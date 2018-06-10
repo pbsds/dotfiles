@@ -1,0 +1,25 @@
+"*":
+  "bracket-matcher":
+    autocompleteBrackets: false
+  core:
+    disabledPackages: [
+      "language-python"
+    ]
+    restorePreviousWindowsOnStart: "no"
+    telemetryConsent: "no"
+    themes: [
+      "one-dark-ui"
+      "railscast-theme-ng"
+    ]
+  editor:
+    fontSize: 17
+    scrollPastEnd: true
+    tabLength: 4
+  "exception-reporting":
+    userId: "c8877d6e-54df-44f2-bb95-b02e63ceaa6b"
+  pigments:
+    mergeColorDuplicates: true
+  welcome:
+    showOnStartup: false
+  whitespace:
+    removeTrailingWhitespace: false

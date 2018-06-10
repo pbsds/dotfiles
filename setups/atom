@@ -1,0 +1,38 @@
+#!/bin/bash
+sudo bash -c ":" || exit 1
+
+function apmget {
+    package=$1
+    echo $package
+    if [[ ! -d "$HOME/.atom/packages/$package" ]]; then
+        apm install $package
+    fi
+}
+
+if ! which atom >> /dev/null; then
+    echo "Please install atom first"
+fi
+
+if ! which apm >> /dev/null; then
+    echo "Atom package manager not found!"
+fi
+
+
+#user the symlink solution instead
+#cp files/atom-config.cson $HOME/.atom/config.cson
+#cp files/atom-keymap.cson $HOME/.atom/keymap.cson
+
+apm disable language-python
+apmget MagicPython
+apmget railscast-theme-ng
+apmget selection-highlight
+apmget markdown-preview
+apmget atom-beautify
+
+#linter stuff
+apmget linter
+apmget linter-ui-default
+apmget busy-signal
+apmget intentions
+apmget linter-clang
+apmget linter-python-pep8

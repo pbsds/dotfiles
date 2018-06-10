@@ -1,0 +1,19 @@
+#!/bin/bash
+sudo bash -c ":" || exit 1
+
+echo '[Unit]
+Description=Fix touchscreen after resume
+After=suspend.target
+
+[Service]
+Type=simple
+ExecStartPre=/usr/bin/sleep 2
+ExecStart=/bin/bash -c "/sbin/rmmod wacom && /sbin/modprobe wacom"
+
+[Install]
+WantedBy=suspend.target' | sudo tee /etc/systemd/system/touchscreen-fix.service > /dev/null
+
+sudo systemctl daemon-reload
+sudo systemctl enable touchscreen-fix
+
+echo "touchscreen-fix successfully installed"

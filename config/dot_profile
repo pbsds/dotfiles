@@ -1,0 +1,71 @@
+#
+# ~/.profile
+
+export PATH=$PATH:~/bin
+
+export EDITOR=nano
+if which micro > /dev/null; then
+    export EDITOR=micro
+fi
+
+parse_git_branch() {
+     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+#export PS1='\[\033[01;32m\]\u@\h\[\033[01;37m\] \W\[\033[01;32m\]\$\[\033[00m\] '
+#export PS1='\[\033[01;32m\]\u@\h\[\033[01;37m\] \W\[\033[33m\]$(parse_git_branch)\[\033[01;32m\]\$\[\033[00m\] '
+export PS1='\[\033[01;32m\]\u@\h\[\033[01;37m\] \[\033[01;34m\]\W\[\033[33m\]$(parse_git_branch)\[\033[01;32m\]\$\[\033[00m\] '
+
+alias ep='$EDITOR ~/.profile && source ~/.profile'
+
+alias sudo='sudo ' #allows you to use aliases in sudo
+
+
+if ! which ed > /dev/null 2> /dev/null; then
+	alias ed=$EDITOR
+fi
+
+#pacman
+alias pac='pacman -S'     # install
+alias pacu='pacman -Syu'  # update, add 'a' to the list of letters to update AUR packages
+alias pacr='pacman -Rs'   # remove
+alias pacs='pacman -Ss'   # search
+alias paci='pacman -Si'   # info
+alias paclo='pacman -Qdt' # list orphans
+alias pacro='paclo && sudo pacman -Rns $(pacman -Qtdq)' # remove orphans
+alias pacc='pacman -Scc'  # clean cache
+alias paclf='pacman -Ql'  # list files
+
+#ls
+alias ll='ls -l'
+
+#git
+alias gs='git status'
+alias gl='git log --oneline | head -n 30'
+alias gd="git diff"
+alias gds="git diff --staged"
+alias gca='git commit --amend'
+alias gcara='git commit --amend --reset-author'
+alias gpm='git push origin master'
+alias gfr='git fetch origin master && git rebase FETCH_HEAD'
+
+#fixes
+alias fix-touchscreen='sudo bash -c "rmmod wacom && modprobe wacom"'
+alias reload-autofs='sudo systemctl restart autofs && cd .'
+
+#shortcuts
+alias gpp="g++ --std=c++17 *.cpp && chmod +x a.out && ./a.out && rm a.out && echo"
+alias open="xdg-open"
+alias vpn="sshuttle 0.0.0.0/0 --disable-ipv6 --dns -r "
+alias xclipc="xclip -sel clip < "
+function fixcrlf {
+	tr -d '\r' < $1 > /tmp/tmp
+	rm $1
+	mv /tmp/tmp $1
+}
+
+#ssh host aliases autocomplete
+complete -W "$(cat ~/.ssh/config | grep 'Host ' | cut  -b 6-)" ssh
+complete -W "$(cat ~/.ssh/config | grep 'Host ' | cut  -b 6-)" vpn
+
+#this is 
+alias http_here="php -S localhost:8081"
