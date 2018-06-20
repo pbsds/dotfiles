@@ -1,0 +1,12 @@
+#!/usr/bin/bash
+
+if ! which micro > /dev/null; then
+	echo "Installing micro..."
+	mkdir -p ~/bin
+	curl -o ~/bin/micro https://getmic.ro
+	chmod +x ~/bin/micro
+	echo "Done!"
+	exit
+fi
+
+echo "Micro is already installed!"
