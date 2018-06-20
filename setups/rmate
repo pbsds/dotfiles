@@ -1,0 +1,12 @@
+#!/usr/bin/bash
+
+if which micro > /dev/null; then
+	
+	echo "installing rmate..."
+	curl -o ~/bin/rmate https://raw.githubusercontent.com/aurora/rmate/master/rmate
+	mkdir -p ~/bin/
+	chmod +x ~/bin/rmate
+	exit
+fi
+
+echo "rmate is already installed!"

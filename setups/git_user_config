@@ -1,0 +1,9 @@
+#!/usr/bin/bash
+
+#git config --global core.excludesfile $HOME/.gitignore_global
+git config --global core.whitespace trailing-space,space-before-tab
+git config --global push.default simple
+git config --global pull.rebase true
+git config --global url.git@github.com:.insteadof https://github.com/
+git config --global user.name "Peder Bergebakken Sundt"
+git config --global user.email pbsds@hotmail.com
