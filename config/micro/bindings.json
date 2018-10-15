@@ -4,12 +4,20 @@
     "CtrlShiftRight": "SelectWordRight",
     "CtrlShiftLeft":  "SelectWordLeft",
 
-    "AltLeft":        "StartOfLine",
-    "AltRight":       "EndOfLine",
-    "AltShiftLeft":   "SelectToStartOfLine",
-    "AltShiftRight":  "SelectToEndOfLine",
+    "ShiftPageUp":    "SelectPageUp",
+    "ShiftPageDown":  "SelectPageDown",
+
+    "AltUp":          "UnbindKey",
+    "CtrlUp":         "MoveLinesUp",
+    "AltDown":        "UnbindKey",
+    "CtrlDown":       "MoveLinesDown",
+
     "AltLeft":        "PreviousTab",
     "AltRight":       "NextTab",
 
-    "Ctrl-W":         "WordRight,SelectWordLeft"
+	"Alt-d":          "SpawnMultiCursor",
+	"Escape":         "RemoveAllMultiCursors",
+
+    "Ctrl-W":         "WordRight,SelectWordLeft",
+    "Ctrl-j":         "EndOfLine,CursorRight,OutdentLine,OutdentLine,OutdentLine,OutdentLine,OutdentLine,OutdentLine,OutdentLine,OutdentLine,OutdentLine,OutdentLine,OutdentLine,OutdentLine,OutdentLine,OutdentLine,Backspace,InsertSpace"
 }
