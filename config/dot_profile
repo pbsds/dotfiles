@@ -7,9 +7,7 @@ export EDITOR=nano
 if which micro > /dev/null; then
     export EDITOR=micro
 fi
-#if ! which ed > /dev/null 2> /dev/null; then
 alias ed=$EDITOR
-#fi
 
 alias ep='$EDITOR ~/.profile && source ~/.profile'
 
