@@ -2,6 +2,7 @@
   "bracket-matcher":
     autocompleteBrackets: false
   core:
+    autoHideMenuBar: true
     disabledPackages: [
       "language-python"
     ]
