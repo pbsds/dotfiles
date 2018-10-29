@@ -1,8 +1,7 @@
 #!/bin/bash
 
 # ensure sudo:
-sudo bash -c ":" || exit 1
-
+#sudo bash -c ":" || exit 1
 DIR=$(git rev-parse --show-toplevel)
 
 mkdir -p "$HOME/.config/micro"

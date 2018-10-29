@@ -1,0 +1,49 @@
+ServerAliveInterval 60
+ServerAliveCountMax 2
+RemoteForward 52698 localhost:52698
+
+Host *.pvv.ntnu.no
+	ForwardX11 yes
+host *.pvv.org
+	ForwardX11 yes
+host *.pbsds.net
+	ForwardX11 yes
+
+
+#NTNU
+Host stud.ntnu.no
+	Hostname login.stud.ntnu.no
+	User pederbs
+Host login.stud.ntnu.no
+	User pederbs
+
+#PVV
+Host hildring.pvv.ntnu.no
+	User pederbs
+Host misantropy.pvv.ntnu.no
+	User pederbs
+Host doktor.pvv.ntnu.no
+	User pederbs
+Host microbel.pvv.ntnu.no
+	User pederbs
+Host lommel.pvv.ntnu.no
+	User pederbs
+Host stakeholder.pvv.ntnu.no
+	User pederbs
+Host venture.pvv.ntnu.no
+	User pederbs
+Host tom.pvv.ntnu.no
+	User pederbs
+Host tim.pvv.ntnu.no
+	User pederbs
+Host tallulah.pvv.ntnu.no
+	User pederbs
+Host knakelibrak.pvv.ntnu.no
+	User pederbs
+Host skrotnisse.pvv.ntnu.no
+	User pederbs
+
+#NVG
+Host nvg
+	Hostname login.nvg.org
+	User pederbs
