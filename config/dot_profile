@@ -6,8 +6,10 @@ export PATH=$PATH:~/bin
 export EDITOR=nano
 if which micro > /dev/null; then
     export EDITOR=micro
-    export TERM=xterm-256color
-    export MICRO_TRUECOLOR=1
+    if [ "$COLORTERM" = "truecolor" ]; then 
+	    export TERM=xterm-256color
+	    export MICRO_TRUECOLOR=1
+    fi
 fi
 alias ed=$EDITOR
 
