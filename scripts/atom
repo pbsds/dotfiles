@@ -2,7 +2,7 @@
 sudo bash -c ":" || exit 1
 
 function install {
-	if ! pacman -Qi $i > /dev/null; then
+	if ! pacman -Qi $1 > /dev/null; then
 		sudo pacman --noconfirm -S $1
 	fi
 }
