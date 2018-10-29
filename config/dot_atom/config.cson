@@ -10,7 +10,7 @@
     telemetryConsent: "no"
     themes: [
       "one-dark-ui"
-      "railscast-theme-ng"
+      "railscast-theme"
     ]
   editor:
     fontSize: 17
