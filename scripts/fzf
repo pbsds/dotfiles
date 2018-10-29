@@ -1,9 +1,8 @@
 #!/bin/sh
 if [ -d ~/.fzf ]; then
-	echo "already installed!"
+	echo "fzf already installed!"
 	exit 1
 fi
 
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
-

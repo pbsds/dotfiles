@@ -7,13 +7,20 @@ function install {
     if ! (pacman -Qi $1) > /dev/null; then
         echo installing $1...
         sudo pacman --noconfirm -S $1
+    else
+        echo omitting installing $1...
     fi
 }
+
 install pacaur
+
 function installaur {
     if ! pacman -Qi $1 > /dev/null; then
         echo installing $1...
-        sudo pacaur --noconfirm -S $1
+        #sudo pacaur --noconfirm -S $1
+        pacaur --noconfirm -S $1
+    else
+        echo omitting installing $1...
     fi
 }
 
@@ -26,8 +33,10 @@ if [ "$DO" = "y" ]; then
     install chromium
     install chrome-gnome-shell
     
+    chromium "https://chrome.google.com/webstore/detail/gnome-shell-integration/gphhapmejobijbbhgpjhcjognlahblep"
+    
     echo
-    echo "Ensure chromium is running before continuing... (enter)"
+    echo "Ensure chromium is running with extension before continuing... (enter)"
     read
 
     chromium "https://extensions.gnome.org/extension/352/middle-click-to-close-in-overview/" # middleclickclose@paolo.tranquilli.gmail.com
@@ -55,9 +64,11 @@ if [ "$DO" = "y" ]; then
 fi
 
 
+install xdotool
 install adwaita-icon-theme
 installaur la-capitaine-icon-theme
 installaur vimix-gtk-themes-git
+installaur gnome-terminal-transparency
 
 DIR=$(git rev-parse --show-toplevel)
 eval "$DIR/config/dconf/push.sh"
