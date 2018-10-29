@@ -43,14 +43,21 @@ alias gcara='git commit --amend --reset-author'
 alias gpm='git push origin master'
 alias gfr='git fetch origin master && git rebase FETCH_HEAD'
 parse_git_branch() {
-     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+	git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
 export PS1='\[\033[01;32m\]\u@\h\[\033[01;37m\] \[\033[01;34m\]\W\[\033[33m\]$(parse_git_branch)\[\033[01;32m\]\$\[\033[00m\] '
-
 
 #fixes
 alias fix-touchscreen='sudo bash -c "rmmod wacom && modprobe wacom"'
 alias reload-autofs='sudo systemctl restart autofs && cd .'
+fix-pulseaudio () {
+	sudo killall pulseaudio
+#	rm -r ~/.pulse*
+	rm -r ~/.config/pulse/{*.tdb,*-sink,*-source,cookie}
+	echo "Wait ten seconds, then run this: pulseaudio -k"
+	echo "Comment: alert sound was reset to default"
+}
+
 
 #Random shortcuts
 alias gpp="g++ --std=c++17 *.cpp && chmod +x a.out && ./a.out && rm a.out && echo"
