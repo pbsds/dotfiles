@@ -48,9 +48,9 @@ parse_git_branch() {
 export PS1='\[\033[01;32m\]\u@\h\[\033[01;37m\] \[\033[01;34m\]\W\[\033[33m\]$(parse_git_branch)\[\033[01;32m\]\$\[\033[00m\] '
 
 #fixes
-alias fix-touchscreen='sudo bash -c "rmmod wacom && modprobe wacom"'
+alias fix_touchscreen='sudo bash -c "rmmod wacom && modprobe wacom"'
 alias reload-autofs='sudo systemctl restart autofs && cd .'
-fix-pulseaudio () {
+function fix_pulseaudio {
 	sudo killall pulseaudio
 #	rm -r ~/.pulse*
 	rm -r ~/.config/pulse/{*.tdb,*-sink,*-source,cookie}
