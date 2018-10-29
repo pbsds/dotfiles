@@ -42,7 +42,7 @@ apmget MagicPython
 #apmget railscast-theme-ng # 404...
 apmget railscast-theme
 apmget selection-highlight
-apmget markdown-preview
+#apmget markdown-preview
 apmget atom-beautify
 
 #linter stuff
