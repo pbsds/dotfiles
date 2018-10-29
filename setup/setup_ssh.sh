@@ -10,3 +10,4 @@ eval "$DIR/scripts/git_user_config"
 #symlinks
 eval "$DIR/scripts/symlinks/micro"
 eval "$DIR/scripts/symlinks/ssh"
+eval "$DIR/scripts/symlinks/profile"
