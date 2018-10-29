@@ -68,8 +68,8 @@ alias forward_bertil="sudo ssh -g -L 445:knut.pbsds.net:446 -N pbsds@localhost"
 
 
 #ssh host aliases autocomplete
-complete -W "$(cat ~/.ssh/config | grep '^Host ' | cut  -b 6-)" ssh
-complete -W "$(cat ~/.ssh/config | grep '^Host ' | cut  -b 6-)" vpn
+complete -W "$(cat ~/.ssh/config | grep '^Host ' | cut  -b 6- | grep -v "^\*")" ssh
+complete -W "$(cat ~/.ssh/config | grep '^Host ' | cut  -b 6- | grep -v "^\*")" vpn
 
 
 #Jumping with symbolic links:
