@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# ensure sudo:
+sudo bash -c ":" || exit 1
+
+DIR=$(git rev-parse --show-toplevel)
+
+mkdir -p "$HOME/.config/micro"
+
+ln -vsf "$DIR/config/micro/bindings.json" "$HOME/.config/micro/bindings.json"
+ln -vsf "$DIR/config/micro/settings.json" "$HOME/.config/micro/settings.json"

@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# ensure sudo:
+sudo bash -c ":" || exit 1
+
+DIR=$(git rev-parse --show-toplevel)
+
+
+ln -vsf "$DIR/config/dot_profile" "$HOME/.profile"
+
+if ! ( grep "^source ~/.profile$" ~/.bashrc ) > /dev/null; then
+	echo "source ~/.profile" >> ~/.bashrc
+if
