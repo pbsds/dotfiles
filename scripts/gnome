@@ -4,26 +4,29 @@ sudo bash -c ":" || exit 1
 which pacman > /dev/null || exit 1
 
 function install {
-    if ! pacman -Qi $i > /dev/null; then
+    if ! (pacman -Qi $1) > /dev/null; then
+        echo installing $1...
         sudo pacman --noconfirm -S $1
     fi
 }
 install pacaur
 function installaur {
-    if ! pacman -Qi $i > /dev/null; then
+    if ! pacman -Qi $1 > /dev/null; then
+        echo installing $1...
         sudo pacaur --noconfirm -S $1
     fi
 }
 
 
 # TODO: automate this
-read -p "Install gnome extentions?  (y/N)?" DO
+read -p "Install gnome extensions?  (y/N)?" DO
 if [ "$DO" = "y" ]; then
 
     install gnome-shell-extensions
     install chromium
     install chrome-gnome-shell
-
+    
+    echo
     echo "Ensure chromium is running before continuing... (enter)"
     read
 
