@@ -1,0 +1,60 @@
+#!/usr/bin/env bash
+
+sudo bash -c ":" || exit 1
+which pacman > /dev/null || exit 1
+
+function install {
+    if ! pacman -Qi $i > /dev/null; then
+        sudo pacman --noconfirm -S $1
+    fi
+}
+install pacaur
+function installaur {
+    if ! pacman -Qi $i > /dev/null; then
+        sudo pacaur --noconfirm -S $1
+    fi
+}
+
+
+# TODO: automate this
+read -p "Install gnome extentions?  (y/N)?" DO
+if [ "$DO" = "y" ]; then
+
+    install gnome-shell-extensions
+    install chromium
+    install chrome-gnome-shell
+
+    echo "Ensure chromium is running before continuing... (enter)"
+    read
+
+    chromium "https://extensions.gnome.org/extension/352/middle-click-to-close-in-overview/" # middleclickclose@paolo.tranquilli.gmail.com
+    chromium "https://extensions.gnome.org/extension/1191/battery-percentage/" # battery-percentage@mubaris.github.io
+    chromium "https://extensions.gnome.org/extension/1326/block-caribou/" # cariboublocker@git.keringar.xyz
+    chromium "https://extensions.gnome.org/extension/949/bottompanel/" # bottompanel@tmoer93
+    chromium "https://extensions.gnome.org/extension/959/disable-workspace-switcher-popup/" # disable-workspace-switcher-popup@github.com
+    chromium "https://extensions.gnome.org/extension/1213/dynamic-battery/" # dynamic_battery@exalm
+    chromium "https://extensions.gnome.org/extension/545/hide-top-bar/" # hidetopbar@mathieu.bidon.ca
+    chromium "https://extensions.gnome.org/extension/744/hide-activities-button/" # Hide_Activities@shay.shayel.org
+    chromium "https://extensions.gnome.org/extension/1097/keep-awake/" # KeepAwake@jepfa.de
+    chromium "https://extensions.gnome.org/extension/118/no-topleft-hot-corner/" # nohotcorner@azuri.free.fr
+    chromium "https://extensions.gnome.org/extension/708/panel-osd/" # panel-osd@berend.de.schouwer.gmail.com
+    chromium "https://extensions.gnome.org/extension/15/alternatetab/" # alternate-tab@gnome-shell-extensions.gcampax.github.com
+    chromium "https://extensions.gnome.org/extension/1297/remove-dash/" # Remove_Dash@localhost.localdomain
+    chromium "https://extensions.gnome.org/extension/906/sound-output-device-chooser/" # sound-output-device-chooser@kgshank.net
+    chromium "https://extensions.gnome.org/extension/1031/topicons/" # TopIcons@phocean.net
+    chromium "https://extensions.gnome.org/extension/1289/window-animations/" # window-animations@rliang.github.com
+
+    echo
+    echo
+    echo "Install all plugins before continuing... (enter)"
+    read
+
+fi
+
+
+install adwaita-icon-theme
+installaur la-capitaine-icon-theme
+installaur vimix-gtk-themes-git
+
+DIR=$(git rev-parse --show-toplevel)
+eval "$DIR/config/dconf/push.sh"
