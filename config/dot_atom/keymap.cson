@@ -40,7 +40,6 @@
   'alt-left': 'pane:show-previous-item'
   'ctrl-l': "editor:unfold-current-row"
   'ctrl-ø': "editor:fold-current-row"
-  'ctrl-q': "core:close"
 'body':
   'ctrl-w': 'unset!'
   'alt-right': 'pane:show-next-item'
@@ -49,4 +48,4 @@
   'ctrl-tab': 'pane:show-next-item'
   'ctrl-shift-tab ^ctrl': 'unset!'
   'ctrl-shift-tab': 'pane:show-previous-item'
-  'ctrl-q': 'unset!'
+  'ctrl-q': "core:close"
