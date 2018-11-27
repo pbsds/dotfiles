@@ -9,4 +9,4 @@ ln -vsf "$DIR/config/dot_profile" "$HOME/.profile"
 
 if ! ( grep "^source ~/.profile$" ~/.bashrc ) > /dev/null; then
 	echo "source ~/.profile" >> ~/.bashrc
-if
+fi
