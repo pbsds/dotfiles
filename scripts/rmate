@@ -2,9 +2,9 @@
 
 if ! which rmate > /dev/null; then
 	echo "Installing rmate..."
-	mkdir -p ~/bin/
-	curl -o ~/bin/rmate https://raw.githubusercontent.com/aurora/rmate/master/rmate
-	chmod +x ~/bin/rmate
+	mkdir -p ~/.local/bin
+	curl -o ~/.local/bin/rmate https://raw.githubusercontent.com/aurora/rmate/master/rmate
+	chmod +x ~/.local/bin/rmate
 	echo "Done!"
 	exit
 fi

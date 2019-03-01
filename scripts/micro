@@ -2,11 +2,11 @@
 
 if ! which micro > /dev/null; then
 	echo "Installing micro..."
-	mkdir -p ~/bin
+	mkdir -p ~/.local/bin
 	(
-		cd ~/bin
+		cd ~/.local/bin
 		curl https://getmic.ro | bash
-		chmod +x ~/bin/micro
+		chmod +x ~/.local/bin/micro
 	)
 	echo "Done!"
 	exit
