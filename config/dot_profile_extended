@@ -1,2 +1,21 @@
 #
 # ~/.extend.profile
+
+# fixes
+alias reload-autofs='sudo killall ssh && sudo systemctl restart autofs && cd .'
+alias fix_touchscreen='sudo bash -c "rmmod wacom && modprobe wacom"'
+
+# Random shortcuts
+alias open="xdg-open"
+alias fork="nohup gnome-terminal --hide-menubar --window-with-profile=manjaro . >/dev/null 2>&1 &"
+alias vpn="sshuttle 0.0.0.0/0 --disable-ipv6 --dns -r "
+alias xclipc="xclip -sel clip < "
+
+# Haskell through stack
+if which pacman > /dev/null; then
+#	alias ghc="stack ghc -dynamic"
+	alias ghc="stack ghc"
+	alias ghci="stack ghci"
+	
+fi
+
