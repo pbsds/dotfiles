@@ -12,6 +12,6 @@ eval "$DIR/scripts/git_user_config"
 eval "$DIR/scripts/symlinks/atom"
 eval "$DIR/scripts/symlinks/applications"
 eval "$DIR/scripts/symlinks/micro"
-eval "$DIR/scripts/symlinks/opt"
+#eval "$DIR/scripts/symlinks/opt" # done by gnome setup
 eval "$DIR/scripts/symlinks/profile"
 eval "$DIR/scripts/symlinks/ssh"

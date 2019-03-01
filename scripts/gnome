@@ -4,6 +4,8 @@ sudo bash -c ":" || exit 1
 which pacman > /dev/null || exit 1
 
 function install {
+	# todo move this to seperate dependancy which all files can depend on
+	# support more than arch
     if ! (pacman -Qi $1) > /dev/null; then
         echo installing $1...
         sudo pacman --noconfirm -S $1
@@ -18,7 +20,7 @@ function installaur {
     if ! pacman -Qi $1 > /dev/null; then
         echo installing $1...
         #sudo pacaur --noconfirm -S $1
-        pacaur --noconfirm -S $1
+        VISUAL=echo pacaur --noconfirm -S $1
     else
         echo omitting installing $1...
     fi
@@ -47,7 +49,7 @@ function installExtension {
 read -p "Install gnome extensions?  (y/N)?" DO
 if [ "$DO" = "y" ]; then
 
-    install gnome-shell-extensions # needed?
+    install gnome-shell-extensions # yes, needed
 
     echo
     
@@ -59,6 +61,7 @@ if [ "$DO" = "y" ]; then
     installExtension "https://extensions.gnome.org/extension/15/alternatetab/" # alternate-tab@gnome-shell-extensions.gcampax.github.com
 
     #neat
+    installExtension "https://extensions.gnome.org/extension/1276/night-light-slider/"
     installExtension "https://extensions.gnome.org/extension/1191/battery-percentage/" # battery-percentage@mubaris.github.io
     installExtension "https://extensions.gnome.org/extension/1326/block-caribou/" # cariboublocker@git.keringar.xyz
     installExtension "https://extensions.gnome.org/extension/959/disable-workspace-switcher-popup/" # disable-workspace-switcher-popup@github.com
@@ -84,7 +87,14 @@ install xclip
 install adwaita-icon-theme
 installaur la-capitaine-icon-theme
 installaur vimix-gtk-themes-git
-installaur gnome-terminal-transparency
+installaur gnome-terminal-transparency # failing?
 
 DIR=$(git rev-parse --show-toplevel)
-eval "$DIR/config/dconf/push.sh"
+(
+	cd "$DIR/config/dconf
+	./push.sh theme.ini behaviour.ini behaviour.ini  shortcuts.ini theme.ini
+)
+(
+	cd "$DIR/scripts/symlinks
+	./opt
+)
