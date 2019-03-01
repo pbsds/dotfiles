@@ -50,5 +50,5 @@ apmget linter
 apmget linter-ui-default
 apmget busy-signal
 apmget intentions
-apmget linter-clang
-apmget linter-python-pep8
+#apmget linter-clang
+#apmget linter-python-pep8
