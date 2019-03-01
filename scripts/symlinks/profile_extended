@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# ensure sudo:
+#sudo bash -c ":" || exit 1
+
+DIR=$(git rev-parse --show-toplevel)
+eval "$DIR/scripts/symlinks/profile"
+
+ln -vsf "$DIR/config/dot_profile_extended" "$HOME/.extend.profile"
+

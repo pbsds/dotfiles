@@ -1,6 +1,9 @@
 #
 # ~/.profile
 
+[[ -f ~/.extend.profile ]] && . ~/.extend.profile
+
+
 # user bin
 export PATH=$PATH:~/bin
 
@@ -17,7 +20,7 @@ alias ed=$EDITOR
 
 
 # .profile shorthand
-alias ep='$EDITOR ~/.profile && source ~/.profile'
+alias ep='$EDITOR ~/.profile ~/.extend.profile && source ~/.profile'
 
 # allows you to use aliases with sudo:
 alias sudo='sudo ' 
