@@ -4,10 +4,11 @@ RemoteForward 52698 localhost:52698
 
 Host *.pvv.ntnu.no
 	ForwardX11 yes
+	ForwardX11Trusted yes
 host *.pvv.org
 	ForwardX11 yes
-host *.pbsds.net
-	ForwardX11 yes
+	ForwardX11Trusted yes
+
 
 
 #NTNU
@@ -42,8 +43,12 @@ Host knakelibrak.pvv.ntnu.no
 	User pederbs
 Host skrotnisse.pvv.ntnu.no
 	User pederbs
+Host spikkjeposche.pvv.ntnu.no
+    User pederbs
 
 #NVG
-Host nvg
+Host nvg.org
 	Hostname login.nvg.org
+	User pederbs
+Host *.nvg.org
 	User pederbs
