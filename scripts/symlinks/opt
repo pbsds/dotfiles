@@ -1,13 +1,18 @@
 #!/bin/bash
 
 # ensure sudo:
-sudo bash -c ":" || exit 1
+#sudo bash -c ":" || exit 1
+
+#ensure user:
+[ "$(whoami)" != "root" ] || echo "you can't be root for this"
+[ "$(whoami)" != "root" ] || exit 1
+
 DIR=$(git rev-parse --show-toplevel)
 
-
-
+mkdir -p "$HOME/.local/opt"
 
 find "$DIR/opt" -type f |
 while read file; do
-    sudo ln -vsf "$file" "/opt/$(basename "$file")"
+#    sudo ln -vsf "$file" "/opt/$(basename "$file")"
+    ln -vsf "$file" "$HOME/.local/opt/$(basename "$file")"
 done

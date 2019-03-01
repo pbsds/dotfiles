@@ -1,7 +1,7 @@
 #!/usb/bin/env python3
 
 #run with:
-#gnome-terminal --hide-menubar --window-with-profile=manjaro -x python -i /opt/python-interactive-imports.py
+#gnome-terminal --hide-menubar --window-with-profile=manjaro -x python -i $HOME/.local/opt/python-interactive-imports.py
 
 from math import cos, pi, sin, exp, log, log10, sqrt
 import numpy as np
