@@ -18,6 +18,7 @@ if which micro > /dev/null; then
 fi
 alias ed=$EDITOR
 alias edl="$EDITOR -colorscheme bubblegum " # micro dependent, lol
+alias eds="$EDITOR -colorscheme simple " # micro dependent, lol
 
 
 # .profile shorthand
