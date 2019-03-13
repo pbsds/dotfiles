@@ -84,6 +84,7 @@ fi
 
 install xdotool
 install xclip
+install xorg-xrandr
 install adwaita-icon-theme
 installaur la-capitaine-icon-theme
 installaur vimix-gtk-themes-git
