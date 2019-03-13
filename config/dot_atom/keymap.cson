@@ -38,6 +38,8 @@
   'ctrl-shift-D': 'editor:delete-line'
   'alt-right': 'pane:show-next-item'
   'alt-left': 'pane:show-previous-item'
+  'alt-.': 'pane:show-next-item'
+  'alt-,': 'pane:show-previous-item'
   'ctrl-l': "editor:unfold-current-row"
   'ctrl-ø': "editor:fold-current-row"
 'body':
