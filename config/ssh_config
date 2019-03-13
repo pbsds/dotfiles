@@ -37,6 +37,8 @@ Host tom.pvv.ntnu.no
 	User pederbs
 Host tim.pvv.ntnu.no
 	User pederbs
+Host eirin.pvv.ntnu.no
+	User pederbs
 Host tallulah.pvv.ntnu.no
 	User pederbs
 Host knakelibrak.pvv.ntnu.no
@@ -52,3 +54,22 @@ Host nvg.org
 	User pederbs
 Host *.nvg.org
 	User pederbs
+
+#FYRKAT
+Host hop.fyrkat.no
+	User pbsds
+	ProxyCommand none
+Host fyrkat.no
+	Hostname fil.fyrkat.no
+	ProxyCommand ssh hop.fyrkat.no -W %h:%p
+	IdentityFile ~/.ssh/id_rsa
+	PasswordAuthentication no
+	ForwardAgent no
+	IdentitiesOnly yes
+Host *.fyrkat.no
+	User pbsds
+	ProxyCommand ssh hop.fyrkat.no -W %h:%p
+	IdentityFile ~/.ssh/id_rsa
+	PasswordAuthentication no
+	ForwardAgent no
+	IdentitiesOnly yes
