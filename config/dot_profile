@@ -64,7 +64,6 @@ export PS1='\[\033[01;32m\]\u@\h\[\033[01;37m\] \[\033[01;34m\]\W\[\033[33m\]$(p
 
 # Random shortcuts
 alias gpp="g++ --std=c++17 *.cpp && chmod +x a.out && ./a.out && rm a.out && echo"
-alias vpn="sshuttle 0.0.0.0/0 --disable-ipv6 --dns -r "
 function fixcrlf {
 	tr -d '\r' < $1 > /tmp/tmp
 	rm $1

@@ -8,7 +8,12 @@ alias fix_touchscreen='sudo bash -c "rmmod wacom && modprobe wacom"'
 # Random shortcuts
 alias open="xdg-open"
 alias fork="nohup gnome-terminal --hide-menubar --window-with-profile=manjaro . >/dev/null 2>&1 &"
-alias vpn="sshuttle 0.0.0.0/0 --disable-ipv6 --dns -r "
+function vpn {
+	ip="$(dig +short -x a $1 | tail -n 1)"
+	echo sshuttle 0.0.0.0/0 --disable-ipv6 --dns -r "$1" -x $ip
+	sshuttle 0.0.0.0/0 --disable-ipv6 --dns -r "$1" -x $ip
+}
+
 alias xclipc="xclip -sel clip < "
 
 # Haskell through stack
