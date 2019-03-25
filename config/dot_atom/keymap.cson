@@ -33,8 +33,9 @@
 
 
 'atom-text-editor':
-  'ctrl-d': 'editor:duplicate-lines'
   'ctrl-w': 'editor:select-word'
+  'alt-d': 'find-and-replace:select-next'
+  'ctrl-d': 'editor:duplicate-lines'
   'ctrl-shift-D': 'editor:delete-line'
   'alt-right': 'pane:show-next-item'
   'alt-left': 'pane:show-previous-item'
