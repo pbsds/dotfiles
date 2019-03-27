@@ -84,6 +84,7 @@ complete -W "$(cat ~/.ssh/config | grep '^Host ' | cut  -b 6- | grep -v "^\*")" 
 #Taken from http://jeroenjanssens.com/2013/08/16/quickly-navigate-your-filesystem-from-the-command-line.html
 export MARKPATH=$HOME/.marks
 function jump { 
+	pushd . > /dev/null
 	cd -P "$MARKPATH/$1" 2>/dev/null || echo "No such mark: $1"
 }
 function mark { 
