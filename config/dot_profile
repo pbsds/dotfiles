@@ -75,7 +75,9 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 alias http_here="php -S localhost:8081"
 
 # ssh host aliases autocomplete
+alias rssh="ssh -l root"
 complete -W "$(cat ~/.ssh/config | grep '^Host ' | cut  -b 6- | grep -v "^\*")" ssh
+complete -W "$(cat ~/.ssh/config | grep '^Host ' | cut  -b 6- | grep -v "^\*")" rssh
 complete -W "$(cat ~/.ssh/config | grep '^Host ' | cut  -b 6- | grep -v "^\*")" vpn
 
 # Jumping with symbolic links:
