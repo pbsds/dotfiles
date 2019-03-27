@@ -117,7 +117,7 @@ function hello {
 		#fortune
 		echo
 		echo "$error"
-	) | cowsay -f $cow | boxes -d spring -a c | lolcat
+	) | cowsay -f $cow | boxes -d spring -p h4 | lolcat
 }
 
 
