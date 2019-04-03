@@ -2,8 +2,19 @@
 # ~/.extend.profile
 
 # fixes
-alias reload-autofs='sudo killall ssh && sudo systemctl restart autofs && cd .'
 alias fix_touchscreen='sudo bash -c "rmmod wacom && modprobe wacom"'
+alias fix_autofs='sudo killall ssh && sudo systemctl restart autofs && cd .'
+alias fix_pulseaudio='pulseaudio -k; pulseaudio --start'
+function fix_pulseaudio_force {
+	pulseaudio -k
+	sudo killall pulseaudio
+#	rm -r ~/.pulse*
+	rm -r ~/.config/pulse/{*.tdb,*-sink,*-source,cookie}
+	sleep 10;
+	pulseaudio --start
+	echo "Comment: alert sound was reset to default"
+}
+
 
 # Random shortcuts
 alias open="xdg-open"
