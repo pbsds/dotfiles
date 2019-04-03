@@ -43,6 +43,7 @@
   'alt-,': 'pane:show-previous-item'
   'ctrl-l': "editor:unfold-current-row"
   'ctrl-ø': "editor:fold-current-row"
+  'alt-g': 'atomic-rtags:follow'
 'body':
   'ctrl-w': 'unset!'
   'alt-right': 'pane:show-next-item'

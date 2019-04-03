@@ -35,12 +35,12 @@
   "markdown-preview-plus":
     markdownItConfig:
       useLazyHeaders: false
-      useToc: false
     mathConfig:
       enableLatexRenderingByDefault: true
     pandocConfig:
       pandocArguments: [
         "--standalone"
+        "--metadata pagetitle=notitle"
       ]
       pandocFilters: [
         "pandoc-codeblock-include"
@@ -48,6 +48,8 @@
         "pandoc-imagine"
       ]
       pandocRemoveReferences: false
+    previewConfig:
+      activatePreviewWithEditor: true
     renderer: "pandoc"
     saveConfig:
       saveToPDFOptions: {}
@@ -58,6 +60,7 @@
   "status-bar": {}
   "tree-view":
     hideIgnoredNames: true
+    hideVcsIgnoredFiles: true
   welcome:
     showOnStartup: false
   whitespace:

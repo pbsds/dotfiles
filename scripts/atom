@@ -28,22 +28,48 @@ if ! which atom >> /dev/null; then
 fi
 
 if ! which apm >> /dev/null; then
-	echo "Atom package manager not found!"
+	echo "CRITICAL: Atom package manager not found!"
 	exit 1
 fi
 
-
-#user the symlink solution instead
-#cp files/atom-config.cson $HOME/.atom/config.cson
-#cp files/atom-keymap.cson $HOME/.atom/keymap.cson
-
-apm disable language-python
-apmget MagicPython
 #apmget railscast-theme-ng # 404...
 apmget railscast-theme
-apmget selection-highlight
-#apmget markdown-preview
 apmget atom-beautify
+apmget atomic-rtags
+apm disable markdown-preview
+apm markdown-preview-plus
+apmget graphviz-preview-plus
+
+# syntax definitions
+apm disable language-python
+apmget MagicPython
+apmget atom-jinja2
+apmget autocomplete-cmake
+apmget language-arduino
+apmget language-armasm
+apmget language-autoit
+apmget language-batch
+apmget language-bison-flex
+apmget language-cmake
+apmget language-diff
+apmget language-dot
+apmget language-glsl
+apmget language-haskell
+apmget language-ini
+apmget language-latex
+apmget language-lua
+apmget language-scala
+apmget language-velocity
+apmget language-zonefile
+
+# quality of life
+apmget lines
+apmget shell-it
+apmget simple-align
+apmget selection-highlight
+apmget markdown-table-editor
+apmget remote-atom
+
 
 #linter stuff
 apmget linter
@@ -52,3 +78,6 @@ apmget busy-signal
 apmget intentions
 #apmget linter-clang
 #apmget linter-python-pep8
+
+
+# todo: ensure symlinked config files
