@@ -3,7 +3,7 @@
 #run with:
 #gnome-terminal --hide-menubar --window-with-profile=manjaro -x python -i $HOME/.local/opt/python-interactive-imports.py
 
-from math import cos, pi, sin, exp, log, log10, sqrt
+from math import cos, pi, sin, exp, log, log10, sqrt, acos, asin, atan
 import numpy as np
 from statistics import *
 
