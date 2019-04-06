@@ -44,8 +44,8 @@
       ]
       pandocFilters: [
         "pandoc-codeblock-include"
-        "pandoc-crossref"
         "pandoc-imagine"
+        "pandoc-crossref"
       ]
       pandocRemoveReferences: false
     previewConfig:
@@ -57,7 +57,8 @@
     useGitHubStyle: true
   pigments:
     mergeColorDuplicates: true
-  "status-bar": {}
+  "status-bar":
+    isVisible: false
   "tree-view":
     hideIgnoredNames: true
     hideVcsIgnoredFiles: true

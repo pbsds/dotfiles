@@ -45,6 +45,7 @@
   'ctrl-ø': "editor:fold-current-row"
   'alt-g': 'atomic-rtags:follow'
 'body':
+  'ctrl-k ctrl-n': 'status-bar:toggle'
   'ctrl-w': 'unset!'
   'alt-right': 'pane:show-next-item'
   'alt-left': 'pane:show-previous-item'
