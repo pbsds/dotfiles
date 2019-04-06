@@ -21,7 +21,7 @@ apmget railscast-theme
 apmget atom-beautify
 apmget atomic-rtags
 apm disable markdown-preview
-apm markdown-preview-plus
+apmget markdown-preview-plus
 apmget graphviz-preview-plus
 
 # syntax definitions
