@@ -18,7 +18,7 @@ function fix_pulseaudio_force {
 
 # Random shortcuts
 alias open="xdg-open"
-alias fork="nohup gnome-terminal --hide-menubar --window-with-profile=manjaro . >/dev/null 2>&1 &"
+alias fork="nohup gnome-terminal --hide-menubar . >/dev/null 2>&1 &"
 function vpn {
 	ip="$(dig +short -x a $1 | tail -n 1)"
 	echo sshuttle 0.0.0.0/0 --disable-ipv6 --dns -r "$1" -x $ip

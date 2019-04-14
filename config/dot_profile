@@ -3,6 +3,7 @@
 
 [[ -f ~/.extend.profile ]] && . ~/.extend.profile
 
+export LESS="${LESS}R"
 
 # user bin
 export PATH=$PATH:~/bin:~/.local/bin
