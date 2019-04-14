@@ -17,7 +17,7 @@ if which micro > /dev/null; then
 	    export MICRO_TRUECOLOR=1
     fi
 fi
-alias ed=$EDITOR
+alias ed=$EDITOR # ed is the standard editor
 alias edl="$EDITOR -colorscheme bubblegum " # micro dependent, lol
 alias eds="$EDITOR -colorscheme simple " # micro dependent, lol
 
@@ -47,6 +47,7 @@ fi
 # typo savers
 alias dc='cd'
 alias sl='ls'
+alias LS='ls'
 
 # git gud
 alias gs='git status'
@@ -56,6 +57,7 @@ alias gds="git diff --staged"
 alias gca='git commit --amend'
 alias gcara='git commit --amend --reset-author'
 alias gpm='git push origin master'
+alias gpasr='git pull --autostash --rebase'
 alias gfr='git fetch origin master && git rebase FETCH_HEAD'
 parse_git_branch() {
 	git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
