@@ -1,11 +1,13 @@
 #!/bin/bash
-sudo bash -c ":" || exit 1
+if ! which atom 2>&1 >/dev/null; then
+	echo "Critical: Please install atom first!"
+	exit 1
+fi
+if ! which apm 2>&1 >/dev/null; then
+	echo "Critical: apm not found in path!"
+	exit 1
+fi
 
-function install {
-	if ! pacman -Qi $1 > /dev/null; then
-		sudo pacman --noconfirm -S $1
-	fi
-}
 function apmget {
 	package=$1
 	echo $package
@@ -13,24 +15,6 @@ function apmget {
 		apm install $package
 	fi
 }
-
-if ! which atom >> /dev/null; then
-	read -p "Please install atom first:  (y/N)?" DO
-	if [ "$DO" = "y" ]; then
-		install atom
-		echo
-		echo
-		echo "Please launch atom once before continuing... (enter)"
-		read;
-	else
-		exit 1
-	fi
-fi
-
-if ! which apm >> /dev/null; then
-	echo "CRITICAL: Atom package manager not found!"
-	exit 1
-fi
 
 #apmget railscast-theme-ng # 404...
 apmget railscast-theme
