@@ -25,7 +25,19 @@ function vpn {
 	sshuttle 0.0.0.0/0 --disable-ipv6 --dns -r "$1" -x $ip
 }
 
-alias xclipc="xclip -sel clip < "
+alias clip="xclip -sel clip"
+function clipf {
+	echo $1
+	cat "$1" | xclip -sel clip -t "$(file --mime-type "$1" -b)"
+}
+function clipmd {
+	(
+		echo "\`\`\`"
+		cat "$1"
+		echo "\`\`\`"
+	) | clip
+}
+
 
 # Haskell through stack
 if which pacman > /dev/null; then

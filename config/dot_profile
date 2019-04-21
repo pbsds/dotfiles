@@ -69,9 +69,9 @@ export PS1='\[\033[01;32m\]\u@\h\[\033[01;37m\] \[\033[01;34m\]\W\[\033[33m\]$(p
 # Random shortcuts
 alias gpp="g++ --std=c++17 *.cpp && chmod +x a.out && ./a.out && rm a.out && echo"
 function fixcrlf {
-	tr -d '\r' < $1 > /tmp/tmp
-	rm $1
-	mv /tmp/tmp $1
+	tr -d '\r' < "$1" > /tmp/tmp
+	rm "$1"
+	mv /tmp/tmp "$1"
 }
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
