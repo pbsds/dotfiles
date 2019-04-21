@@ -31,3 +31,8 @@ def rad(degrees):
 
 def deg(radians):
 	return radians / pi * 180
+
+def clip(data):
+	import subprocess
+	p = subprocess.Popen(("xclip", "-sel", "clip"), stdin=subprocess.PIPE)
+	p.communicate(data.encode("utf-8"))
