@@ -90,7 +90,8 @@ install_ubuntu x11-xserver-utils
 	cd "$DIR/config/dconf"
 	./push.sh theme.ini behaviour.ini behaviour.ini  shortcuts.ini theme.ini
 )
-( # install .local/opt symlinks
+( # install .local/opt and .local/bin/xterminal symlinks
 	cd "$DIR/scripts/symlinks"
 	./opt
+	./xterminal
 )

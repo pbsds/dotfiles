@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+mkdir -p ~/.local/bin
+
+if which lxterminal 2>&1 > /dev/null ; then
+	ln -fvs "$( which lxterminal)" "$HOME/.local/bin/xterminal"
+elif which mate-terminal 2>&1 > /dev/null ; then
+	ln -fvs "$( which mate-terminal)" "$HOME/.local/bin/xterminal"
+elif which gnome-terminal 2>&1 > /dev/null ; then
+	ln -fvs "$( which gnome-terminal)" "$HOME/.local/bin/xterminal"
+elif which xterm 2>&1 > /dev/null ; then
+	ln -fvs "$( which xterm)" "$HOME/.local/bin/xterminal"
+fi
