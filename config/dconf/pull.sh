@@ -8,7 +8,7 @@ while read file; do
     cat "$file" | grep "^\[.*\]$" | rev | cut -c2- | rev | cut -c2- |
     while read path; do
         echo "[$path]"
-        dconf dump "/$path/" | tail -n +2 | sed -e '1,/^$/!d' | grep .
+        dconf dump "/$path/" | tail -n +2 | sed -e '1,/^$/!d' | grep . | sort
         echo
     done
     ) > "$file.new"
