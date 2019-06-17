@@ -32,6 +32,7 @@
   "exception-reporting":
     userId: "c8877d6e-54df-44f2-bb95-b02e63ceaa6b"
   "graphviz-preview-plus": {}
+  jumpy: {}
   "markdown-preview-plus":
     markdownItConfig:
       useLazyHeaders: false

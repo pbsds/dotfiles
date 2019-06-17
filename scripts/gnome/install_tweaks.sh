@@ -28,6 +28,7 @@ installExtension "https://extensions.gnome.org/extension/545/hide-top-bar/" # hi
 installExtension "https://extensions.gnome.org/extension/15/alternatetab/" # alternate-tab@gnome-shell-extensions.gcampax.github.com
 
 # neat
+installExtension "https://extensions.gnome.org/extension/1236/noannoyance/"
 installExtension "https://extensions.gnome.org/extension/1276/night-light-slider/"
 installExtension "https://extensions.gnome.org/extension/1191/battery-percentage/" # battery-percentage@mubaris.github.io
 installExtension "https://extensions.gnome.org/extension/1326/block-caribou/" # cariboublocker@git.keringar.xyz
