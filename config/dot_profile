@@ -28,6 +28,7 @@ alias ep='$EDITOR ~/.profile ~/.extend.profile && source ~/.profile'
 
 # allows you to use aliases with sudo:
 alias sudo='sudo ' 
+alias xargs='xargs '
 
 # enable recursive globbing:
 shopt -s globstar
@@ -128,3 +129,9 @@ function hello {
 
 # Tmux
 alias vsp="tmux split-window -h"
+
+
+# python
+function graph_python_imports {
+	pydeps --reverse --noshow --no-output --show-dot "$@"
+}
