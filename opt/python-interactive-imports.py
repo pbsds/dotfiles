@@ -4,8 +4,11 @@
 #gnome-terminal --hide-menubar --window-with-profile=manjaro -x python -i $HOME/.local/opt/python-interactive-imports.py
 
 from math import cos, pi, sin, exp, log, log10, sqrt, acos, asin, atan
+from pprint import pprint
 import numpy as np
 from statistics import *
+
+p = pprint
 
 def plot(x, *args):
 	import matplotlib.pyplot as plt
