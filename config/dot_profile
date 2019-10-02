@@ -218,3 +218,6 @@ function pandoc_to_pdf {
 	fi
 	
 }
+
+
+alias termbin="nc termbin.com 9999"
