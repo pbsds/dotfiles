@@ -221,3 +221,13 @@ function pandoc_to_pdf {
 
 
 alias termbin="nc termbin.com 9999"
+
+
+function salias { # alias command, stripped
+	res="$( alias $1 )"
+	echo "$res" | cut -d"=" -f2- | cut -c2- | rev | cut -c2- | rev 
+	if which xclip 2>&1 > /dev/null ; then
+		echo "$res" | cut -d"=" -f2- | cut -c2- | rev | cut -c2- | rev | xclip -sel clip
+	fi
+}
+
