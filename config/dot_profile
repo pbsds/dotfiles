@@ -25,6 +25,7 @@ alias eds="$EDITOR -colorscheme simple " # micro dependent, lol
 
 # .profile shorthand
 alias ep='$EDITOR ~/.profile ~/.extend.profile && source ~/.profile'
+alias sr='echo sourcing profiles.... ; source ~/.profile'
 
 # allows you to use aliases with sudo:
 alias sudo='sudo ' 
