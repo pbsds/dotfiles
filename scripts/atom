@@ -16,13 +16,9 @@ function apmget {
 	fi
 }
 
+# theming
 #apmget railscast-theme-ng # 404...
 apmget railscast-theme
-apmget atom-beautify
-apmget atomic-rtags
-apm disable markdown-preview
-apmget markdown-preview-plus
-apmget graphviz-preview-plus
 
 # syntax definitions
 apm disable language-python
@@ -43,25 +39,44 @@ apmget language-ini
 apmget language-latex
 apmget language-lua
 apmget language-scala
+apmget language-systemverilog
 apmget language-velocity
+apmget language-verilog
+apmget language-vhdl
 apmget language-zonefile
 
+# pandoc
+apm disable markdown-preview
+apmget markdown-preview-plus
+apmget graphviz-preview-plus
+
 # quality of life
+apmget jumpy
 apmget lines
+apmget markdown-table-editor
+apmget pigments
+apmget remote-atom
+apmget selection-highlight
 apmget shell-it
 apmget simple-align
-apmget selection-highlight
-apmget markdown-table-editor
-apmget remote-atom
+apmget atom-beautify
 
+# IDE
+apmget atom-ide-ui
+apmget busy-signal
+apmget intentions
+
+# scala
+apmget ide-scala
+
+# C / C++
+apmget atomic-rtags
+#apmget ide-c-cpp # todo
 
 #linter stuff
 apmget linter
 apmget linter-ui-default
-apmget busy-signal
-apmget intentions
 #apmget linter-clang
 #apmget linter-python-pep8
-
 
 # todo: ensure symlinked config files
