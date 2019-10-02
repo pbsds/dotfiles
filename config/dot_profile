@@ -188,3 +188,33 @@ alias vsp="tmux split-window -h"
 function graph_python_imports {
 	pydeps --reverse --noshow --no-output --show-dot "$@"
 }
+
+
+# pandoc
+alias pandoc_mediawiki="pandoc -t mediawiki --filter pandoc-codeblock-include --filter pandoc-crossref --filter pandoc-imagine"
+alias pandoc_markdown="pandoc -t gfm --filter pandoc-codeblock-include --filter pandoc-crossref --filter pandoc-imagine"
+alias pandoc_html="pandoc -t html --filter pandoc-codeblock-include --filter pandoc-crossref --filter pandoc-imagine --katex"
+alias pandoc_tex="pandoc -t latex --filter pandoc-codeblock-include --filter pandoc-crossref --filter pandoc-imagine"
+alias pandoc_tex_full="pandoc -t latex --filter pandoc-codeblock-include --filter pandoc-crossref --filter pandoc-imagine --standalone"
+function pandoc_to_pdf {
+	VARIABLES="--filter pandoc-codeblock-include --filter pandoc-crossref --filter pandoc-imagine"
+	VARIABLES="$VARIABLES --variable papersize=a4paper"
+	VARIABLES="$VARIABLES --table-of-contents"
+	VARIABLES="$VARIABLES --number-sections"
+	#VARIABLES="$VARIABLES --number-offset=0,0"
+	VARIABLES="$VARIABLES --variable links-as-notes=true"
+	VARIABLES="$VARIABLES --highlight-style=pygments" # the default
+
+	if test "$1" == "" ; then
+		echo you must supply an input!
+	elif test "$2" == "" ; then
+		echo you must supply an output!
+	else
+		source="$1"
+		shift
+		dest="$1"
+		shift
+		pandoc "$source" --pdf-engine="xelatex" $VARIABLES "$@" -o "$dest"
+	fi
+	
+}
