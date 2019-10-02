@@ -70,6 +70,7 @@ if [ "$DO" =~ "^[yY].*$" ]; then
 	)
 fi
 
+install xorg-xprop
 install xdotool
 install xclip
 install_arch xorg-xrandr
