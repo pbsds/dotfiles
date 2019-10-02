@@ -44,6 +44,9 @@
   'ctrl-l': "editor:unfold-current-row"
   'ctrl-ø': "editor:fold-current-row"
   'alt-g': 'atomic-rtags:follow'
+'atom-workspace':
+  'ctrl-k ctrl-m': 'diagnostics:toggle-table'
+  'ctrl-k ctrl-,': 'outline-view:toggle'
 'body':
   'ctrl-k ctrl-n': 'status-bar:toggle'
   'ctrl-w': 'unset!'

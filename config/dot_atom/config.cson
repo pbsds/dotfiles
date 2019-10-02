@@ -6,6 +6,11 @@
     autoHideMenuBar: true
     disabledPackages: [
       "language-python"
+      "markdown-preview"
+      "linter-clang"
+      "linter"
+      "linter-ui-default"
+      "linter-python-pep8"
     ]
     ignoredNames: [
       ".git"
@@ -16,6 +21,9 @@
       "Thumbs.db"
       "desktop.ini"
       "__pycache__"
+    ]
+    packagesWithKeymapsDisabled: [
+      "markdown-preview-plus"
     ]
     restorePreviousWindowsOnStart: "no"
     telemetryConsent: "no"
@@ -42,6 +50,7 @@
       pandocArguments: [
         "--standalone"
         "--metadata pagetitle=notitle"
+        "--katex"
       ]
       pandocFilters: [
         "pandoc-codeblock-include"
@@ -49,6 +58,7 @@
         "pandoc-crossref"
       ]
       pandocRemoveReferences: false
+      useNativePandocCodeStyles: true
     previewConfig:
       activatePreviewWithEditor: true
     renderer: "pandoc"
@@ -65,5 +75,7 @@
     hideVcsIgnoredFiles: true
   welcome:
     showOnStartup: false
-  whitespace:
-    removeTrailingWhitespace: false
+  whitespace: {}
+".scala.source":
+  editor:
+    tabLength: 2
