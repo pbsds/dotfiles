@@ -7,6 +7,7 @@ case "$current" in
     "vimix-dark-ruby")         new="vimix-light-ruby" ;;
     "vimix-light-laptop-ruby") new="vimix-dark-laptop-ruby" ;;
     "vimix-light-ruby")        new="vimix-dark-ruby" ;;
+    * )                        new="$current" ;;
 esac
 
 echo $new
