@@ -62,7 +62,9 @@ alias gca='git commit --amend'
 alias gcara='git commit --amend --reset-author'
 alias gpm='git push origin master'
 alias gpasr='git pull --autostash --rebase'
-alias gfr='git fetch origin master && git rebase FETCH_HEAD'
+#alias gfr='git fetch origin master && git rebase FETCH_HEAD'
+alias gfr='git pull --rebase'
+alias gp='git pull --rebase --autostash'
 parse_git_branch() {
 	git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
