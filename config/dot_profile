@@ -79,6 +79,8 @@ function fixcrlf {
 	mv /tmp/tmp "$1"
 }
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+alias salert='mpv "http://pvv.ntnu.no/~pederbs/filer/TFH_MadameC_Sing.wav" --no-video --really-quiet'
+
 
 #Some cute shorthands:
 alias http_here="php -S localhost:8081"
