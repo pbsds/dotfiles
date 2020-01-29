@@ -4,7 +4,8 @@
 
 [[ -f ~/.extend.profile ]] && . ~/.extend.profile
 
-export LESS="${LESS}RMQCiwx4"
+#export LESS="${LESS}RMQCiwx4"
+#export GIT_PAGER="less -eFRX"
 
 # user bin
 export PATH=$PATH:~/bin:~/.local/bin
@@ -56,6 +57,7 @@ alias fuck="echo Ouch! | cowsay -f head-in | lolcat"
 # git gud
 alias gs='git status'
 alias gl='git log --oneline --color | head -n 30'
+alias glg='git log --all --decorate --oneline --graph'
 alias gd="git diff"
 alias gds="git diff --staged"
 alias gca='git commit --amend'
@@ -79,7 +81,15 @@ function fixcrlf {
 	mv /tmp/tmp "$1"
 }
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
-alias salert='mpv "http://pvv.ntnu.no/~pederbs/filer/TFH_MadameC_Sing.wav" --no-video --really-quiet'
+function salert {
+	if [ $? = 0 ]; then
+		mpv "https://pvv.ntnu.no/~pederbs/filer/TFH_MadameC_Sing.wav" --no-video --really-quiet
+	else
+		mpv "https://pvv.ntnu.no/~pederbs/filer/NTR-BKIE-USA-0137.wav" --no-video --really-quiet
+		false
+	fi
+}
+
 
 
 #Some cute shorthands:
@@ -203,6 +213,7 @@ function pandoc_to_pdf {
 	VARIABLES="$VARIABLES --number-sections"
 	#VARIABLES="$VARIABLES --number-offset=0,0"
 	VARIABLES="$VARIABLES --variable links-as-notes=true"
+	VARIABLES="$VARIABLES --variable geometry:margin=1.4in"
 	VARIABLES="$VARIABLES --highlight-style=pygments" # the default
 
 	if test "$1" == "" ; then
@@ -214,9 +225,22 @@ function pandoc_to_pdf {
 		shift
 		dest="$1"
 		shift
+		(
+		set -x
 		pandoc "$source" --pdf-engine="xelatex" $VARIABLES "$@" -o "$dest"
+		)
 	fi
 	
+}
+
+
+
+
+
+
+# clang-format
+function prettify_c {
+	clang-format -style="{BasedOnStyle: Google, IndentWidth: 4}" "$@"
 }
 
 

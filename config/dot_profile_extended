@@ -32,6 +32,11 @@ function vpn {
 	echo sshuttle 0.0.0.0/0 --disable-ipv6 --dns -r "$1" -x $ip
 	sshuttle 0.0.0.0/0 --disable-ipv6 --dns -r "$1" -x $ip
 }
+function dvpn {
+	ip="$(dig +short -x a $1 | tail -n 1)"
+	echo sshuttle 0.0.0.0/0 --disable-ipv6 -r "$1" -x $ip
+	sshuttle 0.0.0.0/0 --disable-ipv6 -r "$1" -x $ip
+}
 
 alias clip="xclip -sel clip"
 function clipf {

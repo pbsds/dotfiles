@@ -1,5 +1,6 @@
 ServerAliveInterval 60
 ServerAliveCountMax 2
+ControlPath ~/.ssh/sockets/%r@%h-%p
 
 
 # X11 and rmate forwarding
@@ -32,9 +33,19 @@ Host stud.ntnu.no
 	Hostname login.stud.ntnu.no
 	User pederbs
 Host login.stud.ntnu.no
+	ControlMaster auto
+	ControlPersist 600
+	User pederbs
+Host idun-login1.hpc.ntnu.no
+	ControlMaster auto
+	ControlPersist 600
+	ProxyJump login.stud.ntnu.no
 	User pederbs
 
 # PVV
+Host *.pvv.ntnu.no
+	ControlMaster auto
+	ControlPersist 600
 Host hildring.pvv.ntnu.no
 	User pederbs
 Host skrott.pvv.ntnu.no

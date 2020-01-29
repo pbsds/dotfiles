@@ -13,10 +13,10 @@ decorated=$(
 
 echo decorated: $decorated
 
-if [ "$decorated" = "0" ]; then
-	next=1
-else
+if [ "$decorated" = "1" ]; then
 	next=0
+else
+	next=1
 fi
 
 

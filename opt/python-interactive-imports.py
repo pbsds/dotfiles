@@ -3,9 +3,12 @@
 #run with:
 #gnome-terminal --hide-menubar --window-with-profile=manjaro -x python -i $HOME/.local/opt/python-interactive-imports.py
 
-from math import cos, pi, sin, exp, log, log10, sqrt, acos, asin, atan
-from pprint import pprint
 import numpy as np
+from numpy import gcd, array, arange, linspace, meshgrid
+from numpy import cos, pi, sin, exp, log, log10, sqrt
+#from math import cos, pi, sin, exp, log, log10, sqrt, acos, asin, atan
+from math import acos, asin, atan, factorial
+from pprint import pprint
 import functools
 from statistics import *
 
@@ -29,6 +32,30 @@ def scatter(x, *args):
 		plt.plot(x[:len(i)], i, ".")
 	plt.show()
 
+def imshow(image, cmap="gray"):
+	import matplotlib.pyplot as plt
+	plt.imshow(image.astype(np.float32), cmap=cmap)
+	plt.show()
+
+def image(filepath=None, gray=False):
+	if not filepath:
+		import cv2
+		cam = cv2.VideoCapture(0)
+		s, im = cam.read() # captures image
+		cv2.destroyAllWindows()
+		im = im.astype(np.float64) / 256
+		if not gray:
+			return np.dstack((
+					im[:,:,2],
+					im[:,:,1],
+					im[:,:,0],
+				))
+		else:
+			return ( im[:,:,2] + im[:,:,1] + im[:,:,0]) / 3
+	else:
+		import matplotlib.image as mpimg
+		img=mpimg.imread('image_name.png')
+
 
 def rad(degrees):
 	return degrees * pi / 180
@@ -37,6 +64,7 @@ def deg(radians):
 	return radians / pi * 180
 
 def clip(data):
+	"xclip -sel clip"
 	import subprocess
 	p = subprocess.Popen(("xclip", "-sel", "clip"), stdin=subprocess.PIPE)
 	p.communicate(data.encode("utf-8"))
@@ -49,3 +77,11 @@ def add(*args):
 
 def mul(*args):
 	return prod(args)
+
+
+def history(n=None):
+	import readline
+	return "\n".join([
+		readline.get_history_item(i + 1)
+		for i in range(readline.get_current_history_length())
+	][-(n+1) if n is not None else 0:-1])
