@@ -1,0 +1,35 @@
+<keymap version="1" name="Default for GNOME copy" parent="Default for GNOME">
+  <action id="CloseContent">
+    <keyboard-shortcut first-keystroke="ctrl f4" />
+    <keyboard-shortcut first-keystroke="ctrl q" />
+  </action>
+  <action id="EditorJoinLines">
+    <keyboard-shortcut first-keystroke="shift ctrl j" />
+    <keyboard-shortcut first-keystroke="ctrl j" />
+  </action>
+  <action id="EditorLookupDown" />
+  <action id="EditorLookupUp" />
+  <action id="EditorScrollDown" />
+  <action id="EditorScrollUp" />
+  <action id="GuiDesigner.QuickJavadoc">
+    <mouse-shortcut keystroke="alt button2" />
+  </action>
+  <action id="InsertLiveTemplate" />
+  <action id="MethodOverloadSwitchDown" />
+  <action id="MethodOverloadSwitchUp" />
+  <action id="MoveLineDown">
+    <keyboard-shortcut first-keystroke="ctrl down" />
+  </action>
+  <action id="MoveLineUp">
+    <keyboard-shortcut first-keystroke="ctrl up" />
+  </action>
+  <action id="QuickJavaDoc">
+    <mouse-shortcut keystroke="alt button2" />
+  </action>
+  <action id="SearchEverywhere.NavigateToNextGroup">
+    <keyboard-shortcut first-keystroke="page_down" />
+  </action>
+  <action id="SearchEverywhere.NavigateToPrevGroup">
+    <keyboard-shortcut first-keystroke="page_up" />
+  </action>
+</keymap>

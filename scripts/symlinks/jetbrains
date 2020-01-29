@@ -1,0 +1,9 @@
+#!/bin/bash
+
+
+echo TODO
+echo config/jetbrains/keymap.xml
+echo /home/pbsds/.IdeaIC2019.2/config/keymaps/Default for GNOME copy.xml
+exit 1
+
+
