@@ -1,0 +1,4 @@
+'.text.html':
+  'ClassSpan':
+    'prefix': 'span'
+    'body': '<span class="$1">$2</span>$0'
