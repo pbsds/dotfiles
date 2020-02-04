@@ -4,6 +4,6 @@
 #sudo bash -c ":" || exit 1
 DIR=$(git rev-parse --show-toplevel)
 
-mkdir -p "$HOME/.ssh"
+mkdir -p "$HOME/.ssh/sockets"
 
 ln -vsf "$DIR/config/ssh_config" "$HOME/.ssh/config"
