@@ -4,6 +4,7 @@ ControlPath ~/.ssh/sockets/%r@%h-%p
 
 
 # X11 and rmate forwarding
+
 Host *.pvv.ntnu.no
 	ForwardX11 yes
 	ForwardX11Trusted yes

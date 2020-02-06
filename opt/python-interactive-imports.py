@@ -9,6 +9,7 @@ from numpy import cos, pi, sin, exp, log, log10, sqrt
 #from math import cos, pi, sin, exp, log, log10, sqrt, acos, asin, atan
 from math import acos, asin, atan, factorial
 from pprint import pprint
+from dis import dis
 import functools
 from statistics import *
 

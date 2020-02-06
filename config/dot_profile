@@ -58,8 +58,11 @@ alias fuck="echo Ouch! | cowsay -f head-in | lolcat"
 alias gs='git status'
 alias gl='git log --oneline --color | head -n 30'
 alias glg='git log --all --decorate --oneline --graph'
+alias gp="git pull --rebase --autostash"
 alias gd="git diff"
+alias gdwd="git diff --word-diff --word-diff-regex=."
 alias gds="git diff --staged"
+alias gdswd="git diff --staged --word-diff --word-diff-regex=."
 alias gca='git commit --amend'
 alias gcara='git commit --amend --reset-author'
 alias gpm='git push origin master'

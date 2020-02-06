@@ -20,7 +20,6 @@ function installExtension {
 
 echo
 
-
 # essential:
 installExtension "https://extensions.gnome.org/extension/118/no-topleft-hot-corner/" # nohotcorner@azuri.free.fr
 installExtension "https://extensions.gnome.org/extension/352/middle-click-to-close-in-overview/" # middleclickclose@paolo.tranquilli.gmail.com

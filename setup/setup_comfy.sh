@@ -32,6 +32,7 @@ DIR=$(git rev-parse --show-toplevel)
 # - last.fm
 # - spotify
 # - automounts?
+# - entr
 
 
 sudo bash -c ":" || exit 1
@@ -40,5 +41,6 @@ function install {
 		sudo pacman --noconfirm -S $1
 	fi
 }
+
 
 # install x
