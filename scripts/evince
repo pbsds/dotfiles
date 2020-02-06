@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+DIR=$(git rev-parse --show-toplevel)
+
+# pacman -S --noconfirm evince
+
+# push gnome dconf config
+(
+	cd "$DIR/config/dconf"
+	./push.sh evince.ini
+)
+
+
