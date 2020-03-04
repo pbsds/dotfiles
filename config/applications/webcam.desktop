@@ -1,6 +1,6 @@
 [Desktop Entry]
 Name=Webcam in MPV
-Exec=/usr/bin/mpv av://v4l2:/dev/video0
+Exec=/usr/bin/mpv av://v4l2:/dev/video0 --vf-append='hflip'
 Icon=mpv
 Terminal=false
 Type=Application
