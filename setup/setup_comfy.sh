@@ -44,3 +44,6 @@ function install {
 
 
 # install x
+
+#todo: spotify, slack, steam, chromium, discord, autofs, mpv, eog
+# pip, sshuttle, dnsutils
