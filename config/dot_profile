@@ -221,14 +221,12 @@ alias pandoc_markdown="pandoc -t gfm --filter pandoc-codeblock-include --filter 
 alias pandoc_html="pandoc -t html --filter pandoc-codeblock-include --filter pandoc-crossref --filter pandoc-imagine --katex"
 alias pandoc_tex="pandoc -t latex --filter pandoc-codeblock-include --filter pandoc-crossref --filter pandoc-imagine"
 alias pandoc_tex_full="pandoc -t latex --filter pandoc-codeblock-include --filter pandoc-crossref --filter pandoc-imagine --standalone"
-function pandoc_to_pdf {
-	VARIABLES="--filter pandoc-codeblock-include --filter pandoc-crossref --filter pandoc-imagine"
-	VARIABLES="$VARIABLES --variable papersize=a4paper"
-	VARIABLES="$VARIABLES --table-of-contents"
-	VARIABLES="$VARIABLES --number-sections"
-	#VARIABLES="$VARIABLES --number-offset=0,0"
-	VARIABLES="$VARIABLES --variable links-as-notes=true"
-	VARIABLES="$VARIABLES --variable geometry:margin=1.4in"
+function pandoc_through_xelatex {
+	VARIABLES=""
+	VARIABLES="$VARIABLES --pdf-engine=xelatex"
+	VARIABLES="$VARIABLES --filter pandoc-codeblock-include"
+	VARIABLES="$VARIABLES --filter pandoc-crossref"
+	VARIABLES="$VARIABLES --filter pandoc-imagine"
 	VARIABLES="$VARIABLES --highlight-style=pygments" # the default
 
 	if test "$1" == "" ; then
@@ -241,13 +239,37 @@ function pandoc_to_pdf {
 		dest="$1"
 		shift
 		(
-		set -x
-		pandoc "$source" --pdf-engine="xelatex" $VARIABLES "$@" -o "$dest"
+			set -x
+			pandoc "$source" $VARIABLES "$@" -o "$dest"
 		)
 	fi
 	
 }
-
+function pandoc_to_pdf {
+	VARIABLES=""
+	VARIABLES="$VARIABLES --variable papersize=a4paper"
+	VARIABLES="$VARIABLES --table-of-contents"
+	VARIABLES="$VARIABLES --number-sections"
+	#VARIABLES="$VARIABLES --number-offset=0,0"
+	VARIABLES="$VARIABLES --variable links-as-notes=true"
+	VARIABLES="$VARIABLES --variable geometry:margin=1.4in"
+	if test "$1" == "" ; then
+		echo you must supply an input!
+	elif test "$2" == "" ; then
+		echo you must supply an output!
+	else
+		pandoc_through_xelatex "$@" $VARIABLES
+	fi
+}
+function pandoc_to_beamer_pdf {
+	if test "$1" == "" ; then
+		echo you must supply an input!
+	elif test "$2" == "" ; then
+		echo you must supply an output!
+	else
+		pandoc_through_xelatex "$@" -t beamer
+	fi
+}
 
 
 
