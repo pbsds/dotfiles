@@ -44,6 +44,7 @@ apmget language-velocity
 apmget language-verilog
 apmget language-vhdl
 apmget language-zonefile
+apmget language-docker
 
 # pandoc
 apm disable markdown-preview
@@ -66,12 +67,18 @@ apmget atom-ide-ui
 apmget busy-signal
 apmget intentions
 
+# rust
+apmget ide-rust
+
 # scala
 apmget ide-scala
 
 # C / C++
 apmget atomic-rtags
 #apmget ide-c-cpp # todo
+
+# C#
+#apmget ide-csharp
 
 #linter stuff
 apmget linter
