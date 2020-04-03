@@ -1,4 +1,3 @@
-
 #
 # ~/.profile
 
@@ -7,8 +6,14 @@
 #export LESS="${LESS}RMQCiwx4"
 #export GIT_PAGER="less -eFRX"
 
-# user bin
-export PATH=$PATH:~/bin:~/.local/bin
+# PATH
+export PATH=$PATH::~/.local/bin
+if [ -d ~/.cargo/bin ]; then
+	# RUST
+	export PATH=$PATH:~/.cargo/bin
+fi
+
+
 
 # Micro
 export EDITOR=nano
@@ -22,7 +27,6 @@ fi
 alias ed=$EDITOR # ed is the standard editor
 alias edl="$EDITOR -colorscheme bubblegum " # micro dependent, lol
 alias eds="$EDITOR -colorscheme simple " # micro dependent, lol
-
 
 # .profile shorthand
 alias ep='$EDITOR ~/.profile ~/.extend.profile && source ~/.profile'
@@ -96,12 +100,17 @@ function salert {
 
 
 #Some cute shorthands:
-alias http_here="php -S localhost:8081"
+#alias http_here="php -S localhost:8081"
+alias http_here="python3 -m http.server"
+alias myip="curl myip.tf"
+alias myip4="curl -4 myip.tf"
+alias myip6="curl -6 myip.tf"
 
 # ssh host aliases autocomplete
 alias rssh="ssh -l root"
 complete -W "$(cat ~/.ssh/config | grep '^Host ' | cut  -b 6- | grep -v "^\*")" ssh
 complete -W "$(cat ~/.ssh/config | grep '^Host ' | cut  -b 6- | grep -v "^\*")" rssh
+complete -W "$(cat ~/.ssh/config | grep '^Host ' | cut  -b 6- | grep -v "^\*")" dvpn
 complete -W "$(cat ~/.ssh/config | grep '^Host ' | cut  -b 6- | grep -v "^\*")" vpn
 
 # Jumping with symbolic links:
@@ -201,6 +210,9 @@ alias vsp="tmux split-window -h"
 function graph_python_imports {
 	pydeps --reverse --noshow --no-output --show-dot "$@"
 }
+if python -m pudb -h > /dev/null; then
+	export PYTHONBREAKPOINT="pudb.set_trace"
+fi
 
 
 # pandoc

@@ -5,6 +5,7 @@
 alias fix_touchscreen='sudo bash -c "rmmod wacom && modprobe wacom"'
 #alias fix_pulseaudio='pulseaudio -k; pulseaudio --start'
 alias reload-autofs='sudo killall ssh && sudo systemctl restart autofs && cd .'
+alias kill-gvfs='killall gvfsd && nautilus -q'
 function fix_pulseaudio {
 	pulseaudio -k
 	sudo killall pulseaudio
@@ -38,7 +39,7 @@ function dvpn {
 	sshuttle 0.0.0.0/0 --disable-ipv6 -r "$1" -x $ip
 }
 
-alias clip="xclip -sel clip"
+alias clip="xclip -sel clip -t text/plain"
 function clipf {
 	MIME="$(file --mime-type "$1" -b)"
 	echo $1 "($MIME)"
@@ -47,7 +48,7 @@ function clipf {
 function clipmd {
 	(
 		echo "\`\`\`"
-		cat "$1"
+		cat
 		echo "\`\`\`"
 	) | clip
 }
