@@ -37,7 +37,6 @@ installExtension "https://extensions.gnome.org/extension/118/no-topleft-hot-corn
 installExtension "https://extensions.gnome.org/extension/352/middle-click-to-close-in-overview/" # middleclickclose@paolo.tranquilli.gmail.com
 installExtension "https://extensions.gnome.org/extension/949/bottompanel/" # bottompanel@tmoer93
 installExtension "https://extensions.gnome.org/extension/545/hide-top-bar/" # hidetopbar@mathieu.bidon.ca
-installExtension "https://extensions.gnome.org/extension/15/alternatetab/" # alternate-tab@gnome-shell-extensions.gcampax.github.com
 installExtension "https://extensions.gnome.org/extension/234/steal-my-focus/"
 installExtension "https://extensions.gnome.org/extension/1236/noannoyance/"
 installExtension "https://extensions.gnome.org/extension/1326/block-caribou/" # cariboublocker@git.keringar.xyz
