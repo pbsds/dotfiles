@@ -1,21 +1,33 @@
 #!/usr/bin/env bash
 
+if test "$1" = "--open"; then
+	OPEN_INSTEAD=1
+	echo asd
+fi
+
+
 function installExtension {
-    url="$1"
-    uuid="$(
-        curl -s -L $url |
-        grep data-uuid=\".*\" | sed -e "s/^.*uuid=\"//" |
-        rev | cut -c2- | rev
-    )"
+	url="$1"
+	if ! test -z "$OPEN_INSTEAD"; then
+		echo Opening $url...
+		xdg-open "$url"
+	else
+	    uuid="$(
+	        curl -s -L $url |
+	        grep data-uuid=\".*\" | sed -e "s/^.*uuid=\"//" |
+	        rev | cut -c2- | rev
+	    )"
+	    
+	    echo "installing $uuid from $url.."
+	    dbus-send --dest=org.gnome.Shell                       \
+	        --print-reply                                      \
+	        --type=method_call                                 \
+	        /org/gnome/Shell                                   \
+	        org.gnome.Shell.Extensions.InstallRemoteExtension  \
+	        string:"$uuid"
+	    echo
+	fi
     
-    echo "installing $uuid from $url.."
-    dbus-send --dest=org.gnome.Shell                       \
-        --print-reply                                      \
-        --type=method_call                                 \
-        /org/gnome/Shell                                   \
-        org.gnome.Shell.Extensions.InstallRemoteExtension  \
-        string:"$uuid"
-    echo
 }
 
 echo
@@ -44,7 +56,10 @@ installExtension "https://extensions.gnome.org/extension/906/sound-output-device
 installExtension "https://extensions.gnome.org/extension/1031/topicons/" # TopIcons@phocean.net
 installExtension "https://extensions.gnome.org/extension/1289/window-animations/" # window-animations@rliang.github.com
 
-echo
-echo
-echo Press enter after installing all tweaks...
-read
+
+if test -z $OPEN_INSTEAD; then
+	echo
+	echo
+	echo Press enter after installing all tweaks...
+	read
+fi

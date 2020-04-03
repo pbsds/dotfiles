@@ -79,19 +79,23 @@ install_ubuntu x11-xserver-utils
 
 #installaur gnome-terminal-transparency # failing?
 
-( # install vimix theme
-	cd "$DIR/script/gnome"
+(
+	# install vimix theme
+	cd "$DIR/scripts/gnome"
 	./install_vimix.sh
 )
-( # install capiataine icon theme
-	cd "$DIR/script/gnome"
+(
+	# install capiataine icon theme
+	cd "$DIR/scripts/gnome"
 	./install_capitaine_icons.sh
 )
-( # push gnome dconf config
+(
+	# push gnome dconf config
 	cd "$DIR/config/dconf"
 	./push.sh theme.ini behaviour.ini shortcuts.ini
 )
-( # install .local/opt and .local/bin/xterminal symlinks
+(
+	# install .local/opt and .local/bin/xterminal symlinks
 	cd "$DIR/scripts/symlinks"
 	./opt
 	./xterminal
