@@ -8,10 +8,11 @@ from numpy import gcd, array, arange, linspace, meshgrid
 from numpy import cos, pi, sin, exp, log, log10, sqrt
 #from math import cos, pi, sin, exp, log, log10, sqrt, acos, asin, atan
 from math import acos, asin, atan, factorial
+from statistics import *
 from pprint import pprint
 from dis import dis
+import os, sys
 import functools
-from statistics import *
 
 p = pprint
 
@@ -68,7 +69,7 @@ def clip(data):
 	"xclip -sel clip"
 	import subprocess
 	p = subprocess.Popen(("xclip", "-sel", "clip"), stdin=subprocess.PIPE)
-	p.communicate(data.encode("utf-8"))
+	p.communicate(str(data).encode("utf-8"))
 
 def prod(args):
 	return functools.reduce(lambda x, y: x*y, args)
@@ -86,3 +87,12 @@ def history(n=None):
 		readline.get_history_item(i + 1)
 		for i in range(readline.get_current_history_length())
 	][-(n+1) if n is not None else 0:-1])
+
+
+def integral(data, initial=0, step=None):
+    if step is None:
+        step = (data[-1] - data[0]) / len(data)
+    out = [initial]
+    for i in data:
+        out.append(out[-1] + i*step)
+    return out[1:]
