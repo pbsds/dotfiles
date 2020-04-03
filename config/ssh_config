@@ -1,5 +1,5 @@
-ServerAliveInterval 60
-ServerAliveCountMax 2
+ServerAliveInterval 10
+ServerAliveCountMax 3
 ControlPath ~/.ssh/sockets/%r@%h-%p
 
 
@@ -25,7 +25,10 @@ Host *.uninett.no
 Host *.eduroam.no
 	User pedsun
 Host login.uninett.no
+	ControlMaster auto
+	ControlPersist 600
 Host pbsds-tos.eduroam.no
+	ProxyJump login.uninett.no
 Host box.eduroam.no
 	ProxyJump login.uninett.no
 
@@ -42,6 +45,9 @@ Host idun-login1.hpc.ntnu.no
 	ControlPersist 600
 	ProxyJump login.stud.ntnu.no
 	User pederbs
+Host gitlab.stud.idi.ntnu.no
+#	ProxyJump login.stud.ntnu.no
+	ProxyJump hildring.pvv.ntnu.no
 
 # PVV
 Host *.pvv.ntnu.no
@@ -89,8 +95,6 @@ Host innovation.pvv.ntnu.no
 	User root
 Host alpys.pvv.ntnu.no
 	User root
-Host skrott.pvv.ntnu.no
-	User root
 Host spikkjeposche.pvv.ntnu.no
     User pederbs
     User root
@@ -99,8 +103,6 @@ Host toriel.pvv.ntnu.no
 Host principal.pvv.ntnu.no
     User root
 Host gro-heidi.pvv.ntnu.no
-    User root
-Host skrott.pvv.ntnu.no
     User root
 Host brzeczyszczykiewicz.pvv.ntnu.no
     User grzegorz
