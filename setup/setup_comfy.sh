@@ -34,6 +34,11 @@ DIR=$(git rev-parse --show-toplevel)
 # - automounts?
 # - entr
 
+eval "$DIR/scripts/lxterminal"
+eval "$DIR/scripts/pandoc"
+eval "$DIR/scripts/python"
+eval "$DIR/scripts/rust"
+
 
 sudo bash -c ":" || exit 1
 function install {

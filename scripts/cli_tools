@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+cat <<EOF | xargs sudo pacman --noconfirm -S
+	git
+	nmap
+	dnsutils
+	graphviz
+EOF

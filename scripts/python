@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+cat <<EOF | xargs sudo pacman --noconfirm -S
+	python
+	python-pip
+	python-wheel
+EOF

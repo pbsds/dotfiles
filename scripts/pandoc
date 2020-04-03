@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+cat <<EOF | xargs sudo pacman --noconfirm -S
+	pandoc
+	pandoc-crossref
+	texlive-core
+EOF
+
+cat <<EOF | xargs pip install --user
+	pandoc-imagine
+	pandoc-codeblock-include
+EOF

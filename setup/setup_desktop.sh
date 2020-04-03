@@ -7,6 +7,9 @@ eval "$DIR/scripts/gnome"
 eval "$DIR/scripts/micro/install.sh"
 eval "$DIR/scripts/fzf"
 eval "$DIR/scripts/git_user_config"
+eval "$DIR/scripts/cli_tools"
+eval "$DIR/scripts/cups"
+eval "$DIR/scripts/fonts"
 
 #symlinks
 eval "$DIR/scripts/symlinks/atom"

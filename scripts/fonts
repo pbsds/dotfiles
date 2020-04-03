@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+cat <<EOF | xargs sudo pacman --noconfirm -S
+	noto-fonts-emoji
+	ttf-joypixels
+	font-mathematica
+	texlive-core
+	otf-latin-modern
+	otf-latinmodern-math	
+EOF
