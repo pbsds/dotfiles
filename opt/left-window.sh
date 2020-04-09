@@ -15,18 +15,25 @@ xrandr |
 	sed -e "s/[x+]/ /g" |
 while read DW DH DX DY; do
 	#check if center of window is within this monitor
-	if [ $CX -ge $DX -a $CX -lt $(expr $DX + $DW) ]; then
-	if [ $CY -ge $DY -a $CY -lt $(expr $DY + $DH) ]; then
-		echo $DW $DH $DX $DY
-		
-#		xdotool windowsize $WINDOW 60% 64%
-		xdotool windowsize $WINDOW $(expr $DW \* 60 / 100) $(expr $DH \* 64 / 100)
-#		xdotool windowmove $WINDOW 2% 3%
-		xdotool windowmove $WINDOW $(expr $DX + $DW \* 2 / 100) $(expr $DY + $DH \* 3 / 100)
-		
-		break
+	if ! [ $CX -ge $DX -a $CX -lt $(expr $DX + $DW) ]; then continue; fi
+	if ! [ $CY -ge $DY -a $CY -lt $(expr $DY + $DH) ]; then continue; fi
+
+	# todo, perhaps use perl or something faster, expr doesn't like floats?
+	if python -c "exit(($DW / $DH * 9) < 20)"; then
+		echo current monitor: $DW $DH $DX $DY - wide mode
+		W="21"
+		H="93"
+		X="1"
+		Y="2"
+	else
+		echo current monitor: $DW $DH $DX $DY - normal mode
+		W="60"
+		H="64"
+		X="2"
+		Y="3"
 	fi
-	fi
+	xdotool windowsize $WINDOW $(expr $DW \* $W / 100) $(expr $DH \* $H / 100)
+	xdotool windowmove $WINDOW $(expr $DX + $DW \* $X / 100) $(expr $DY + $DH \* $Y / 100)
+
+	break
 done
-
-
