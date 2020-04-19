@@ -1,24 +1,25 @@
 {
-    "CtrlLeft":       "WordLeft",
-    "CtrlRight":      "WordRight",
+    "Alt-/": "lua:comment.comment",
+    "Alt-D": "SpawnMultiCursor",
+    "Alt-L": "command-edit:goto ",
+    "Alt-U": "ToggleMacro",
+    "Alt-j": "lua:joinLines.joinLines",
+    "AltDown": "None",
+    "AltLeft": "PreviousTab",
+    "AltRight": "NextTab",
+    "AltUp": "None",
+    "Ctrl-J": "EndOfLine,CursorRight,OutdentLine,OutdentLine,OutdentLine,OutdentLine,OutdentLine,OutdentLine,OutdentLine,OutdentLine,OutdentLine,OutdentLine,OutdentLine,OutdentLine,OutdentLine,OutdentLine,Backspace",
+    "Ctrl-L": "command:lower",
+    "Ctrl-U": "command:upper",
+    "Ctrl-W": "WordRight,SelectWordLeft",
+	"Ctrl-C": "Copy|SelectLine,Copy", // this does nothing atm, since copy never returns failiure
+    "CtrlDown": "MoveLinesDown",
+    "CtrlLeft": "WordLeft",
+    "CtrlRight": "WordRight",
+    "CtrlShiftLeft": "SelectWordLeft",
     "CtrlShiftRight": "SelectWordRight",
-    "CtrlShiftLeft":  "SelectWordLeft",
-
-    "ShiftPageUp":    "SelectPageUp",
-    "ShiftPageDown":  "SelectPageDown",
-
-    "AltUp":          "UnbindKey",
-    "CtrlUp":         "MoveLinesUp",
-    "AltDown":        "UnbindKey",
-    "CtrlDown":       "MoveLinesDown",
-
-    "AltLeft":        "PreviousTab",
-    "AltRight":       "NextTab",
-//    "CtrlN":          "AddTab",
-
-	"Alt-d":          "SpawnMultiCursor",
-	"Escape":         "RemoveAllMultiCursors",
-
-    "Ctrl-W":         "WordRight,SelectWordLeft",
-    "Ctrl-j":         "EndOfLine,CursorRight,OutdentLine,OutdentLine,OutdentLine,OutdentLine,OutdentLine,OutdentLine,OutdentLine,OutdentLine,OutdentLine,OutdentLine,OutdentLine,OutdentLine,OutdentLine,OutdentLine,Backspace,InsertSpace"
+    "CtrlUp": "MoveLinesUp",
+    "Escape": "RemoveAllMultiCursors",
+    "ShiftPageDown": "SelectPageDown",
+    "ShiftPageUp": "SelectPageUp"
 }

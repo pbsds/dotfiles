@@ -9,7 +9,14 @@ if ! which micro > /dev/null; then
 		chmod +x ~/.local/bin/micro
 	)
 	echo "Done!"
-	exit
+else
+	echo "Micro is already installed!"
 fi
 
-echo "Micro is already installed!"
+
+echo "Installing plugins..."
+
+micro --plugin install joinLines
+micro --plugin install quoter
+micro --plugin install manipulator
+micro --plugin install editorconfig
