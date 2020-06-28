@@ -1,25 +1,24 @@
 {
     "Alt-/": "lua:comment.comment",
-    "Alt-D": "SpawnMultiCursor",
-    "Alt-L": "command-edit:goto ",
-    "Alt-U": "ToggleMacro",
+    "Alt-d": "SpawnMultiCursor",
+    "Alt-l": "command-edit:goto ",
+    "Alt-u": "ToggleMacro",
     "Alt-j": "lua:joinLines.joinLines",
-    "AltDown": "None",
     "AltLeft": "PreviousTab",
     "AltRight": "NextTab",
-    "AltUp": "None",
-    "Ctrl-J": "EndOfLine,CursorRight,OutdentLine,OutdentLine,OutdentLine,OutdentLine,OutdentLine,OutdentLine,OutdentLine,OutdentLine,OutdentLine,OutdentLine,OutdentLine,OutdentLine,OutdentLine,OutdentLine,Backspace",
-    "Ctrl-L": "command:lower",
-    "Ctrl-U": "command:upper",
-    "Ctrl-W": "WordRight,SelectWordLeft",
-	"Ctrl-C": "Copy|SelectLine,Copy", // this does nothing atm, since copy never returns failiure
-    "CtrlDown": "MoveLinesDown",
+    "Ctrl-j": "EndOfLine,CursorRight,OutdentLine,OutdentLine,OutdentLine,OutdentLine,OutdentLine,OutdentLine,OutdentLine,OutdentLine,OutdentLine,OutdentLine,OutdentLine,OutdentLine,OutdentLine,OutdentLine,Backspace",
+    "Ctrl-l": "command:lower",
+    "Ctrl-u": "command:upper",
+    "Ctrl-w": "WordRight,SelectWordLeft",
+    "Ctrl-c": "Copy|SelectLine,Copy", // this does nothing atm, since copy never returns failiure
+    "Ctrl-r": "ToggleRuler,ToggleDiffGutter",
     "CtrlLeft": "WordLeft",
     "CtrlRight": "WordRight",
     "CtrlShiftLeft": "SelectWordLeft",
     "CtrlShiftRight": "SelectWordRight",
-    "CtrlUp": "MoveLinesUp",
+    "CtrlDown": "None",
+    "CtrlUp": "None",
     "Escape": "RemoveAllMultiCursors",
-    "ShiftPageDown": "SelectPageDown",
-    "ShiftPageUp": "SelectPageUp"
+    "Shift-PageDown": "SelectPageDown",
+    "Shift-PageUp": "SelectPageUp"
 }
