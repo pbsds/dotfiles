@@ -44,8 +44,7 @@
   "markdown-preview-plus":
     markdownItConfig:
       useLazyHeaders: false
-    mathConfig:
-      enableLatexRenderingByDefault: true
+    mathConfig: {}
     pandocConfig:
       pandocArguments: [
         "--standalone"
@@ -77,6 +76,11 @@
   welcome:
     showOnStartup: false
   whitespace: {}
+  wordcount:
+    alwaysOn: true
+    ignorecode: true
+    ignorecomments: true
+    showchars: false
 ".dg.source":
   editor:
     tabType: "soft"

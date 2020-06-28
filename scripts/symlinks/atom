@@ -6,6 +6,6 @@ DIR=$(git rev-parse --show-toplevel)
 
 mkdir -p "$HOME/.atom"
 
-ln -vsf "$DIR/config/dot_atom/config.cson" "$HOME/.atom/config.cson"
-ln -vsf "$DIR/config/dot_atom/keymap.cson" "$HOME/.atom/keymap.cson"
-ln -vsf "$DIR/config/dot_atom/snippets.cson" "$HOME/.atom/snippets.cson"
+ln -vsf "$DIR/config/atom/config.cson" "$HOME/.atom/config.cson"
+ln -vsf "$DIR/config/atom/keymap.cson" "$HOME/.atom/keymap.cson"
+ln -vsf "$DIR/config/atom/snippets.cson" "$HOME/.atom/snippets.cson"
