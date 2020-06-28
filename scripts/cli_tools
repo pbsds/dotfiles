@@ -5,4 +5,6 @@ cat <<EOF | xargs sudo pacman --noconfirm -S
 	nmap
 	dnsutils
 	graphviz
+	zenity
+	dialog
 EOF
