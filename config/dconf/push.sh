@@ -8,6 +8,6 @@ DIR=$(git rev-parse --show-toplevel)
 	|| ls -1 "$@"
 ) | grep "\.ini$" |
 while read file; do
-    echo "cat \"$file\" | dconf load /"
+    echo "+ cat \"$file\" | dconf load /"
     cat "$file" | dconf load /
 done
