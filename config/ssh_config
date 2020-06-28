@@ -31,6 +31,10 @@ Host pbsds-tos.eduroam.no
 	ProxyJump login.uninett.no
 Host box.eduroam.no
 	ProxyJump login.uninett.no
+Host box-test.eduroam.no
+	ProxyJump login.uninett.no
+Host timescaledb.labs.uninett.no
+	ProxyJump login.uninett.no
 
 # NTNU
 Host stud.ntnu.no
