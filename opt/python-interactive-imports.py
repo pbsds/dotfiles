@@ -16,7 +16,7 @@ import functools
 
 p = pprint
 
-def plot(x, *args):
+def plot(x, *args, label=[]):
 	import matplotlib.pyplot as plt
 	for i in args:
 		plt.plot(x[:len(i)], i)

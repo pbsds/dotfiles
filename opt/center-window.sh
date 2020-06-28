@@ -21,19 +21,19 @@ while read DW DH DX DY; do
 	# todo, perhaps use perl or something faster, expr doesn't like floats?
 	if python -c "exit(($DW / $DH * 9) < 20)"; then
 		echo current monitor: $DW $DH $DX $DY - wide mode
-		W="74"
-		H="93"
-		X="13"
-		Y="2"
+		W="400"
+		H="640"
+		X="520"
+		Y="270"
 	else
 		echo current monitor: $DW $DH $DX $DY - normal mode
-		W="90"
-		H="82"
-		X="5"
-		Y="8"
+		W="900"
+		H="820"
+		X="50"
+		Y="80"
 	fi
-	xdotool windowsize $WINDOW $(expr $DW \* $W / 100) $(expr $DH \* $H / 100)
-	xdotool windowmove $WINDOW $(expr $DX + $DW \* $X / 100) $(expr $DY + $DH \* $Y / 100)
+	xdotool windowsize $WINDOW $(expr $DW \* $W / 1000) $(expr $DH \* $H / 1000)
+	xdotool windowmove $WINDOW $(expr $DX + $DW \* $X / 1000) $(expr $DY + $DH \* $Y / 1000)
 
 	break
 done
