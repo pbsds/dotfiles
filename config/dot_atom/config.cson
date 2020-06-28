@@ -54,9 +54,10 @@
       ]
       pandocFilters: [
         "pandoc-codeblock-include"
-        "pandoc-imagine"
         "pandoc-crossref"
+        "pandoc-imagine"
       ]
+      pandocMarkdownFlavor: "markdown-raw_tex+tex_math_single_backslash+emoji"
       pandocRemoveReferences: false
       useNativePandocCodeStyles: true
     previewConfig:
@@ -76,6 +77,12 @@
   welcome:
     showOnStartup: false
   whitespace: {}
+".dg.source":
+  editor:
+    tabType: "soft"
 ".scala.source":
+  editor:
+    tabLength: 2
+".source.yaml":
   editor:
     tabLength: 2

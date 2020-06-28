@@ -37,23 +37,28 @@
   'alt-d': 'find-and-replace:select-next'
   'ctrl-d': 'editor:duplicate-lines'
   'ctrl-shift-D': 'editor:delete-line'
+  'ctrl-l': "editor:unfold-current-row"
+  'ctrl-ø': "editor:fold-current-row"
+  'alt-g': 'atomic-rtags:follow'
+  'alt-.': 'pane:show-next-item'
+  'alt-,': 'pane:show-previous-item'
+'body':
   'alt-right': 'pane:show-next-item'
   'alt-left': 'pane:show-previous-item'
   'alt-.': 'pane:show-next-item'
   'alt-,': 'pane:show-previous-item'
-  'ctrl-l': "editor:unfold-current-row"
-  'ctrl-ø': "editor:fold-current-row"
-  'alt-g': 'atomic-rtags:follow'
-'atom-workspace':
-  'ctrl-k ctrl-m': 'diagnostics:toggle-table'
-  'ctrl-k ctrl-,': 'outline-view:toggle'
-'body':
-  'ctrl-k ctrl-n': 'status-bar:toggle'
-  'ctrl-w': 'unset!'
-  'alt-right': 'pane:show-next-item'
-  'alt-left': 'pane:show-previous-item'
   'ctrl-tab ^ctrl': 'unset!'
   'ctrl-tab': 'pane:show-next-item'
   'ctrl-shift-tab ^ctrl': 'unset!'
   'ctrl-shift-tab': 'pane:show-previous-item'
+  'ctrl-w': 'unset!'
   'ctrl-q': "core:close"
+  'ctrl-k ctrl-n': 'status-bar:toggle'
+'atom-workspace':
+  'ctrl-k ctrl-m': 'diagnostics:toggle-table'
+  'ctrl-k ctrl-,': 'outline-view:toggle'
+'atom-workspace atom-text-editor:not([mini])':
+  'ctrl-up': 'unset!'
+  'ctrl-down': 'unset!'
+  'alt-up': 'editor:move-line-up'
+  'alt-down': 'editor:move-line-down'
