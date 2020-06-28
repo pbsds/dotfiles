@@ -2,3 +2,22 @@
   'ClassSpan':
     'prefix': 'span'
     'body': '<span class="$1">$2</span>$0'
+'.source.jinja, .text.html.jinja, .text.generic-config.jinja, .source.python.jinja, .source.shell.jinja, .text.xml.jinja, .source.yaml.jinja':
+  'Comment':
+    'prefix': 'comment'
+    'body': '{# $0 #}'
+  'Complete Comment':
+    'prefix': '{#'
+    'body': '{# $0 #}'
+  'Do':
+    'prefix': 'do'
+    'body': '{% do ${1:expr} %}'
+  'Todo':
+    'prefix': 'todo'
+    'body': '{# TODO: ${1:message} #}'
+  'Block':
+    'prefix': 'block'
+    'body': '{% block ${1:name} %}\n\t$2\n{% endblock %}{# ${1:name} #}'
+  'Set':
+    'prefix': 'set'
+    'body': '{% set ${1:var} = ${2:expr} %}'
