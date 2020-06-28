@@ -19,7 +19,7 @@ fi
 export EDITOR=nano
 if which micro > /dev/null; then
     export EDITOR=micro
-    if [ "$COLORTERM" = "truecolor" ] || [ "$TERM" == "xterm" ]; then 
+    if [ "$COLORTERM" = "truecolor" ] || [ "$TERM" == "xterm" ]; then
 	    export TERM=xterm-256color
 	    export MICRO_TRUECOLOR=1
     fi
@@ -32,8 +32,13 @@ alias eds="$EDITOR -colorscheme simple " # micro dependent, lol
 alias ep='$EDITOR ~/.profile ~/.extend.profile && source ~/.profile'
 alias sr='echo sourcing profiles.... ; source ~/.profile'
 
+# bash navigation
+alias ll="ls -l"
+alias dush="du -sh * | sort -h"
+alias diff="diff -u --color"
+
 # allows you to use aliases with sudo:
-alias sudo='sudo ' 
+alias sudo='sudo '
 alias xargs='xargs '
 
 # enable recursive globbing:
@@ -110,20 +115,21 @@ alias myip6="curl -6 myip.tf"
 alias rssh="ssh -l root"
 complete -W "$(cat ~/.ssh/config | grep '^Host ' | cut  -b 6- | grep -v "^\*")" ssh
 complete -W "$(cat ~/.ssh/config | grep '^Host ' | cut  -b 6- | grep -v "^\*")" rssh
+complete -W "$(cat ~/.ssh/config | grep '^Host ' | cut  -b 6- | grep -v "^\*")" lvpn
 complete -W "$(cat ~/.ssh/config | grep '^Host ' | cut  -b 6- | grep -v "^\*")" dvpn
 complete -W "$(cat ~/.ssh/config | grep '^Host ' | cut  -b 6- | grep -v "^\*")" vpn
 
 # Jumping with symbolic links:
 #Taken from http://jeroenjanssens.com/2013/08/16/quickly-navigate-your-filesystem-from-the-command-line.html
 export MARKPATH=$HOME/.marks
-function jump { 
+function jump {
 	pushd . > /dev/null
 	cd -P "$MARKPATH/$1" 2>/dev/null || echo "No such mark: $1"
 }
-function mark { 
+function mark {
 	mkdir -p "$MARKPATH"; ln -s "$(pwd)" "$MARKPATH/$1"
 }
-function unmark { 
+function unmark {
 	rm -i "$MARKPATH/$1"
 }
 function marks {
@@ -243,7 +249,7 @@ function pandoc_through_xelatex {
 			pandoc "$source" $VARIABLES "$@" -o "$dest"
 		)
 	fi
-	
+
 }
 function pandoc_to_pdf {
 	VARIABLES=""
@@ -286,7 +292,7 @@ alias termbin="nc termbin.com 9999"
 
 function salias { # alias command, stripped
 	res="$( alias $1 )"
-	echo "$res" | cut -d"=" -f2- | cut -c2- | rev | cut -c2- | rev 
+	echo "$res" | cut -d"=" -f2- | cut -c2- | rev | cut -c2- | rev
 	if which xclip 2>&1 > /dev/null ; then
 		echo "$res" | cut -d"=" -f2- | cut -c2- | rev | cut -c2- | rev | xclip -sel clip
 	fi

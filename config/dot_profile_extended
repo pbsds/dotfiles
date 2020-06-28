@@ -1,11 +1,17 @@
-#
+
 # ~/.extend.profile
 
 # fixes
-alias fix_touchscreen='sudo bash -c "rmmod wacom && modprobe wacom"'
+
+#alias fix_touchscreen='sudo bash -c "rmmod wacom && modprobe wacom"'
+
 #alias fix_pulseaudio='pulseaudio -k; pulseaudio --start'
-alias reload-autofs='sudo killall ssh && sudo systemctl restart autofs && cd .'
-alias kill-gvfs='killall gvfsd && nautilus -q'
+
+#alias reload-autofs='sudo killall ssh && sudo systemctl restart autofs && cd .'
+
+alias kill-gvfs='killall gvfsd'
+alias kill-gvfs2='killall gvfsd && nautilus -q'
+
 function fix_pulseaudio {
 	pulseaudio -k
 	sudo killall pulseaudio
@@ -19,6 +25,7 @@ function fix_pulseaudio {
 
 
 # Random shortcuts
+
 function open {
 	(
 		xdg-open "$@"  &
@@ -30,13 +37,15 @@ alias fork="nohup xterminal  >/dev/null 2>&1 &"
 
 function vpn {
 	ip="$(dig +short -x a $1 | tail -n 1)"
-	echo sshuttle 0.0.0.0/0 --disable-ipv6 --dns -r "$1" -x $ip
-	sshuttle 0.0.0.0/0 --disable-ipv6 --dns -r "$1" -x $ip
+	( set -x; sshuttle 0.0.0.0/0 --disable-ipv6 --dns -r "$1" -x $ip -x 127.0.0.1)
+}
+function lvpn {
+	ip="$(dig +short -x a $1 | tail -n 1)"
+	( set -x; sshuttle 192.168.0.0/24 --disable-ipv6 -r "$1" -x $ip -x 127.0.0.1 )
 }
 function dvpn {
 	ip="$(dig +short -x a $1 | tail -n 1)"
-	echo sshuttle 0.0.0.0/0 --disable-ipv6 -r "$1" -x $ip
-	sshuttle 0.0.0.0/0 --disable-ipv6 -r "$1" -x $ip
+	( set -x; sshuttle 0.0.0.0/0 --disable-ipv6 -r "$1" -x $ip -x 127.0.0.1 )
 }
 
 alias clip="xclip -sel clip -t text/plain"
@@ -55,10 +64,9 @@ function clipmd {
 
 
 # Haskell through stack
-if which pacman > /dev/null; then
+if which pacman 2>&1 > /dev/null; then
 #	alias ghc="stack ghc -dynamic"
 	alias ghc="stack ghc"
 	alias ghci="stack ghci"
-	
 fi
 
