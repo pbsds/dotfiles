@@ -17,7 +17,7 @@ function installExtension {
 	        grep data-uuid=\".*\" | sed -e "s/^.*uuid=\"//" |
 	        rev | cut -c2- | rev
 	    )"
-	    
+
 	    echo "installing $uuid from $url.."
 	    dbus-send --dest=org.gnome.Shell                       \
 	        --print-reply                                      \
@@ -27,7 +27,7 @@ function installExtension {
 	        string:"$uuid"
 	    echo
 	fi
-    
+
 }
 
 echo
@@ -39,6 +39,7 @@ installExtension "https://extensions.gnome.org/extension/545/hide-top-bar/" # hi
 installExtension "https://extensions.gnome.org/extension/234/steal-my-focus/"
 installExtension "https://extensions.gnome.org/extension/1236/noannoyance/"
 installExtension "https://extensions.gnome.org/extension/1326/block-caribou/" # cariboublocker@git.keringar.xyz
+installExtension "https://extensions.gnome.org/extension/28/gtile/"
 
 # neat
 installExtension "https://extensions.gnome.org/extension/905/refresh-wifi-connections/"
