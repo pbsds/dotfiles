@@ -51,11 +51,3 @@ installExtension "https://extensions.gnome.org/extension/1297/remove-dash/" # Re
 installExtension "https://extensions.gnome.org/extension/906/sound-output-device-chooser/" # sound-output-device-chooser@kgshank.net
 installExtension "https://extensions.gnome.org/extension/1031/topicons/" # TopIcons@phocean.net
 installExtension "https://extensions.gnome.org/extension/1289/window-animations/" # window-animations@rliang.github.com
-
-
-if test -z $OPEN_INSTEAD; then
-	echo
-	echo
-	echo Press enter after installing all tweaks...
-	read
-fi

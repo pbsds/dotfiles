@@ -4,6 +4,7 @@ sudo bash -c ":" || exit 1 # ensure sudo
 DIR=$(git rev-parse --show-toplevel)
 
 function install_arch {
+    #todo verify it IS arch
     if ! ( pacman -Qi $1 ) > /dev/null; then
         echo installing $1...
         sudo pacman --noconfirm -S $1
@@ -14,6 +15,7 @@ function install_arch {
 }
 
 function install_ubuntu {
+	# todo verify if it IS ubuntu
 	#tries both apt and snap
     if ( snap info $1 >/dev/null 2>&1 ); then
     	echo installing $1...

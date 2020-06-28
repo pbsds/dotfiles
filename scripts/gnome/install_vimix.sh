@@ -2,6 +2,7 @@
 
 # todo: move these installer functions into a separate include file
 # todo: update instead of reinstall?
+# todo: detect install and stop
 
 function install_arch {
     if ! ( pacman -Qi $1 ) > /dev/null; then
@@ -38,11 +39,14 @@ function install {
 }
 
 
- install git
- install_ubuntu gtk2-engines-murrine
- install_ubuntu gtk2-engines-pixbuf
-# install_arch gtk-engine-murrine
-# install_arch gtk-engines
+install git
+install_ubuntu gtk2-engines-murrine
+install_ubuntu gtk2-engines-pixbuf
+install_arch gtk-engine-murrine
+install_arch gtk-engines
+
+# todo, switch to using pamac?
+# todo, find something to use aur on other distros
 
 (
 	mkdir -p ~/.local/tmp
