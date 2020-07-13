@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Webcam in MPV unflipped
+Exec=/usr/bin/mpv av://v4l2:/dev/video0
+Icon=mpv
+Terminal=false
+Type=Application
+Keywords=webcam;camera;
