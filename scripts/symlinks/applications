@@ -7,6 +7,8 @@ DIR=$(git rev-parse --show-toplevel)
 #application shortcuts
 mkdir -p "$HOME/.local/share/applications"
 
+echo Creating symlinks...
+
 find "$DIR/config/applications" -type f |
 while read file; do
     ln -vsf "$file" "$HOME/.local/share/applications/$(basename "$file")"

@@ -7,4 +7,5 @@ cat <<EOF | xargs sudo pacman --noconfirm -S
 	graphviz
 	zenity
 	dialog
+	tldr
 EOF
