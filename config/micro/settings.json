@@ -24,7 +24,7 @@
     "joinLines": true,
     "keepautoindent": false,
     "keymenu": false,
-    "linter": true,
+    "linter": false,
     "literate": true,
     "manipulator": true,
     "matchbrace": false,
