@@ -7,7 +7,21 @@
 
 #alias fix_pulseaudio='pulseaudio -k; pulseaudio --start'
 
+# might depend on '-o reconnect' being set
 #alias reload-autofs='sudo killall ssh && sudo systemctl restart autofs && cd .'
+
+function kill-reidun {
+	(set -x
+		sudo umount -f /mnt/sshfs/reidun
+		sudo umount -f /mnt/sshfs/reidun
+		sudo umount -f /mnt/sshfs
+		sudo umount -f /mnt/sshfs
+		sudo killall sshfs
+		sudo systemctl restart autofs
+		ls /mnt/sshfs
+	)
+}
+
 
 alias kill-gvfs='killall gvfsd'
 alias kill-gvfs2='killall gvfsd && nautilus -q'
