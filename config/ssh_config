@@ -61,17 +61,9 @@ Host hildring.pvv.ntnu.no
 	User pederbs
 Host skrott.pvv.ntnu.no
 	User root
-Host misantropy.pvv.ntnu.no
-	User pederbs
-Host doktor.pvv.ntnu.no
-	User pederbs
 Host microbel.pvv.ntnu.no
 	User pederbs
 Host lommel.pvv.ntnu.no
-	User pederbs
-Host stakeholder.pvv.ntnu.no
-	User pederbs
-Host venture.pvv.ntnu.no
 	User pederbs
 Host tom.pvv.ntnu.no
 	User pederbs
@@ -93,8 +85,6 @@ Host essendrop.pvv.ntnu.no
 	User pederbs
 Host skrotnisse.pvv.ntnu.no
 	User pederbs
-Host jerry.pvv.ntnu.no
-	User root
 Host innovation.pvv.ntnu.no
 	User root
 Host alpys.pvv.ntnu.no
