@@ -81,6 +81,8 @@ Host knakelibrak.pvv.ntnu.no
 	User pederbs
 Host dash8.pvv.ntnu.no
 	User pederbs
+Host git.pvv.ntnu.no
+	User pederbs
 Host essendrop.pvv.ntnu.no
 	User pederbs
 Host skrotnisse.pvv.ntnu.no
@@ -91,12 +93,9 @@ Host alpys.pvv.ntnu.no
 	User root
 Host spikkjeposche.pvv.ntnu.no
     User pederbs
-    User root
 Host toriel.pvv.ntnu.no
     User root
 Host principal.pvv.ntnu.no
-    User root
-Host gro-heidi.pvv.ntnu.no
     User root
 Host brzeczyszczykiewicz.pvv.ntnu.no
     User grzegorz
@@ -106,6 +105,10 @@ Host nsa.pvv.ntnu.no
 	User pi
 Host balduzius.pvv.ntnu.no
 	User root
+Host fenris.pvv.ntnu.no
+	User root
+Host sleipner.pvv.ntnu.no
+	User pederbs
 
 
 
