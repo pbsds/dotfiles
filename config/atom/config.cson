@@ -51,6 +51,7 @@
         "--metadata pagetitle=notitle"
         "--katex"
       ]
+      pandocBibliography: true
       pandocFilters: [
         "pandoc-codeblock-include"
         "pandoc-crossref"

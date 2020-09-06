@@ -74,7 +74,7 @@ alias gds="git diff --staged"
 alias gdswd="git diff --staged --word-diff --word-diff-regex=."
 alias gca='git commit --amend'
 alias gcara='git commit --amend --reset-author'
-alias gpm='git push origin master'
+alias gpo='git push origin'
 alias gpasr='git pull --autostash --rebase'
 #alias gfr='git fetch origin master && git rebase FETCH_HEAD'
 alias gfr='git pull --rebase'
@@ -216,7 +216,7 @@ alias vsp="tmux split-window -h"
 function graph_python_imports {
 	pydeps --reverse --noshow --no-output --show-dot "$@"
 }
-if python -m pudb -h > /dev/null; then
+if python -m pudb -h > /dev/null 2> /dev/null; then
 	export PYTHONBREAKPOINT="pudb.set_trace"
 fi
 

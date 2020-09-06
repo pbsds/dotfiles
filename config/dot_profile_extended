@@ -11,6 +11,7 @@
 #alias reload-autofs='sudo killall ssh && sudo systemctl restart autofs && cd .'
 
 function kill-reidun {
+	# "at some point it has got to start working again"
 	(set -x
 		sudo umount -f /mnt/sshfs/reidun
 		sudo umount -f /mnt/sshfs/reidun
@@ -18,7 +19,9 @@ function kill-reidun {
 		sudo umount -f /mnt/sshfs
 		sudo killall sshfs
 		sudo systemctl restart autofs
+		sleep 5
 		ls /mnt/sshfs
+		ls /mnt/sshfs/reidun
 	)
 }
 
