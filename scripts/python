@@ -5,3 +5,7 @@ cat <<EOF | xargs sudo pacman --noconfirm -S
 	python-pip
 	python-wheel
 EOF
+
+(cd symlinks
+    ./pudb
+)
