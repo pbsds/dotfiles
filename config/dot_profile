@@ -7,7 +7,7 @@
 #export GIT_PAGER="less -eFRX"
 
 # PATH
-export PATH=$PATH::~/.local/bin
+export PATH=$PATH:~/.local/bin
 if [ -d ~/.cargo/bin ]; then
 	# RUST
 	export PATH=$PATH:~/.cargo/bin
