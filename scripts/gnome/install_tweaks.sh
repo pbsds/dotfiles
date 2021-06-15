@@ -52,5 +52,4 @@ installExtension "https://extensions.gnome.org/extension/3718/hide-dash-forked/"
 installExtension "https://extensions.gnome.org/extension/906/sound-output-device-chooser/" # sound-output-device-chooser@kgshank.net
 installExtension "https://extensions.gnome.org/extension/1031/topicons/" # TopIcons@phocean.net
 installExtension "https://extensions.gnome.org/extension/1289/window-animations/" # window-animations@rliang.github.com
-installExtension "https://extensions.gnome.org/extension/1680/animation-tweaks/"
 installExtension "https://extensions.gnome.org/extension/3488/big-avatar/"
