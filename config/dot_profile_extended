@@ -40,6 +40,30 @@ function fix_pulseaudio {
 	echo "Comment: alert sound was reset to default"
 }
 
+alias teamviewer_start_daemon="(set -x; sudo systemctl start teamviewerd)"
+
+
+function force_mic_100 {
+	volume="50000"
+	test -z "$1" || volume=$1
+
+	# fucking webrtc mutes my microphone
+	echo Every 0.5 seconds: set volume to $volume / 65535 = $(perl -e "print $volume / 65535" | cut -c-5)
+	pacmd list-sources | grep -A 1  "\\* index:"
+	sindex="$(pacmd list-sources | grep  "\\* index:" | cut -d":" -f2)"
+
+
+	while true; do
+		printf "\r@%s: pacmd set-source-volume %s %s" $(date +%s) $sindex $volume
+
+		pacmd set-source-volume $sindex $volume
+
+		sleep 0.5
+	done
+}
+
+
+
 
 # Random shortcuts
 
@@ -65,19 +89,33 @@ function dvpn {
 	( set -x; sshuttle 0.0.0.0/0 --disable-ipv6 -r "$1" -x $ip -x 127.0.0.1 )
 }
 
-alias clip="xclip -sel clip -t text/plain"
-function clipf {
-	MIME="$(file --mime-type "$1" -b)"
-	echo $1 "($MIME)"
-	cat "$1" | xclip -sel clip -t "$MIME"
-}
-function clipmd {
-	(
-		echo "\`\`\`"
-		cat
-		echo "\`\`\`"
-	) | clip
-}
+if [ "$XDG_SESSION_TYPE" == "wayland" ]; then
+    alias clip="wl-copy"
+    alias clipf="wl-copy"
+else
+    alias clip="xclip -sel clip -t text/plain"
+    function clipf {
+    	MIME="$(file --mime-type "$1" -b)"
+    	echo $1 "($MIME)"
+    	cat "$1" | xclip -sel clip -t "$MIME"
+    }
+    function clipmd {
+    	(
+    		echo "\`\`\`"
+    		cat
+    		echo "\`\`\`"
+    	) | clip
+    }
+    function clip_bmp_to_png {
+    	# for use with virtualbox and xfreerdp
+    	xclip -sel clip -t image/bmp -o > /tmp/clip.bmp
+    	convert /tmp/clip.bmp /tmp/clip.png
+    	cat /tmp/clip.png | xclip -sel clip -t image/png
+    	rm /tmp/clip.bmp /tmp/clip.png
+    }
+fi
+
+
 
 
 # Haskell through stack

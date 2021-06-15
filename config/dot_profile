@@ -34,7 +34,7 @@ alias sr='echo sourcing profiles.... ; source ~/.profile'
 
 # bash navigation
 alias ll="ls -l"
-alias dush="du -sh * | sort -h"
+alias dush="du -shc * | sort -h"
 alias diff="diff -u --color"
 
 # allows you to use aliases with sudo:
@@ -65,13 +65,16 @@ alias fuck="echo Ouch! | cowsay -f head-in | lolcat"
 
 # git gud
 alias gs='git status'
+alias gb='git blame'
 alias gl='git log --oneline --color | head -n 30'
 alias glg='git log --all --decorate --oneline --graph'
 alias gp="git pull --rebase --autostash"
 alias gd="git diff"
-alias gdwd="git diff --word-diff --word-diff-regex=."
+alias gdwd="git diff --word-diff"
+alias gdwdr="git diff --word-diff --word-diff-regex=."
 alias gds="git diff --staged"
-alias gdswd="git diff --staged --word-diff --word-diff-regex=."
+alias gdswd="git diff --staged --word-diff"
+alias gdswdr="git diff --staged --word-diff --word-diff-regex=."
 alias gca='git commit --amend'
 alias gcara='git commit --amend --reset-author'
 alias gpo='git push origin'
@@ -102,7 +105,18 @@ function salert {
 	fi
 }
 
+function ssh_controlmaster_list {
+    ls ~/.ssh/sockets/ -1 |
+    while read line; do
+        printf "%s\t\t\t" "$line"
+        ssh -O check "$(echo "$line" | rev | cut -d- -f2- | rev)" 2>&1
+    done | tr -d '\r'
+}
 
+function ssh_controlmaster_kill {
+    ssh_controlmaster_list
+    ssh_controlmaster_list | grep 'pid=' | cut -d= -f2 | tr -d '() ' | xargs kill --verbose
+}
 
 #Some cute shorthands:
 #alias http_here="php -S localhost:8081"
@@ -113,11 +127,11 @@ alias myip6="curl -6 myip.tf"
 
 # ssh host aliases autocomplete
 alias rssh="ssh -l root"
-complete -W "$(cat ~/.ssh/config | grep '^Host ' | cut  -b 6- | grep -v "^\*")" ssh
-complete -W "$(cat ~/.ssh/config | grep '^Host ' | cut  -b 6- | grep -v "^\*")" rssh
-complete -W "$(cat ~/.ssh/config | grep '^Host ' | cut  -b 6- | grep -v "^\*")" lvpn
-complete -W "$(cat ~/.ssh/config | grep '^Host ' | cut  -b 6- | grep -v "^\*")" dvpn
-complete -W "$(cat ~/.ssh/config | grep '^Host ' | cut  -b 6- | grep -v "^\*")" vpn
+complete -W "$(cat ~/.ssh/config | grep '^Host ' | cut  -b 6- | grep -v "\*")" ssh
+complete -W "$(cat ~/.ssh/config | grep '^Host ' | cut  -b 6- | grep -v "\*")" rssh
+complete -W "$(cat ~/.ssh/config | grep '^Host ' | cut  -b 6- | grep -v "\*")" lvpn
+complete -W "$(cat ~/.ssh/config | grep '^Host ' | cut  -b 6- | grep -v "\*")" dvpn
+complete -W "$(cat ~/.ssh/config | grep '^Host ' | cut  -b 6- | grep -v "\*")" vpn
 
 # Jumping with symbolic links:
 #Taken from http://jeroenjanssens.com/2013/08/16/quickly-navigate-your-filesystem-from-the-command-line.html
@@ -146,16 +160,24 @@ complete -F _completemarks jump unmark
 
 # MOTD
 function hello {
-	name="$(curl -s 'http://pvv.org/~pederbs/names.txt' | grep . | shuf -n 1 -)"
-	title="$(curl -s 'http://pvv.org/~pederbs/demon_names.txt' | grep . | shuf -n 1 -)"
+	name="$(curl -s 'https://pvv.ntnu.no/~pederbs/names.txt' | grep . | shuf -n 1 -)"
+	title="$(curl -s 'https://pvv.ntnu.no/~pederbs/demon_names.txt' | grep . | shuf -n 1 -)"
 	error="$(curl -s 'http://pages.cs.wisc.edu/~ballard/bofh/excuses' | grep . | shuf -n 1 -)"
+	commit="$(curl -s 'http://whatthecommit.com/index.txt')"
 	cow="$(cowsay -l | tail -n +2 | sed -e "s/ /\n/g" | shuf -n 1)"
+	printerfact="$(curl -s 'https://printerfacts.cetacean.club/fact')"
 	(
-		echo "$name the $title claims the problem is:"
+		echo "$name the $title found a problem:"
 		#echo
 		#fortune
 		echo
 		echo "$error"
+		echo
+		echo "Issue was fixed by commit #$(uuidgen | cut -d- -f1):"
+		echo
+		echo "'$commit'"
+		echo
+		echo "Did you know? $printerfact"
 	) | cowsay -f $cow | boxes -d spring -p h4 | lolcat
 }
 
@@ -278,7 +300,8 @@ function pandoc_to_beamer_pdf {
 }
 
 
-
+# bat config
+export BAT_THEME="gruvbox"
 
 
 # clang-format
