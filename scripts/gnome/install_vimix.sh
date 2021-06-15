@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+exit 0 # aur has it
+
 # todo: move these installer functions into a separate include file
 # todo: update instead of reinstall?
 # todo: detect install and stop
