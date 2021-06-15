@@ -16,6 +16,8 @@ function apmget {
 	fi
 }
 
+# apm list --installed --bare
+
 # theming
 #apmget railscast-theme-ng # 404...
 apmget railscast-theme
@@ -50,6 +52,7 @@ apmget language-docker
 apm disable markdown-preview
 apmget markdown-preview-plus
 apmget graphviz-preview-plus
+apmget language-markdown
 
 # quality of life
 apmget jumpy

@@ -10,3 +10,6 @@ cat <<EOF | xargs pip install --user
 	pandoc-imagine
 	pandoc-codeblock-include
 EOF
+
+
+# TODO: hunspell for en_US en_GB and nb

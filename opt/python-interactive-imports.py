@@ -13,6 +13,7 @@ from pprint import pprint
 from dis import dis
 import os, sys
 import functools
+from functools import reduce
 
 p = pprint
 
