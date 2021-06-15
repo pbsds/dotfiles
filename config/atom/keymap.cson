@@ -42,6 +42,7 @@
   'alt-g': 'atomic-rtags:follow'
   'alt-.': 'pane:show-next-item'
   'alt-,': 'pane:show-previous-item'
+  'ctrl-m': 'markdown-preview-plus:sync-preview'
 'body':
   'alt-right': 'pane:show-next-item'
   'alt-left': 'pane:show-previous-item'

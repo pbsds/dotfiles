@@ -1,3 +1,31 @@
+'.text.md':
+  'Comment':
+    'prefix': 'comment'
+    'body': '<!--\n$1\n-->$0'
+  'Todo':
+    'prefix': 'todo'
+    'body': '<!-- TODO: $1 -->$0'
+  'Div':
+    'prefix': 'div'
+    'body': '<div class="$1" id="$2">\n$3\n</div>$0'
+  'Equation':
+    'prefix': 'eq'
+    'body': '$$ $1\n$$ {#eq:${2:TODO}}$0'
+  'AlignedEquation':
+    'prefix': 'eqs'
+    'body': '$$ \\\\begin{aligned}\n\t${1:a &= b} \\\\\\\\\n\t${2:c &= d} \\\\\\\\\n\\\\end{aligned} $$ {#eq:${3:TODO}}$0'
+  'smallcaps':
+    'prefix': 'sm'
+    body: '[$1]{.smallcaps}$0'
+  'bold':
+    'prefix': 'bf'
+    body: '**$1**$0'
+  'italic':
+    'prefix': 'it'
+    body: '*$1*$0'
+  'monospace':
+    'prefix': 'ms'
+    body: '`$1`$0'
 '.text.html':
   'ClassSpan':
     'prefix': 'span'

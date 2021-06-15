@@ -22,9 +22,6 @@
       "desktop.ini"
       "__pycache__"
     ]
-    packagesWithKeymapsDisabled: [
-      "markdown-preview-plus"
-    ]
     restorePreviousWindowsOnStart: "no"
     telemetryConsent: "no"
     themes: [
@@ -40,22 +37,71 @@
   "exception-reporting":
     userId: "c8877d6e-54df-44f2-bb95-b02e63ceaa6b"
   "graphviz-preview-plus": {}
+  "ide-python":
+    pylsPlugins:
+      autopep8:
+        enabled: false
+      flake8:
+        ignore: [
+          "E121"
+          "E123"
+          "E126"
+          "E226"
+          "E24"
+          "E704"
+          "W503"
+          "W504"
+          "E302"
+          "E306"
+          "E128"
+          "E221"
+        ]
+        maxLineLength: 119
+      jedi_definition:
+        follow_imports: true
+      preload: {}
+      pycodestyle:
+        enabled: false
+        ignore: [
+          "E121"
+          "E123"
+          "E126"
+          "E226"
+          "E24"
+          "E704"
+          "W503"
+          "E302"
+          "E306"
+          "E128"
+          "E221"
+        ]
+        maxLineLength: 119
   jumpy: {}
+  kite:
+    showWelcomeNotificationOnStartup: false
+  "markdown-preview-enhanced":
+    breakOnSingleNewLine: false
+    enableLinkify: false
+    enableWikiLinkSyntax: false
+    mathRenderingOnlineService: "https://latex.codecogs.com/svg.latex"
+    pandocArguments: "--filter=pandoc-codeblock-include, --filter=pandoc-imagine"
+    pandocMarkdownFlavor: "markdown-raw_tex+tex_math_single_backslash+emoji"
+    usePandocParser: true
   "markdown-preview-plus":
     markdownItConfig:
       useLazyHeaders: false
     mathConfig: {}
     pandocConfig:
       pandocArguments: [
-        "--standalone"
-        "--metadata pagetitle=notitle"
-        "--katex"
+        "--webtex=https://latex.codecogs.com/svg.latex?"
       ]
       pandocBibliography: true
       pandocFilters: [
+        "pandoc-include"
         "pandoc-codeblock-include"
-        "pandoc-crossref"
         "pandoc-imagine"
+        "pantable"
+        "pandoc-crossref"
       ]
       pandocMarkdownFlavor: "markdown-raw_tex+tex_math_single_backslash+emoji"
       pandocRemoveReferences: false
@@ -69,8 +115,21 @@
     useGitHubStyle: true
   pigments:
     mergeColorDuplicates: true
-  "status-bar":
-    isVisible: false
+  "spell-check":
+    grammars: [
+      "source.asciidoc"
+      "source.gfm"
+      "text.git-commit"
+      "text.plain"
+      "text.plain.null-grammar"
+      "source.rst"
+      "text.restructuredtext"
+      "text.md"
+    ]
+    locales: [
+      "en_US"
+    ]
+  "status-bar": {}
   "tree-view":
     hideIgnoredNames: true
     hideVcsIgnoredFiles: true
