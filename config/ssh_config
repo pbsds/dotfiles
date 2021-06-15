@@ -36,67 +36,65 @@ Host box-test.eduroam.no
 Host timescaledb.labs.uninett.no
 	ProxyJump login.uninett.no
 
+
 # NTNU
+
 Host stud.ntnu.no
 	Hostname login.stud.ntnu.no
-	User pederbs
 Host login.stud.ntnu.no
 	ControlMaster auto
 	ControlPersist 600
-	User pederbs
 Host idun-login1.hpc.ntnu.no
+	ProxyJump hildring.pvv.ntnu.no
+Host *.idi.ntnu.no
+	ForwardX11 yes
+	ForwardX11Trusted yes
+	RemoteForward 52698 localhost:52698
+	#ProxyJump login.stud.ntnu.no
+	#ProxyJump hildring.pvv.ntnu.no
+	ProxyJump dash8.pvv.ntnu.no
+Host lab40*.idi.ntnu.no
 	ControlMaster auto
 	ControlPersist 600
-	ProxyJump login.stud.ntnu.no
-	User pederbs
-Host gitlab.stud.idi.ntnu.no
-#	ProxyJump login.stud.ntnu.no
-	ProxyJump hildring.pvv.ntnu.no
+Host lab405.idi.ntnu.no
+Host lab406.idi.ntnu.no
+Host lab408.idi.ntnu.no
+Host *.ntnu.no
+    User pederbs
+
 
 # PVV
-Host *.pvv.ntnu.no
-	ControlMaster auto
-	ControlPersist 600
 Host hildring.pvv.ntnu.no
-	User pederbs
+Host microbel.pvv.ntnu.no
+Host tom.pvv.ntnu.no
+Host tim.pvv.ntnu.no
+Host demiurgen.pvv.ntnu.no
+Host eirin.pvv.ntnu.no
+Host knakelibrak.pvv.ntnu.no
+Host dash8.pvv.ntnu.no
+Host git.pvv.ntnu.no
+Host essendrop.pvv.ntnu.no
+Host skrotnisse.pvv.ntnu.no
+Host spikkjeposche.pvv.ntnu.no
+Host sleipner.pvv.ntnu.no
+Host hasub.pvv.ntnu.no
+Host monty.pvv.ntnu.no
+Host lommel.pvv.ntnu.no
+    ProxyJump hildring.pvv.ntnu.no
+Host tallulah.pvv.ntnu.no
+	LocalForward 8080 localhost:9091
 Host skrott.pvv.ntnu.no
 	User root
-Host microbel.pvv.ntnu.no
-	User pederbs
-Host lommel.pvv.ntnu.no
-	User pederbs
-Host tom.pvv.ntnu.no
-	User pederbs
-Host tim.pvv.ntnu.no
-	User pederbs
-Host demiurgen.pvv.ntnu.no
-	User pederbs
-Host eirin.pvv.ntnu.no
-	User pederbs
-Host tallulah.pvv.ntnu.no
-	User pederbs
-	User pvv
-	LocalForward 8080 localhost:9091
-Host knakelibrak.pvv.ntnu.no
-	User pederbs
-Host dash8.pvv.ntnu.no
-	User pederbs
-Host git.pvv.ntnu.no
-	User pederbs
-Host essendrop.pvv.ntnu.no
-	User pederbs
-Host skrotnisse.pvv.ntnu.no
-	User pederbs
 Host innovation.pvv.ntnu.no
 	User root
 Host alpys.pvv.ntnu.no
 	User root
-Host spikkjeposche.pvv.ntnu.no
-    User pederbs
 Host toriel.pvv.ntnu.no
     User root
 Host principal.pvv.ntnu.no
     User root
+	ProxyJump hildring.pvv.ntnu.no
+    IdentityFile ~/.ssh/id_ecdsa_passwd
 Host brzeczyszczykiewicz.pvv.ntnu.no
     User grzegorz
 Host dvask-mgmt.pvv.ntnu.no
@@ -105,35 +103,26 @@ Host nsa.pvv.ntnu.no
 	User pi
 Host balduzius.pvv.ntnu.no
 	User root
+	ProxyJump hildring.pvv.ntnu.no
 Host fenris.pvv.ntnu.no
 	User root
-Host sleipner.pvv.ntnu.no
+    ProxyJump hildring.pvv.ntnu.no
+Host *.pvv.ntnu.no
+	ControlMaster auto
+	ControlPersist 600
 	User pederbs
-
 
 
 #NVG
 Host nvg.org
 	Hostname login.nvg.org
-	User pederbs
 Host *.nvg.org
 	User pederbs
 
+
 #FYRKAT
-Host hop.fyrkat.no
-	User pbsds
-	ProxyCommand none
+Host *.fyrkat.no
+    User pbsds
+    ProxyJump hop.fyrkat.no
 Host fyrkat.no
 	Hostname fil.fyrkat.no
-	ProxyCommand ssh hop.fyrkat.no -W %h:%p
-	IdentityFile ~/.ssh/id_rsa
-	PasswordAuthentication no
-	ForwardAgent no
-	IdentitiesOnly yes
-Host *.fyrkat.no
-	User pbsds
-	ProxyCommand ssh hop.fyrkat.no -W %h:%p
-	IdentityFile ~/.ssh/id_rsa
-	PasswordAuthentication no
-	ForwardAgent no
-	IdentitiesOnly yes
