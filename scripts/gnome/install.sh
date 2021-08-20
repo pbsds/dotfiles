@@ -78,6 +78,7 @@ install xdotool
 install xclip
 install_arch xorg-xrandr
 install_ubuntu x11-xserver-utils
+install wl-clipboard
 #install adwaita-icon-theme
 
 #installaur gnome-terminal-transparency # failing?

@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+pamac install --no-confirm vimix-gtk-themes
+pamac install --no-confirm flat-remix # icons
+
 exit 0 # aur has it
 
 # todo: move these installer functions into a separate include file
