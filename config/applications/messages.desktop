@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Messages (Android)
+Exec=vivaldi-stable --app='https://messages.google.com/web/conversations'
+Icon=mail
+Terminal=false
+Type=Application
+Keywords=web;messages;android;kiosk;app;

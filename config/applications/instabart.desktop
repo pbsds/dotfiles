@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Instabart
+Exec=vivaldi-stable --app='https://instabart.no'
+Icon=app-launcher
+Terminal=false
+Type=Application
+Keywords=web;ntnu;kiosk;app;instabart;
