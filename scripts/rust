@@ -1,6 +1,16 @@
 #!/usr/bin/bash
 
-pacman -S rustup
+cat << EOF | xargs pacman -S --noconfirm
+    rustup
+    rust-analyzer
+    cargo-edit
+    cargo-audit
+    cargo-bloat
+    cargo-depgraph
+    cargo-flamegraph
+    cargo-outdated
+    cargo-watch
+EOF
 
 #rustup toolchain install nightly 
 #rustup default nightly
