@@ -19,6 +19,13 @@ function kill_reidun {
 		sudo umount -f /mnt/sshfs
 		sudo killall sshfs
 		sudo systemctl restart autofs
+	)
+}
+
+function kill_reidun_refresh {
+	# "at some point it has got to start working again"
+	(set -x
+	    kill_reidun
 		sleep 5
 		ls /mnt/sshfs
 		ls /mnt/sshfs/reidun
@@ -78,15 +85,15 @@ alias fork="nohup xterminal  >/dev/null 2>&1 &"
 
 function vpn {
 	ip="$(dig +short -x a $1 | tail -n 1)"
-	( set -x; sshuttle 0.0.0.0/0 --disable-ipv6 --dns -r "$1" -x $ip -x 127.0.0.1)
+	( set -x; sshuttle 0.0.0.0/0 --disable-ipv6 --dns -r "$1" -x $ip -x 127.0.0.1 -x 172.0.0.0/8 )
 }
 function lvpn {
 	ip="$(dig +short -x a $1 | tail -n 1)"
-	( set -x; sshuttle 192.168.0.0/24 --disable-ipv6 -r "$1" -x $ip -x 127.0.0.1 )
+	( set -x; sshuttle 192.168.0.0/16 --disable-ipv6 -r "$1" -x $ip -x 127.0.0.1 -x 172.0.0.0/8 )
 }
 function dvpn {
 	ip="$(dig +short -x a $1 | tail -n 1)"
-	( set -x; sshuttle 0.0.0.0/0 --disable-ipv6 -r "$1" -x $ip -x 127.0.0.1 )
+	( set -x; sshuttle 0.0.0.0/0 --disable-ipv6 -r "$1" -x $ip -x 127.0.0.1 -x 172.0.0.0/8 )
 }
 
 if [ "$XDG_SESSION_TYPE" == "wayland" ]; then
