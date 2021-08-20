@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
-cat <<EOF | xargs sudo pacman --noconfirm -S
+# community
+
+cat <<EOF | xargs echo pamac install --no-confirm
 	git
 	nmap
 	dnsutils
@@ -8,4 +10,11 @@ cat <<EOF | xargs sudo pacman --noconfirm -S
 	zenity
 	dialog
 	tldr
+	jq
+EOF
+
+# AUR
+
+cat <<EOF | xargs echo pamac build --no-confirm
+	gron
 EOF
