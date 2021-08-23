@@ -14,6 +14,7 @@ eval "$DIR/scripts/fonts"
 #symlinks
 eval "$DIR/scripts/symlinks/atom"
 eval "$DIR/scripts/symlinks/applications"
+eval "$DIR/scripts/symlinks/templates"
 eval "$DIR/scripts/symlinks/micro"
 #eval "$DIR/scripts/symlinks/opt" # done by gnome setup
 eval "$DIR/scripts/symlinks/profile_extended"

@@ -1,0 +1,5 @@
+[Desktop Entry]
+Type=Application
+Name=URL Handler (.local)
+MimeType=application/x-mswinurl;
+Exec=bash -c "set -e; P=$(python3 -c 'import configparser,sys,urllib.parse; c=configparser.RawConfigParser(); c.read(sys.argv[1])\ntry:\n    u=c[\"InternetShortcut\"][\"URL\"]\n    if not urllib.parse.urlparse(u).scheme in [\"http\",\"https\",\"ftp\",\"ssh\"]: raise Exception(\"Invalid scheme in URI\")\n    print(u)\nexcept Exception as e: print(e,file=sys.stderr); exit(3);' %f); xdg-open \"$P\""
