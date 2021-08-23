@@ -3,7 +3,7 @@
 DIR=$(git rev-parse --show-toplevel)
 
 # download backgrounds
-(
+false && (
     mkdir -p ~/Pictures/backgrounds_randomized
     cd ~/Pictures/backgrounds_randomized
     curl "http://pvv.ntnu.no/~pederbs/backgrounds.txt" |
@@ -17,7 +17,7 @@ DIR=$(git rev-parse --show-toplevel)
 )
 
 # set random bg
-(
+false && (
     file="$(ls ~/Pictures/backgrounds_randomized -1 | shuf -n 1)"
     (
         echo "[org/gnome/desktop/background]"
@@ -26,29 +26,35 @@ DIR=$(git rev-parse --show-toplevel)
     ) | dconf load /
 )
 
-#todos:
-# - eog
-# - mpv
-# - last.fm
-# - spotify
-# - automounts?
-# - entr
 
 eval "$DIR/scripts/lxterminal"
+eval "$DIR/scripts/symlinks/lxterminal"
+eval "$DIR/scripts/symlinks/xterminal"
+
 eval "$DIR/scripts/pandoc"
 eval "$DIR/scripts/python"
 eval "$DIR/scripts/rust"
+#eval "$DIR/scripts/haskell"
 
 
-sudo bash -c ":" || exit 1
-function install {
-	if ! pacman -Qi $1 > /dev/null; then
-		sudo pacman --noconfirm -S $1
-	fi
-}
 
 
 # install x
 
-#todo: spotify, slack, steam, chromium, discord, autofs, mpv, eog
-# pip, sshuttle, dnsutils
+cat <<EOF | xargs pamac install --no-confirm
+    vivaldi
+    mpv
+    eog
+    sshuttle
+    discord
+EOF
+
+cat <<EOF | xargs pamac build --no-confirm
+    spotify
+    slack-desktop
+EOF
+
+#todos:
+# - last.fm
+# - autofs
+# - steam

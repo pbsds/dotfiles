@@ -4,7 +4,7 @@ DIR=$(git rev-parse --show-toplevel)
 
 eval "$DIR/scripts/atom"
 eval "$DIR/scripts/gnome"
-eval "$DIR/scripts/micro/install.sh"
+eval "$DIR/scripts/micro"
 eval "$DIR/scripts/fzf"
 eval "$DIR/scripts/git_user_config"
 eval "$DIR/scripts/cli_tools"
