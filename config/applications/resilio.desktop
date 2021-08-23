@@ -4,5 +4,5 @@ Type=Application
 Exec=bash -c 'systemctl start --user rslsync && /usr/bin/xdg-open http://localhost:8888/gui/'
 StartupNotify=false
 Terminal=false
-Icon=text-html
-Keywords=sync;resilio;rslsync;rsl;
+Icon=btsync-gui
+Keywords=sync;resilio;rslsync;rsl;btsync;

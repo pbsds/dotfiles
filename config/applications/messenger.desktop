@@ -1,7 +1,9 @@
 [Desktop Entry]
 Name=Messenger (Facebook)
+TryExec=vivaldi-stable
 Exec=vivaldi-stable --app='https://www.messenger.com'
 Icon=appimagekit-caprine
 Terminal=false
 Type=Application
 Keywords=web;messenger;facebook;kiosk;app;
+#StartupWMClass=todo
