@@ -235,6 +235,11 @@ ex () {
 # Tmux
 alias vsp="tmux split-window -h"
 
+# SSH x11 forwarding
+if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+    export GDK_BACKEND=x11
+fi
+
 
 # python
 function graph_python_imports {
