@@ -1,12 +1,13 @@
 #!/usr/bin/env bash
 
+sudo bash -c ":" || exit 1 # ensure sudo
 
 DIR=$(git rev-parse --show-toplevel)
 
-pacman -S lxterminal
-(
+sudo pacman -S --noconfirm lxterminal
+( #set -x
 	cd "$DIR"
-	cd symlinks
+	cd scripts/symlinks
 	./lxterminal
 	./xterminal
 )
