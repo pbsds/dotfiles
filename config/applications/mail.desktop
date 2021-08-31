@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Outlook
+TryExec=vivaldi-stable
+Exec=vivaldi-stable --app='https://outlook.office365.com/owa/?realm=ntnu.no#path=/mail'
+Icon=mail
+Terminal=false
+Type=Application
+Keywords=web;ntnu;kiosk;app;instabart;outlook;mail;email;
+#StartupWMClass=todo

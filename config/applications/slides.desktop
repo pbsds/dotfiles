@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=slides.com
+TryExec=vivaldi-stable
+Exec=vivaldi-stable --app='https://slides.com/pbsds'
+Icon=x-office-presentation
+Terminal=false
+Type=Application
+Keywords=web;kiosk;app;slides;powerpoint;presentation;
+#StartupWMClass=todo

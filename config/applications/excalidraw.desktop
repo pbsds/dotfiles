@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Excalidraw
+TryExec=vivaldi-stable
+Exec=vivaldi-stable --app='https://excalidraw.com'
+Icon=dnfdragora
+Terminal=false
+Type=Application
+Keywords=web;kiosk;app;draw;excalidraw;svg;
+#StartupWMClass=todo

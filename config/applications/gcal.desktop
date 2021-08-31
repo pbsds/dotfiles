@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Google Calendar
+TryExec=vivaldi-stable
+Exec=vivaldi-stable --app='https://calendar.google.com/calendar/u/0/r/week'
+Icon=google-agenda
+Terminal=false
+Type=Application
+Keywords=web;kiosk;app;google;calendar;
+#StartupWMClass=todo

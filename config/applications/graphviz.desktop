@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Graphviz Online
+TryExec=vivaldi-stable
+Exec=vivaldi-stable --app='https://dreampuf.github.io/GraphvizOnline/'
+Icon=application
+Terminal=false
+Type=Application
+Keywords=web;kiosk;app;graphviz;dot;neato;
+#StartupWMClass=todo
