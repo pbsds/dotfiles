@@ -69,6 +69,10 @@ if [ "$DO" =~ "^[yY].*$" ]; then
 		install gnome-shell-extensions # yes, needed
 		cd "$DIR/script/gnome"
 		./install_tweaks.sh
+
+		# push gnome dconf config
+		cd "$DIR/config/dconf"
+		./push.sh gtile.ini # TODO: rename to gnome-extensions.ini ?
 	)
 fi
 
@@ -90,11 +94,15 @@ install bluez-utils
 	# install theme
 	cd "$DIR/scripts/gnome"
 	./install_theme.sh
+
+	# push gnome dconf config
+	cd "$DIR/config/dconf"
+	./push.sh theme.ini
 )
 (
 	# push gnome dconf config
 	cd "$DIR/config/dconf"
-	./push.sh theme.ini behaviour.ini shortcuts.ini
+	./push.sh behaviour.ini shortcuts.ini evince.ini
 )
 (
 	# install .local/opt and .local/bin/xterminal symlinks

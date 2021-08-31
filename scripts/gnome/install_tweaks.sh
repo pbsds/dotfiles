@@ -20,16 +20,19 @@ function installExtension {
 
 
 	    echo "installing $uuid from $url.."
-	    #dbus-send --dest=org.gnome.Shell                       \
-	    #    --print-reply                                      \
-	    #    --type=method_call                                 \
-	    #    /org/gnome/Shell                                   \
-	    #    org.gnome.Shell.Extensions.InstallRemoteExtension  \
-	    #    string:"$uuid"
-        (set -x
-            #echo \
-            gnome-extensions enable $uuid
-        )
+
+	    dbus-send --dest=org.gnome.Shell                       \
+	        --print-reply                                      \
+	        --type=method_call                                 \
+	        /org/gnome/Shell                                   \
+	        org.gnome.Shell.Extensions.InstallRemoteExtension  \
+	        string:"$uuid"
+
+        # TODO: doesn't work for remote extensions 
+        #(set -x
+        #    #echo \
+        #    gnome-extensions enable $uuid
+        #)
 	fi
 
 }
