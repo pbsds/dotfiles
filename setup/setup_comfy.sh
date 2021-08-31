@@ -28,15 +28,11 @@ false && (
 
 
 eval "$DIR/scripts/lxterminal"
-eval "$DIR/scripts/symlinks/lxterminal"
-eval "$DIR/scripts/symlinks/xterminal"
 
 eval "$DIR/scripts/pandoc"
 eval "$DIR/scripts/python"
 eval "$DIR/scripts/rust"
 #eval "$DIR/scripts/haskell"
-
-
 
 
 # install x

@@ -1,7 +1,11 @@
 #!/usr/bin/env bash
 
+
+DIR=$(git rev-parse --show-toplevel)
+
 pacman -S lxterminal
 (
+	cd "$DIR"
 	cd symlinks
 	./lxterminal
 	./xterminal
