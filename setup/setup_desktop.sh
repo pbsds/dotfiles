@@ -3,7 +3,7 @@
 DIR=$(git rev-parse --show-toplevel)
 
 eval "$DIR/scripts/atom"
-eval "$DIR/scripts/gnome"
+eval "$DIR/scripts/gnome/install.sh"
 eval "$DIR/scripts/micro"
 eval "$DIR/scripts/fzf"
 eval "$DIR/scripts/git_user_config"
