@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+sudo bash -c ":" || exit 1 # ensure sudo
+
+# ugly but it works
+
+#sudo sed -i 's/#\?\(Port\s*\).*$/\1 2231/' /etc/ssh/sshd_config
+sudo sed -i 's/#\?\(PerminRootLogin\s*\).*$/\1 no/' /etc/ssh/sshd_config
+sudo sed -i 's/#\?\(PubkeyAuthentication\s*\).*$/\1 yes/' /etc/ssh/sshd_config
+sudo sed -i 's/#\?\(PermitEmptyPasswords\s*\).*$/\1 no/' /etc/ssh/sshd_config
+sudo sed -i 's/#\?\(PasswordAuthentication\s*\).*$/\1 no/' /etc/ssh/sshd_config
+
+sudo systemctl enable --now sshd
