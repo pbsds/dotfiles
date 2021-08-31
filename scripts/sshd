@@ -2,6 +2,8 @@
 
 sudo bash -c ":" || exit 1 # ensure sudo
 
+(
+
 set -x
 
 # ugly but it works
@@ -13,3 +15,5 @@ sudo sed -i 's/#\?\(PermitEmptyPasswords\s*\).*$/\1 no/' /etc/ssh/sshd_config
 sudo sed -i 's/#\?\(PasswordAuthentication\s*\).*$/\1 no/' /etc/ssh/sshd_config
 
 sudo systemctl enable --now sshd
+
+)
