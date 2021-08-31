@@ -2,6 +2,8 @@
 
 DIR=$(git rev-parse --show-toplevel)
 
+#$DIR/setup/setup_desktop.sh
+
 # download backgrounds
 false && (
     mkdir -p ~/Pictures/backgrounds_randomized
@@ -37,7 +39,7 @@ eval "$DIR/scripts/rust"
 
 # install x
 
-cat <<EOF | xargs pamac install --no-confirm
+cat <<EOF | xargs sudo pacman -S --noconfirm
     vivaldi
     mpv
     eog
@@ -45,6 +47,7 @@ cat <<EOF | xargs pamac install --no-confirm
     discord
 EOF
 
+curl -sS https://download.spotify.com/debian/pubkey_0D811D58.gpg | gpg --import -
 cat <<EOF | xargs pamac build --no-confirm
     spotify
     slack-desktop
