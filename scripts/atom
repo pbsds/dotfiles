@@ -55,38 +55,25 @@ apmget graphviz-preview-plus
 apmget language-markdown
 
 # quality of life
-apmget jumpy
-apmget lines
+#apmget jumpy
+apmget lines # join lines
 apmget markdown-table-editor
 apmget pigments
 apmget remote-atom
 apmget selection-highlight
-apmget shell-it
+#apmget shell-it
 apmget simple-align
-apmget atom-beautify
+#apmget atom-beautify
+
+# apmget live-doc-viewer # todo, test first
 
 # IDE
-apmget atom-ide-ui
-apmget busy-signal
-apmget intentions
-
-# rust
+apmget atom-ide-base
 apmget ide-rust
-
-# scala
-apmget ide-scala
-
-# C / C++
-apmget atomic-rtags
-#apmget ide-c-cpp # todo
-
-# C#
+#apmget ide-scala
+apmget atomic-rtags # C / C++
+#apmget ide-c-cpp # C / C++ todo
 #apmget ide-csharp
-
-#linter stuff
-apmget linter
-apmget linter-ui-default
-#apmget linter-clang
-#apmget linter-python-pep8
+apmget ide-python
 
 # todo: ensure symlinked config files

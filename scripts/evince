@@ -2,7 +2,7 @@
 
 DIR=$(git rev-parse --show-toplevel)
 
-# pacman -S --noconfirm evince
+sudo pacman -S --noconfirm evince
 
 # push gnome dconf config
 (

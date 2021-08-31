@@ -11,6 +11,7 @@ cat <<EOF | xargs echo pamac install --no-confirm
 	dialog
 	tldr
 	jq
+	yq
 	entr
 EOF
 

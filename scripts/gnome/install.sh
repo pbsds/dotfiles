@@ -81,17 +81,15 @@ install_ubuntu x11-xserver-utils
 install wl-clipboard
 #install adwaita-icon-theme
 
+
+install bluez-utils
+
 #installaur gnome-terminal-transparency # failing?
 
 (
-	# install vimix theme
+	# install theme
 	cd "$DIR/scripts/gnome"
-	./install_vimix.sh
-)
-(
-	# install capiataine icon theme
-	cd "$DIR/scripts/gnome"
-	./install_capitaine_icons.sh
+	./install_theme.sh
 )
 (
 	# push gnome dconf config
