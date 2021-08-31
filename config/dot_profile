@@ -13,7 +13,7 @@ if [ -d ~/.cargo/bin ]; then
 	export PATH=$PATH:~/.cargo/bin
 fi
 
-
+alias ip="ip -br -color"
 
 # Micro
 export EDITOR=nano
@@ -55,6 +55,7 @@ if which pacman > /dev/null; then
 	alias pacro='paclo && sudo pacman -Rns $(pacman -Qtdq)' # remove orphans
 	alias pacc='pacman -Scc'  # clean cache
 	alias paclf='pacman -Ql'  # list files
+	alias pac_file_owner='pacman -Qo' # check which package owns a file
 fi
 
 # typo savers
