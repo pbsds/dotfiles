@@ -13,7 +13,7 @@ cat << EOF | xargs sudo pacman -S --noconfirm
 EOF
 
 #rustup toolchain install nightly 
-#rustup default nightly
+rustup default nightly
 
 #rustup component add rls rust-analysis rust-src
 #rustup component add rustfmt
