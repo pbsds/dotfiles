@@ -2,7 +2,7 @@
 
 # community
 
-cat <<EOF | xargs echo pamac install --no-confirm
+cat <<EOF | xargs pamac install --no-confirm
 	git
 	nmap
 	dnsutils
@@ -17,6 +17,6 @@ EOF
 
 # AUR
 
-cat <<EOF | xargs echo pamac build --no-confirm
+cat <<EOF | xargs pamac build --no-confirm
 	gron
 EOF
