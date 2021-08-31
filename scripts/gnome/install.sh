@@ -76,6 +76,8 @@ if [ "$DO" =~ "^[yY].*$" ]; then
 	)
 fi
 
+install yad
+
 install xorg-xprop
 install wmctrl
 install xdotool
