@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Blackboard (TDT4195)
+TryExec=vivaldi-stable
+Exec=vivaldi-stable 'https://ntnu.blackboard.com/webapps/blackboard/execute/modulepage/view?course_id=_29813_1&cmp_tab_id=_241577_1&editMode=true&mode=cpview'
+Icon=view-private
+Terminal=false
+Type=Application
+Keywords=web;ntnu;app;bb;instabart;blackoard;tdt4195;
+#StartupWMClass=todo
