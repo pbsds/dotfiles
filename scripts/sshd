@@ -2,6 +2,8 @@
 
 sudo bash -c ":" || exit 1 # ensure sudo
 
+set -x
+
 # ugly but it works
 
 #sudo sed -i 's/#\?\(Port\s*\).*$/\1 2231/' /etc/ssh/sshd_config
