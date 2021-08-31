@@ -57,7 +57,7 @@
   'ctrl-k ctrl-n': 'status-bar:toggle'
 'atom-workspace':
   'ctrl-k ctrl-m': 'diagnostics:toggle-table'
-  'ctrl-k ctrl-,': 'outline-view:toggle'
+  'ctrl-k ctrl-,': 'outline:toggle'
 'atom-workspace atom-text-editor:not([mini])':
   'ctrl-up': 'unset!'
   'ctrl-down': 'unset!'

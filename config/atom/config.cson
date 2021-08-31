@@ -8,8 +8,6 @@
       "language-python"
       "markdown-preview"
       "linter-clang"
-      "linter"
-      "linter-ui-default"
       "linter-python-pep8"
     ]
     ignoredNames: [
@@ -111,8 +109,8 @@
     renderer: "pandoc"
     saveConfig:
       saveToPDFOptions: {}
+    style: "github"
     syncConfig: {}
-    useGitHubStyle: true
   pigments:
     mergeColorDuplicates: true
   "spell-check":
