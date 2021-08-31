@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-cat << EOF | xargs pacman -S --noconfirm
+cat << EOF | xargs sudo pacman -S --noconfirm
     rustup
     rust-analyzer
     cargo-edit
