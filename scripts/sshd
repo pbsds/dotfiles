@@ -16,4 +16,21 @@ sudo sed -i 's/#\?\(PasswordAuthentication\s*\).*$/\1 no/' /etc/ssh/sshd_config
 
 sudo systemctl enable --now sshd
 
+# disable automatic suspend as gdm user on ac-power
+gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-timeout 0
+gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-type 'nothing'
+# disable automatic suspend as gdm user on ac-power
+sudo -u gdm dbus-launch gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-timeout 0
+sudo -u gdm dbus-launch gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-type 'nothing'
+#
+sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
+# 'unmask' to revert
+
+# TODO: check if running from ssh, if so:
+#sudo systemctl restart systemd-logind.service
+#sudo systemctl restart gdm.service
+#otherwise:
+echo "Please restart the machine."
+
+
 )
