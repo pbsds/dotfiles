@@ -72,7 +72,7 @@ if [ "$DO" =~ "^[yY].*$" ]; then
 
 		# push gnome dconf config
 		cd "$DIR/config/dconf"
-		./push.sh gtile.ini # TODO: rename to gnome-extensions.ini ?
+		./push.sh extension_*.ini
 	)
 fi
 

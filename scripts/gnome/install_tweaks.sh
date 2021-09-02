@@ -55,7 +55,7 @@ installExtension "https://extensions.gnome.org/extension/1236/noannoyance/" ## T
 installExtension "https://extensions.gnome.org/extension/1326/block-caribou/" #- cariboublocker@git.keringar.xyz
 installExtension "https://extensions.gnome.org/extension/28/gtile/" #- gTile@vibou
 installExtension "https://extensions.gnome.org/extension/4144/vertical-overview/"
-installExtension "https://extensions.gnome.org/extension/4099/no-overview/"
+#installExtension "https://extensions.gnome.org/extension/4099/no-overview/"
 
 # neat
 installExtension "https://extensions.gnome.org/extension/905/refresh-wifi-connections/" #- refresh-wifi@kgshank.net
