@@ -11,5 +11,12 @@ cat <<EOF | xargs pip install --user
 	pandoc-codeblock-include
 EOF
 
+# download the official lua filters:
+#    https://github.com/pandoc/lua-filters
+PANDOC_DIR="$HOME/.local/share/pandoc"
+test -d "$PANDOC_DIR" || mkdir -p "$PANDOC_DIR"
+RELEASE_URL="https://github.com/pandoc/lua-filters/releases/latest"
+curl -LSs "$RELEASE_URL/download/lua-filters.tar.gz" |
+    tar --strip-components=1 --one-top-level=$PANDOC_DIR -zvxf -
 
 # TODO: hunspell for en_US en_GB and nb
