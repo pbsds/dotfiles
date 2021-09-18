@@ -15,6 +15,11 @@ fi
 
 alias ip="ip -br -color"
 
+# direnv
+if which direnv > /dev/null; then
+	eval "$(direnv hook bash)"
+fi
+
 # Micro
 export EDITOR=nano
 if which micro > /dev/null; then

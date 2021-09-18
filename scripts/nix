@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+sudo bash -c ":" || {
+    echo "sudo needed!";
+    exit 1
+}
+test $(id -u) = "0" && {
+    echo "cannot be run as root!"
+    exit 2
+}
+
+sudo pacman -S --noconfirm nix
+sudo usermod -aG nix-users $(whoami)
+sudo systemctl enable --now nix-daemon
+
+which direnv > /dev/null || pamac build --no-confirm direnv
