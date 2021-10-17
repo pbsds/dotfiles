@@ -142,6 +142,9 @@
 ".dg.source":
   editor:
     tabType: "soft"
+".nix.source":
+  editor:
+    tabLength: 2
 ".scala.source":
   editor:
     tabLength: 2

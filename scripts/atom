@@ -39,12 +39,14 @@ apmget language-batch
 apmget language-bison-flex
 apmget language-cmake
 apmget language-diff
+apmget language-dg
 apmget language-dot
 apmget language-glsl
 apmget language-haskell
 apmget language-ini
 apmget language-latex
 apmget language-lua
+apmget language-nix
 apmget language-scala
 apmget language-systemverilog
 apmget language-velocity
