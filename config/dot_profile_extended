@@ -32,7 +32,6 @@ function kill_reidun_refresh {
 	)
 }
 
-
 alias kill-gvfs='killall gvfsd'
 alias kill-gvfs2='killall gvfsd && nautilus -q'
 
@@ -81,7 +80,7 @@ function open {
 	) 2>/dev/null >/dev/null
 }
 
-alias fork="nohup xterminal  >/dev/null 2>&1 &"
+#alias fork="nohup xterminal  >/dev/null 2>&1 &"
 
 function vpn {
 	ip="$(dig +short -x a $1 | tail -n 1)"
@@ -96,7 +95,7 @@ function dvpn {
 	( set -x; sshuttle 0.0.0.0/0 --disable-ipv6 -r "$1" -x $ip -x 127.0.0.1 -x 172.0.0.0/8 )
 }
 
-if [ "$XDG_SESSION_TYPE" == "wayland" ]; then
+if [ "$XDG_SESSION_TYPE" == "wayland" ] && ! ( [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ] ) ; then
     alias clip="wl-copy"
     alias clipf="wl-copy"
 else
@@ -106,13 +105,6 @@ else
     	echo $1 "($MIME)"
     	cat "$1" | xclip -sel clip -t "$MIME"
     }
-    function clipmd {
-    	(
-    		echo "\`\`\`"
-    		cat
-    		echo "\`\`\`"
-    	) | clip
-    }
     function clip_bmp_to_png {
     	# for use with virtualbox and xfreerdp
     	xclip -sel clip -t image/bmp -o > /tmp/clip.bmp
@@ -121,12 +113,19 @@ else
     	rm /tmp/clip.bmp /tmp/clip.png
     }
 fi
+function clipmd {
+	(
+		echo '```'
+		cat
+		echo '```'
+	) | clip
+}
 
 
 
 
 # Haskell through stack
-if which pacman 2>&1 > /dev/null; then
+if command -v stack >/dev/null; then
 #	alias ghc="stack ghc -dynamic"
 	alias ghc="stack ghc"
 	alias ghci="stack ghci"

@@ -13,6 +13,8 @@ cat <<EOF | xargs pamac install --no-confirm
 	jq
 	yq
 	entr
+	cowsay
+	lolcat
 EOF
 
 # AUR
@@ -20,4 +22,5 @@ EOF
 cat <<EOF | xargs pamac build --no-confirm
 	gron
 	sysz
+	boxes
 EOF
