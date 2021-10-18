@@ -78,6 +78,7 @@ fi
 
 install yad
 
+install xorg-xauth
 install xorg-xprop
 install wmctrl
 install xdotool

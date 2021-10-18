@@ -71,6 +71,7 @@ apmget selection-highlight
 #apmget shell-it
 apmget simple-align
 #apmget atom-beautify
+apmget copy-highlighted
 
 # apmget live-doc-viewer # todo, test first
 

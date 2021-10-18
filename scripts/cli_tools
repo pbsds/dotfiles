@@ -3,6 +3,7 @@
 # community
 
 cat <<EOF | xargs pamac install --no-confirm
+	unrar
 	git
 	nmap
 	dnsutils
