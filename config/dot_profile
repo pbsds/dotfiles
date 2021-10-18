@@ -14,6 +14,7 @@ if [ -d ~/.cargo/bin ]; then
 fi
 
 alias ip="ip -br -color"
+alias watch="watch -c "
 
 # direnv
 if which direnv > /dev/null; then
@@ -22,7 +23,7 @@ fi
 
 # Micro
 export EDITOR=nano
-if which micro > /dev/null; then
+if command -v micro >/dev/null; then
     export EDITOR=micro
     if [ "$COLORTERM" = "truecolor" ] || [ "$TERM" == "xterm" ]; then
 	    export TERM=xterm-256color
@@ -50,7 +51,7 @@ alias xargs='xargs '
 shopt -s globstar
 
 # pacman sanity
-if which pacman > /dev/null; then
+if command -v pacman >/dev/null; then
 	alias pac='pacman -S'     # install
 	alias pacu='pacman -Syu'  # update, add 'a' to the list of letters to update AUR packages
 	alias pacr='pacman -Rs'   # remove
@@ -81,6 +82,7 @@ alias gdwdr="git diff --word-diff --word-diff-regex=."
 alias gds="git diff --staged"
 alias gdswd="git diff --staged --word-diff"
 alias gdswdr="git diff --staged --word-diff --word-diff-regex=."
+alias gcp="git cherry-pick"
 alias gca='git commit --amend'
 alias gcara='git commit --amend --reset-author'
 alias gpo='git push origin'
@@ -274,7 +276,7 @@ alias termbin="nc termbin.com 9999"
 function salias { # alias command, stripped
 	res="$( alias $1 )"
 	echo "$res" | cut -d"=" -f2- | cut -c2- | rev | cut -c2- | rev
-	if which xclip 2>&1 > /dev/null ; then
+	if command -v xclip >/dev/null ; then
 		echo "$res" | cut -d"=" -f2- | cut -c2- | rev | cut -c2- | rev | xclip -sel clip
 	fi
 }

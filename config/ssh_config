@@ -49,6 +49,7 @@ Host login.stud.ntnu.no
 Host *.idi.ntnu.no stud.ntnu.no *.stud.ntnu.no
     ForwardX11 yes
     ForwardX11Trusted yes
+    Compression yes
     RemoteForward 52698 localhost:52698
 #Match exec "test 129.241 != $(curl -4 myip.tf | cut -d. -f1-2)" host *.idi.ntnu.no
     #ProxyJump login.stud.ntnu.no
@@ -84,6 +85,7 @@ Host spikkjeposche.pvv.ntnu.no
 Host sleipner.pvv.ntnu.no
 Host hasub.pvv.ntnu.no
 Host monty.pvv.ntnu.no
+Host isvegg.pvv.ntnu.no
 Host sleipner.pvv.ntnu.no
     ProxyJump hildring.pvv.ntnu.no
 Host lommel.pvv.ntnu.no
