@@ -1,7 +1,11 @@
 "*":
+  "atom-ide-code-format":
+    formatOnSave: false
   "autocomplete-plus": {}
   "bracket-matcher":
     autocompleteBrackets: false
+  "copy-highlighted":
+    style: "railscasts"
   core:
     autoHideMenuBar: true
     disabledPackages: [
@@ -19,6 +23,9 @@
       "Thumbs.db"
       "desktop.ini"
       "__pycache__"
+    ]
+    packagesWithKeymapsDisabled: [
+      "atom-ide-code-format"
     ]
     restorePreviousWindowsOnStart: "no"
     telemetryConsent: "no"

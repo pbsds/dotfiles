@@ -16,16 +16,16 @@
     'body': '$$ \\\\begin{aligned}\n\t${1:a &= b} \\\\\\\\\n\t${2:c &= d} \\\\\\\\\n\\\\end{aligned} $$ {#eq:${3:TODO}}$0'
   'smallcaps':
     'prefix': 'sm'
-    body: '[$1]{.smallcaps}$0'
+    'body': '[$1]{.smallcaps}$0'
   'bold':
     'prefix': 'bf'
-    body: '**$1**$0'
+    'body': '**$1**$0'
   'italic':
     'prefix': 'it'
-    body: '*$1*$0'
+    'body': '*$1*$0'
   'monospace':
     'prefix': 'ms'
-    body: '`$1`$0'
+    'body': '`$1`$0'
 '.text.html':
   'ClassSpan':
     'prefix': 'span'

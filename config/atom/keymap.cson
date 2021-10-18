@@ -56,8 +56,10 @@
   'ctrl-q': "core:close"
   'ctrl-k ctrl-n': 'status-bar:toggle'
 'atom-workspace':
-  'ctrl-k ctrl-m': 'diagnostics:toggle-table'
-  'ctrl-k ctrl-,': 'outline:toggle'
+  #'ctrl-k ctrl-m': 'diagnostics:toggle-table'
+  #'ctrl-k ctrl-,': 'outline:toggle'
+  'ctrl-k ctrl-m': 'window:toggle-bottom-dock'
+  'ctrl-k ctrl-,': 'window:toggle-right-dock'
 'atom-workspace atom-text-editor:not([mini])':
   'ctrl-up': 'unset!'
   'ctrl-down': 'unset!'
