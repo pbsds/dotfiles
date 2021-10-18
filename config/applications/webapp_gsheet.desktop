@@ -5,5 +5,5 @@ Exec=vivaldi-stable --app='https://docs.google.com/spreadsheets/d/1KzoHIQxT9H7Q3
 Icon=x-office-spreadsheet
 Terminal=false
 Type=Application
-Keywords=web;kiosk;app;google;sheets;
+Keywords=web;kiosk;app;google;sheets;drafts;
 #StartupWMClass=todo

@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Quiver
+TryExec=vivaldi-stable
+Exec=vivaldi-stable --app='https://q.uiver.app'
+Icon=emblem-link
+Terminal=false
+Type=Application
+Keywords=web;kiosk;app;draw;quiver;tikz;
+#StartupWMClass=todo
