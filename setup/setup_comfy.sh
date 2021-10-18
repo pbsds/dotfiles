@@ -31,6 +31,8 @@ false && (
 
 eval "$DIR/scripts/lxterminal"
 
+eval "$DIR/scripts/f3d"
+
 eval "$DIR/scripts/pandoc"
 eval "$DIR/scripts/python"
 eval "$DIR/scripts/rust"

@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+cat <<EOF | xargs pamac build --no-confirm
+	f3d-bin
+EOF
+
+# TODO: register mimetypes properly
