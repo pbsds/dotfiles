@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+cat <<EOF | xargs sudo pacman -S --noconfirm
+    aspell
+    aspell-en
+    aspell-nb
+    hunspell
+    hunspell-en_GB
+    hunspell-en_US
+EOF
+
+cat <<EOF | xargs pamac build  --no-confirm
+    hunspell-nb
+EOF
