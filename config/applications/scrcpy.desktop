@@ -1,6 +1,7 @@
 [Desktop Entry]
 Name=Android Screen
-Exec=bash -c '/usr/bin/scrcpy --window-x 0 --window-y 0 ; test $? = 1 && test $(/usr/bin/adb devices -l | wc -l) -le 2 && /usr/bin/zenity --error --text "no android device was found"'
+#Exec=bash -c '/usr/bin/scrcpy --stay-awake --window-x 0 --window-y 0 ; test $? = 1 && test $(/usr/bin/adb devices -l | wc -l) -le 2 && /usr/bin/zenity --error --text "no android device was found"'
+Exec=bash -c 'notify-send "scrcpy" "$(/usr/bin/scrcpy --stay-awake --window-x 0 --window-y 0 2>&1)" --icon=phone -t 1000'
 TryExec=/usr/bin/scrcpy
 Icon=phone
 Terminal=false
