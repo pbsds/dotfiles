@@ -1,7 +1,8 @@
 [Desktop Entry]
 Name=Excalidraw
-TryExec=vivaldi-stable
-Exec=vivaldi-stable --app='https://excalidraw.com'
+TryExec=firefox
+#Exec=chromium --app=
+Exec=firefox 'https://excalidraw.com'
 Icon=dnfdragora
 Terminal=false
 Type=Application

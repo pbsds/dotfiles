@@ -1,7 +1,8 @@
 [Desktop Entry]
 Name=Instabart
-TryExec=vivaldi-stable
-Exec=vivaldi-stable --app='https://instabart.no'
+TryExec=firefox
+#Exec=chromium --app=
+Exec=firefox 'https://instabart.no'
 Icon=app-launcher
 Terminal=false
 Type=Application

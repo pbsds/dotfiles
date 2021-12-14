@@ -1,7 +1,8 @@
 [Desktop Entry]
 Name=Pent.no (Trondheim)
-TryExec=vivaldi-stable
-Exec=vivaldi-stable --app='https://pent.no/63.43048,10.39506'
+TryExec=firefox
+#Exec=chromium --app=
+Exec=firefox 'https://pent.no/63.43048,10.39506'
 Icon=weather
 Terminal=false
 Type=Application

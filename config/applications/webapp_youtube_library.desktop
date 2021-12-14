@@ -1,7 +1,8 @@
 [Desktop Entry]
 Name=Youtube Library
-TryExec=vivaldi-stable
-Exec=vivaldi-stable --app='https://www.youtube.com/feed/library'
+TryExec=firefox
+#Exec=chromium --app=
+Exec=firefox 'https://www.youtube.com/feed/library'
 Icon=youtube
 Terminal=false
 Type=Application

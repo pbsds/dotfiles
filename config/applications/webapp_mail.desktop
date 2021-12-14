@@ -1,7 +1,8 @@
 [Desktop Entry]
 Name=Outlook
-TryExec=vivaldi-stable
-Exec=vivaldi-stable --app='https://outlook.office365.com/owa/?realm=ntnu.no#path=/mail'
+TryExec=firefox
+#Exec=chromium --app=
+Exec=firefox 'https://outlook.office365.com/owa/?realm=ntnu.no#path=/mail'
 Icon=mail
 Terminal=false
 Type=Application

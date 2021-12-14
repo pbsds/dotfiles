@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=Piazza (TDT4195)
-TryExec=vivaldi-stable
-Exec=vivaldi-stable 'https://piazza.com/class/ksptwhz4f4y35e'
+TryExec=firefox
+Exec=firefox 'https://piazza.com/class/ksptwhz4f4y35e'
 Icon=institution
 Terminal=false
 Type=Application

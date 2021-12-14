@@ -1,7 +1,8 @@
 [Desktop Entry]
 Name=Graphviz Online
-TryExec=vivaldi-stable
-Exec=vivaldi-stable --app='https://dreampuf.github.io/GraphvizOnline/'
+TryExec=firefox
+#Exec=chromium --app=
+Exec=firefox 'https://dreampuf.github.io/GraphvizOnline/'
 Icon=application
 Terminal=false
 Type=Application

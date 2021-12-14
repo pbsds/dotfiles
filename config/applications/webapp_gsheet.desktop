@@ -1,7 +1,8 @@
 [Desktop Entry]
 Name=Sheet (Google)
-TryExec=vivaldi-stable
-Exec=vivaldi-stable --app='https://docs.google.com/spreadsheets/d/1KzoHIQxT9H7Q3u5utd7qx8D5SEnEUWPJdGI_Qg9W7uA/edit'
+TryExec=firefox
+#Exec=chromium --app=
+Exec=firefox 'https://docs.google.com/spreadsheets/d/1KzoHIQxT9H7Q3u5utd7qx8D5SEnEUWPJdGI_Qg9W7uA/edit'
 Icon=x-office-spreadsheet
 Terminal=false
 Type=Application

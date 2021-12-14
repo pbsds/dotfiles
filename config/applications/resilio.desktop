@@ -1,7 +1,8 @@
 [Desktop Entry]
 Name=Resilio Sync
 Type=Application
-Exec=bash -c 'systemctl start --user rslsync && /usr/bin/xdg-open http://localhost:8888/gui/'
+#Exec=bash -c 'systemctl start --user rslsync && /usr/bin/xdg-open http://localhost:8888/gui/'
+Exec=bash -c 'systemctl start --user rslsync && firefox "http://localhost:8888/gui/"'
 TryExec=/usr/bin/rslsync
 StartupNotify=false
 Terminal=false
