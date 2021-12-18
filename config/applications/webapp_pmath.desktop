@@ -2,7 +2,7 @@
 Name=Mathtype (PVV)
 TryExec=firefox
 #Exec=chromium --app=
-Exec=firefox 'https://www.pvv.ntnu.no/~pederbs/math'
+Exec=firefox --new-window 'https://www.pvv.ntnu.no/~pederbs/math'
 Icon=typora
 Terminal=false
 Type=Application

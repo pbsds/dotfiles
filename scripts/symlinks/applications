@@ -9,7 +9,7 @@ mkdir -p "$HOME/.local/share/applications"
 
 echo Creating symlinks...
 
-find "$DIR/config/applications" -type f |
+find "$DIR/config/applications" -type f | grep '\.desktop$' |
 while read file; do
     ln -vsf "$file" "$HOME/.local/share/applications/$(basename "$file")"
 done
