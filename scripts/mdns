@@ -1,0 +1,12 @@
+#!/bin/sh
+
+sudo bash -c ":" || exit 1 # ensure sudo
+
+sudo mkdir -p /etc/systemd/resolved.conf.d
+
+# https://man.archlinux.org/man/resolved.conf.5
+
+echo -e "[Resolve]\nMulticastDNS=yes" \
+    | sudo tee /etc/systemd/resolved.conf.d/1337_pjuddu.conf
+
+sudo systemctl enable --now systemd-resolved
