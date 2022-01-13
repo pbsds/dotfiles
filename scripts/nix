@@ -4,17 +4,18 @@ sudo bash -c ":" || {
     echo "sudo needed!";
     exit 1
 }
-test $(id -u) = "0" && {
+test $(id -u) -eq "0" && {
     echo "cannot be run as root!"
     exit 2
 }
 
 sudo pacman -S --noconfirm nix
 sudo sed -i /etc/nix/nix.conf -e 's/^# sandbox = false$/sandbox = false/'
-sudo usermod -aG nix-users $(whoami)
+sudo usermod -aG nix-users $(id -un)
 sudo systemctl enable --now nix-daemon
 
 sg nix-users 'nix-channel --add https://nixos.org/channels/nixpkgs-unstable'
 sg nix-users 'nix-channel --update nixpkgs'
 
-which direnv > /dev/null || pamac build --no-confirm direnv
+which direnv >/dev/null || \
+    pamac build --no-confirm direnv
