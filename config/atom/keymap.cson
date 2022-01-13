@@ -31,7 +31,6 @@
 # Atom Flight Manual:
 # http://flight-manual.atom.io/using-atom/sections/basic-customization/#_cson
 
-
 'atom-text-editor':
   'ctrl-w': 'editor:select-word'
   'alt-d': 'find-and-replace:select-next'
@@ -43,6 +42,9 @@
   'alt-.': 'pane:show-next-item'
   'alt-,': 'pane:show-previous-item'
   'ctrl-m': 'markdown-preview-plus:sync-preview'
+  'ctrl-enter': 'atom-ide-go-to-definition:go-to-definition'
+  'ctrl-alt':  'unset!'# 'datatip:toggle'
+  'alt-shift': 'datatip:toggle'
 'body':
   'alt-right': 'pane:show-next-item'
   'alt-left': 'pane:show-previous-item'

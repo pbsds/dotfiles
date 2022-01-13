@@ -54,14 +54,18 @@ apmget language-verilog
 apmget language-vhdl
 apmget language-zonefile
 apmget language-docker
+# apmget autocomplete-unity
+# apmget autocomplete-cmake
 
 # pandoc
 apm disable markdown-preview
 apmget markdown-preview-plus
 apmget graphviz-preview-plus
 apmget language-markdown
+apmget zotero-citations
 
 # quality of life
+apmget fonts
 #apmget jumpy
 apmget lines # join lines
 apmget markdown-table-editor
