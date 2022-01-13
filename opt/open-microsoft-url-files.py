@@ -24,7 +24,7 @@ try:
             c.write(f, space_around_delimiters=False)
         exit(0)
 
-    if urllib.parse.urlparse(url).scheme not in ["http","https","ftp","ssh"]:
+    if urllib.parse.urlparse(url).scheme not in ["http","https","ftp","ssh","zotero"]:
         raise Exception("Invalid scheme in URI")
 
     os.execv(shutil.which("xdg-open"), ["xdg-open", url])
