@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+sudo bash -c ":" || { echo "SUDO is required"; exit 1; }
+test "$(id -u)" -eq 0 || { echo "Cannot be root"; exit 2; }
+
+cat <<EOF | xargs pamac install --no-confirm
+	ddcutil
+EOF
+
+sudo usermod -aG i2c "$(id -un)" # requires restart to take effect
+sudo modprobe i2c_dev
