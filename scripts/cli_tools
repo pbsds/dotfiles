@@ -2,7 +2,10 @@
 
 # community
 
+# https://zaiste.net/posts/shell-commands-rust/
+
 cat <<EOF | xargs pamac install --no-confirm
+	time
 	unrar
 	git
 	nmap
@@ -16,6 +19,12 @@ cat <<EOF | xargs pamac install --no-confirm
 	entr
 	cowsay
 	lolcat
+	bat
+	fd
+	sd
+	dust
+	ripgrep
+	git-delta
 EOF
 
 # AUR
