@@ -1,0 +1,4 @@
+*.ipynb diff=to_markdown
+*.docx diff=to_markdown
+*.odt diff=to_markdown
+*.pdf diff=pdftotext

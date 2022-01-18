@@ -1,5 +1,7 @@
 #!/usr/bin/bash
 
+DIR=$(git rev-parse --show-toplevel)
+
 
 # global
 
@@ -20,6 +22,24 @@ if [ "$DO" = "y" ]; then
     (set -x
         git config --global url.git@github.com:.insteadof https://github.com/
     )
+fi
+
+# pandoc to diff certain
+if command -v pandoc >/dev/null; then
+# https://tech.marksblogg.com/git-track-changes-in-media-office-documents.html
+read -p "Setup git to use pandoc?  (y/N)?" DO
+if [ "$DO" = "y" ]; then
+    (set -x
+        git config --global diff.to_markdown.textconv "pandoc --to markdown"
+        git config --global diff.pdftotext.textconv   "sh -c 'pdftotext -layout \"$0\" -'"
+        git config --global core.attributesfile       "${DIR}"/config/git_attributes_pandoc
+    )
+else
+    (set -x
+        git config --global --unset diff.to_markdown.textconv
+        git config --global --unset core.attributesfile
+    )
+fi
 fi
 
 # git-delta diff
