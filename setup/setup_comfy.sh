@@ -47,12 +47,14 @@ cat <<EOF | xargs sudo pacman -S --noconfirm
     eog
     sshuttle
     discord
+    transmission-gtk
 EOF
 
 curl -sS https://download.spotify.com/debian/pubkey_0D811D58.gpg | gpg --import -
 cat <<EOF | xargs pamac build --no-confirm
     spotify
     slack-desktop
+    transmission-remote-gui-gtk2
 EOF
 
 #todos:
