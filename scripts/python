@@ -8,4 +8,5 @@ EOF
 
 (cd symlinks
     ./pudb
+    ./ptpython
 )
