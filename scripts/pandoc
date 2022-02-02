@@ -1,14 +1,18 @@
 #!/usr/bin/env bash
 
-cat <<EOF | xargs sudo pacman --noconfirm -S
+cat <<EOF | xargs echo sudo pacman --noconfirm -S
 	pandoc
 	pandoc-crossref
 	texlive-core
+	texlive-fontsextra
+	luarocks
 EOF
+#	texlive-latexextra
 
-cat <<EOF | xargs pip install --user
+cat <<EOF | xargs echo pip install --user
 	pandoc-imagine
 	pandoc-codeblock-include
+	mermaid-cli
 EOF
 
 # download the official lua filters:

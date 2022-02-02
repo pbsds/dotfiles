@@ -4,9 +4,19 @@ cat <<EOF | xargs sudo pacman --noconfirm -S
 	python
 	python-pip
 	python-wheel
+	python-poetry
+	python-poetry-core
 EOF
 
 (cd symlinks
     ./pudb
     ./ptpython
 )
+
+
+# todo:
+# python-lsp-server[all]
+# pyls-memestra
+# pylsp-rope
+# pyls-isort
+

@@ -32,6 +32,7 @@ apm disable language-python
 apmget MagicPython
 apmget atom-jinja2
 apmget autocomplete-cmake
+apmget nix
 apmget language-arduino
 apmget language-armasm
 apmget language-autoit
