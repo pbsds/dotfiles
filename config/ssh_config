@@ -9,7 +9,7 @@ Host *.pvv.ntnu.no
     ForwardX11 yes
     ForwardX11Trusted yes
     RemoteForward 52698 localhost:52698
-host *.pvv.org
+Host *.pvv.org
     ForwardX11 yes
     ForwardX11Trusted yes
     RemoteForward 52698 localhost:52698
@@ -43,6 +43,8 @@ Host timescaledb.labs.uninett.no
 Host stud.ntnu.no
     Hostname login.stud.ntnu.no
     User pederbs
+Host login.ansatt.ntnu.no
+    User pederbs
 Host login.stud.ntnu.no
     ControlMaster auto
     ControlPersist 600
@@ -51,10 +53,12 @@ Host *.idi.ntnu.no stud.ntnu.no *.stud.ntnu.no
     ForwardX11Trusted yes
     Compression yes
     RemoteForward 52698 localhost:52698
-#Match exec "test 129.241 != $(curl -4 myip.tf | cut -d. -f1-2)" host *.idi.ntnu.no
+# TODO: change the match to use DHCP search domain
+#Match host *.idi.ntnu.no exec "[[ `hostname --domain` != *ntnu.no ]]"
+Match host *.idi.ntnu.no exec "test 129.241 != `curl -s4 myip.tf | cut -d. -f1-2`"
     #ProxyJump login.stud.ntnu.no
-    #ProxyJump hildring.pvv.ntnu.no
-    #ProxyJump dash8.pvv.ntnu.no
+    ProxyJump hildring.pvv.ntnu.no
+    #ProxyJump isvegg.pvv.ntnu.no
 Host lab40*.idi.ntnu.no
     ControlMaster auto
     ControlPersist 600
@@ -63,10 +67,14 @@ Host lab405.idi.ntnu.no # 1080
 #Host lab406.idi.ntnu.no # 1080
 Host lab408.idi.ntnu.no # TITAN X (Pascal)
 #Host lab411.idi.ntnu.no
-Host clab25.idi.ntnu.no
+Host clab15.idi.ntnu.no
 Host idun-login1.hpc.ntnu.no
+Host snotra-login1.idi.ntnu.no
+Host heid.idi.ntnu.no
+    ProxyJump snotra.pvv.ntnu.no
 Host *.hpc.ntnu.no *.stud.ntnu.no *.idi.ntnu.no
     User pederbs
+
 
 
 # PVV
@@ -86,6 +94,7 @@ Host sleipner.pvv.ntnu.no
 Host hasub.pvv.ntnu.no
 Host monty.pvv.ntnu.no
 Host isvegg.pvv.ntnu.no
+    ProxyJump hildring.pvv.ntnu.no
 Host sleipner.pvv.ntnu.no
     ProxyJump hildring.pvv.ntnu.no
 Host lommel.pvv.ntnu.no

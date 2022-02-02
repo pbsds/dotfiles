@@ -15,9 +15,10 @@ fi
 
 alias ip="ip -br -color"
 alias watch="watch -c "
+alias hman="man -H "
 
 # direnv
-if which direnv > /dev/null; then
+if command -v direnv > /dev/null; then
 	eval "$(direnv hook bash)"
 fi
 
@@ -34,7 +35,7 @@ alias ed=$EDITOR # ed is the standard editor
 alias edl="$EDITOR -colorscheme bubblegum " # micro dependent, lol
 alias eds="$EDITOR -colorscheme simple " # micro dependent, lol
 
-# .profile shorthand
+# .profile management shorthand
 alias ep='$EDITOR ~/.profile ~/.extend.profile && source ~/.profile'
 alias sr='echo sourcing profiles.... ; source ~/.profile'
 
@@ -42,8 +43,9 @@ alias sr='echo sourcing profiles.... ; source ~/.profile'
 alias ll="ls -l"
 alias dush="du -shc * | sort -h"
 alias diff="diff -u --color"
+bind 'set completion-ignore-case on'
 
-# allows you to use aliases with sudo:
+# Use aliases with sudo and xargs
 alias sudo='sudo '
 alias xargs='xargs '
 
@@ -63,6 +65,10 @@ if command -v pacman >/dev/null; then
 	alias paclf='pacman -Ql'  # list files
 	alias pac_file_owner='pacman -Qo' # check which package owns a file
 fi
+
+# miniconda3 AUR
+test -f /opt/miniconda3/etc/profile.d/conda.sh \
+    && source /opt/miniconda3/etc/profile.d/conda.sh
 
 # typo savers
 alias dc='cd'
@@ -259,8 +265,8 @@ if python -m pudb -h > /dev/null 2> /dev/null; then
 fi
 
 
-# bat config
-export BAT_THEME="gruvbox"
+# bat --list-themes
+#export BAT_THEME="gruvbox-dark"
 
 
 # clang-format
@@ -286,3 +292,12 @@ function salias { # alias command, stripped
 # 1-May-2020: Fix for Keyring error with pip. Hopefully new pip will fix it
 # soon https://github.com/pypa/pip/issues/7883
 export PYTHON_KEYRING_BACKEND=keyring.backends.null.Keyring
+
+
+# pyenv:
+if test -d "$HOME/.pyenv"; then
+    export PYENV_ROOT="$HOME/.pyenv"
+    export PATH="$PYENV_ROOT/bin:$PATH"
+    eval "$(pyenv init --path)"
+fi
+

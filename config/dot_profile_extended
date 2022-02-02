@@ -95,9 +95,11 @@ function dvpn {
 	( set -x; sshuttle 0.0.0.0/0 --disable-ipv6 -r "$1" -x $ip -x 127.0.0.1 -x 172.0.0.0/8 )
 }
 
+# TODO: move these to normal .profile? The x variants are nice over ssh
 if [ "$XDG_SESSION_TYPE" == "wayland" ] && ! ( [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ] ) ; then
     alias clip="wl-copy"
     alias clipf="wl-copy"
+    alias clipo="wl-paste -t text/plain"
 else
     alias clip="xclip -sel clip -t text/plain"
     function clipf {
@@ -112,6 +114,7 @@ else
     	cat /tmp/clip.png | xclip -sel clip -t image/png
     	rm /tmp/clip.bmp /tmp/clip.png
     }
+    clipo="xclip -sel clip -t text/plain -o"
 fi
 function clipmd {
 	(
