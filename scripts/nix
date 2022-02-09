@@ -9,7 +9,7 @@ test $(id -u) -eq "0" && {
     exit 2
 }
 
-sudo pacman -S --noconfirm nix
+sudo pacman -S --noconfirm nix direnv
 sudo sed -i /etc/nix/nix.conf -e 's/^# sandbox = false$/sandbox = false/'
 sudo usermod -aG nix-users $(id -un)
 sudo systemctl enable --now nix-daemon
@@ -18,5 +18,3 @@ sudo systemctl enable --now nix-daemon
 sg nix-users 'nix-channel --add https://nixos.org/channels/nixos-21.11 nixpkgs'
 sg nix-users 'nix-channel --update nixpkgs'
 
-which direnv >/dev/null || \
-    pamac build --no-confirm direnv
