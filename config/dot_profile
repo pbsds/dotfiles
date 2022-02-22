@@ -117,11 +117,10 @@ function fixcrlf {
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 function salert {
 	retval=$?
-	if [ $? = 0 ]; then
-		mpv "https://pvv.ntnu.no/~pederbs/filer/TFH_MadameC_Sing.wav" --no-video --really-quiet
-	else
-		mpv "https://pvv.ntnu.no/~pederbs/filer/NTR-BKIE-USA-0137.wav" --no-video --really-quiet
-	fi
+	test $? -eq 0 \
+		&& mpv "https://pvv.ntnu.no/~pederbs/filer/TFH_MadameC_Sing.wav" --no-video --really-quiet \
+		|| mpv "https://pvv.ntnu.no/~pederbs/filer/NTR-BKIE-USA-0137.wav" --no-video --really-quiet \
+		|| true
 	return $retval
 }
 

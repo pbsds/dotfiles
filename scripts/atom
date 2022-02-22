@@ -91,3 +91,6 @@ apmget atomic-rtags # C / C++
 apmget ide-python
 
 # todo: ensure symlinked config files
+
+# nix
+apmget 000-project-shell-env
