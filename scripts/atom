@@ -66,6 +66,7 @@ apmget language-markdown
 apmget zotero-citations
 
 # quality of life
+apmget on-save
 apmget fonts
 #apmget jumpy
 apmget lines # join lines

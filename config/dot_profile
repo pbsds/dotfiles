@@ -13,6 +13,10 @@ if [ -d ~/.cargo/bin ]; then
 	export PATH=$PATH:~/.cargo/bin
 fi
 
+# browser
+export BROWSER=firefox
+
+# shorthands
 alias ip="ip -br -color"
 alias watch="watch -c "
 alias hman="man -H "
@@ -53,6 +57,7 @@ alias xargs='xargs '
 shopt -s globstar
 
 # pacman sanity
+# TODO: remove?
 if command -v pacman >/dev/null; then
 	alias pac='pacman -S'     # install
 	alias pacu='pacman -Syu'  # update, add 'a' to the list of letters to update AUR packages
@@ -134,8 +139,8 @@ function ssh_controlmaster_kill {
 }
 
 #Some cute shorthands:
-#alias http_here="php -S localhost:8081"
-alias http_here="python3 -m http.server"
+alias http_here="php -S localhost:8081"
+#alias http_here="python3 -m http.server"
 alias myip="curl myip.tf"
 alias myip4="curl -4 myip.tf"
 alias myip6="curl -6 myip.tf"
@@ -304,4 +309,8 @@ if test -d "$HOME/.pyenv"; then
     export PATH="$PYENV_ROOT/bin:$PATH"
     eval "$(pyenv init --path)"
 fi
+
+# remote-exec
+complete -F _command remote
+complete -F _command remote-quick
 

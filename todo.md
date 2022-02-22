@@ -1,5 +1,6 @@
 https://wiki.archlinux.org/index.php/KDE_Wallet#Disable_KWallet
 
+* ~/.tmux.conf
 * pandoc awesomeness
 * python
 * automount

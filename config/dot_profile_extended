@@ -1,4 +1,4 @@
-
+#
 # ~/.extend.profile
 
 # fixes
@@ -50,7 +50,9 @@ alias teamviewer_start_daemon="(set -x; sudo systemctl start teamviewerd)"
 
 
 function force_mic_100 {
-	volume="50000"
+    # because WebRTC is a bastard
+	#volume="50000"
+	volume="65535"
 	test -z "$1" || volume=$1
 
 	# fucking webrtc mutes my microphone

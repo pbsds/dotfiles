@@ -10,10 +10,13 @@
     'body': '<div class="$1" id="$2">\n$3\n</div>$0'
   'Equation':
     'prefix': 'eq'
-    'body': '$$ $1\n$$ {#eq:${2:TODO}}$0'
+    'body': '\\$\\$ $1\n\\$\\$${3: \\{#eq:${2:TODOs}\\}}$0'
   'AlignedEquation':
     'prefix': 'eqs'
-    'body': '$$ \\\\begin{aligned}\n\t${1:a &= b} \\\\\\\\\n\t${2:c &= d} \\\\\\\\\n\\\\end{aligned} $$ {#eq:${3:TODO}}$0'
+    'body': '\\$\\$ \\\\begin\\{aligned\\}\n\t${1:a &= b} \\\\\\\\\n\t${2:c &= d} \\\\\\\\\n\\\\end\\{aligned\\} \\$\\$${4: \\{#eq:${3:TODO}\\}}$0'
+  'EquationSolve':
+    'prefix': 'eqso'
+    'body': '\\$\\$ \\\\begin\\{aligned\\}\n\t${1:a}\n\t\t&= ${2:b} \\\\\\\\\n\\\\end\\{aligned\\} \\$\\$${4: \\{#eq:${3:TODO}\\}}$0'
   'smallcaps':
     'prefix': 'sm'
     'body': '[$1]{.smallcaps}$0'

@@ -100,15 +100,8 @@
     mathConfig: {}
     pandocConfig:
       pandocArguments: [
+        "--defaults=defaults.yaml"
         "--webtex=https://latex.codecogs.com/svg.latex?"
-      ]
-      pandocBibliography: true
-      pandocFilters: [
-        "pandoc-include"
-        "pandoc-codeblock-include"
-        "pandoc-imagine"
-        "pantable"
-        "pandoc-crossref"
       ]
       pandocMarkdownFlavor: "markdown-raw_tex+tex_math_single_backslash+emoji"
       pandocRemoveReferences: false

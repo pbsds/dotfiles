@@ -55,7 +55,7 @@ Host *.idi.ntnu.no stud.ntnu.no *.stud.ntnu.no
     RemoteForward 52698 localhost:52698
 # TODO: change the match to use DHCP search domain
 #Match host *.idi.ntnu.no exec "[[ `hostname --domain` != *ntnu.no ]]"
-Match host *.idi.ntnu.no exec "test 129.241 != `curl -s4 myip.tf | cut -d. -f1-2`"
+Match host *.idi.ntnu.no,*.hpc.ntnu.no exec "test 129.241 != `curl -s4 myip.tf | cut -d. -f1-2`"
     #ProxyJump login.stud.ntnu.no
     ProxyJump hildring.pvv.ntnu.no
     #ProxyJump isvegg.pvv.ntnu.no
