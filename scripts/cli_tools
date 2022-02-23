@@ -6,6 +6,7 @@
 
 cat <<EOF | xargs pamac install --no-confirm
 	time
+	htop
 	unrar
 	git
 	nmap

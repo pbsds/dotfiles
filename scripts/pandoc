@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
 
+nix-env -iA pandoc
+
+# pandoc from nix is way easier to use
+# TODO: use my pandoc+filters derivation
+exit 0
+
 cat <<EOF | xargs echo sudo pacman --noconfirm -S
 	pandoc
 	pandoc-crossref

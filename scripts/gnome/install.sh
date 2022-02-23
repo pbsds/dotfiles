@@ -60,11 +60,11 @@ function installppa {
 	repository="$1"
 	packages="$@"
 
-	
+
 }
 
 read -p "Install gnome extensions?  (y/N)?" DO
-if [ "$DO" =~ "^[yY].*$" ]; then
+if [ "$DO" = "y" ]; then
 	(
 		install gnome-shell-extensions # yes, needed
 		cd "$DIR/script/gnome"

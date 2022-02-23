@@ -33,7 +33,7 @@ eval "$DIR/scripts/lxterminal"
 
 eval "$DIR/scripts/f3d"
 
-eval "$DIR/scripts/pandoc"
+#eval "$DIR/scripts/pandoc"
 eval "$DIR/scripts/python"
 eval "$DIR/scripts/rust"
 #eval "$DIR/scripts/haskell"
@@ -42,7 +42,7 @@ eval "$DIR/scripts/rust"
 # install x
 
 cat <<EOF | xargs sudo pacman -S --noconfirm
-    vivaldi
+    firefox
     mpv
     eog
     sshuttle
