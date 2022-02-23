@@ -13,6 +13,7 @@
       "markdown-preview"
       "linter-clang"
       "linter-python-pep8"
+      "language-gfm"
     ]
     ignoredNames: [
       ".git"
@@ -113,6 +114,8 @@
       saveToPDFOptions: {}
     style: "github"
     syncConfig: {}
+  "one-dark-ui":
+    fontSize: 11
   pigments:
     mergeColorDuplicates: true
   "spell-check":

@@ -8,6 +8,7 @@ test $(id -u) -eq "0" && {
     echo "cannot be run as root!"
     exit 2
 }
+DIR=$(git rev-parse --show-toplevel)
 
 sudo pacman -S --noconfirm nix direnv
 sudo sed -i /etc/nix/nix.conf -e 's/^# sandbox = false$/sandbox = false/'
@@ -18,3 +19,6 @@ sudo systemctl enable --now nix-daemon
 sg nix-users 'nix-channel --add https://nixos.org/channels/nixos-21.11 nixpkgs'
 sg nix-users 'nix-channel --update nixpkgs'
 
+(
+    "$DIR"/scripts/symlinks/nix
+)
