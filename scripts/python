@@ -6,6 +6,7 @@ cat <<EOF | xargs sudo pacman --noconfirm -S
 	python-wheel
 	python-poetry
 	python-poetry-core
+	python-numpy openblas
 EOF
 
 (cd symlinks
