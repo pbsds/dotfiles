@@ -20,6 +20,7 @@ export BROWSER=firefox
 alias ip="ip -br -color"
 alias watch="watch -c "
 alias hman="man -H "
+alias igrep="grep -i"
 
 # direnv
 if command -v direnv > /dev/null; then

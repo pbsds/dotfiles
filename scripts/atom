@@ -25,7 +25,8 @@ function apmget {
 
 # theming
 #apmget railscast-theme-ng # 404...
-apmget railscast-theme
+#apmget railscast-theme
+apmget railscast-theme-markup
 
 # syntax definitions
 apm disable language-python
@@ -83,10 +84,9 @@ apmget copy-highlighted
 
 # IDE
 apmget atom-ide-base
+apmget ide-clangd
 apmget ide-rust
 #apmget ide-scala
-apmget atomic-rtags # C / C++
-#apmget ide-c-cpp # C / C++ todo
 #apmget ide-csharp
 apmget ide-python
 

@@ -71,7 +71,7 @@ Host clab15.idi.ntnu.no
 Host idun-login1.hpc.ntnu.no
 Host snotra-login1.idi.ntnu.no
 Host heid.idi.ntnu.no
-    ProxyJump snotra.pvv.ntnu.no
+    #ProxyJump snotra.idi.ntnu.no
 Host *.hpc.ntnu.no *.stud.ntnu.no *.idi.ntnu.no
     User pederbs
 

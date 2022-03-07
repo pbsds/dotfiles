@@ -99,11 +99,11 @@ function dvpn {
 
 # TODO: move these to normal .profile? The x variants are nice over ssh
 if [ "$XDG_SESSION_TYPE" == "wayland" ] && ! ( [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ] ) ; then
-    alias clip="wl-copy"
+    alias clip="wl-copy --trim-newline"
     alias clipf="wl-copy"
     alias clipo="wl-paste -t text/plain"
 else
-    alias clip="xclip -sel clip -t text/plain"
+    alias clip="perl -pe 'chomp if eof' | xclip -sel clip -t text/plain -i"
     function clipf {
     	MIME="$(file --mime-type "$1" -b)"
     	echo $1 "($MIME)"

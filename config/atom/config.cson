@@ -1,6 +1,8 @@
 "*":
   "atom-ide-code-format":
     formatOnSave: false
+  "atom-ide-outline":
+    foldInitially: true
   "autocomplete-plus": {}
   "bracket-matcher":
     autocompleteBrackets: false
@@ -32,10 +34,10 @@
     telemetryConsent: "no"
     themes: [
       "one-dark-ui"
-      "railscast-theme"
+      "railscast-theme-markup"
     ]
   editor:
-    fontSize: 17
+    fontSize: 16
     invisibles: {}
     scrollPastEnd: true
     softTabs: false
@@ -152,7 +154,7 @@
     tabType: "soft"
 ".md.text":
   editor:
-    softWrapAtPreferredLineLength: true
+    softWrapAtPreferredLineLength: false
 ".nix.source":
   editor:
     tabLength: 2

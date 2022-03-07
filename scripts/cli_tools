@@ -26,6 +26,7 @@ cat <<EOF | xargs pamac install --no-confirm
 	dust
 	ripgrep
 	git-delta
+	bash-completion
 EOF
 
 # AUR

@@ -3,6 +3,7 @@
 cat <<EOF | xargs sudo pacman --noconfirm -S
 	python
 	python-pip
+	python-pipx
 	python-wheel
 	python-poetry
 	python-poetry-core
