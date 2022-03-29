@@ -12,6 +12,10 @@ DIR=$(git rev-parse --show-toplevel)
 
 sudo pacman -S --noconfirm nix direnv
 sudo sed -i /etc/nix/nix.conf -e 's/^# sandbox = false$/sandbox = false/'
+if ! grep -q '^experimental-features = nix-command flakes$' /etc/nix/nix.conf; then
+    echo "experimental-features = nix-command flakes" \
+        | sudo tee --append /etc/nix/nix.conf
+fi
 sudo usermod -aG nix-users $(id -un)
 sudo systemctl enable --now nix-daemon
 

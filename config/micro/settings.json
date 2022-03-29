@@ -8,6 +8,7 @@
     "linter": false,
     "matchbrace": false,
     "matchbraceleft": false,
+    "parsecursor": true,
     "pluginchannels": [
         "https://raw.githubusercontent.com/micro-editor/plugin-channel/master/channel.json"
     ],

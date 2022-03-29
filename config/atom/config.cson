@@ -132,6 +132,15 @@
       "text.restructuredtext"
       "text.md"
     ]
+    knownWords: [
+      "equivariant"
+      "isosurface"
+      "discretization"
+      "voxel"
+      "SIREN"
+      "SIRENs"
+      "Zernike"
+    ]
     locales: [
       "en_US"
     ]

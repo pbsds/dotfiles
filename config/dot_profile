@@ -21,6 +21,7 @@ alias ip="ip -br -color"
 alias watch="watch -c "
 alias hman="man -H "
 alias igrep="grep -i"
+alias flexget="ssh -t knut.pbsds.net sudo -u flexget flexget"
 
 # direnv
 if command -v direnv > /dev/null; then
@@ -37,6 +38,7 @@ if command -v micro >/dev/null; then
     fi
 fi
 alias ed=$EDITOR # ed is the standard editor
+alias de=$EDITOR # de is the editor standard
 alias edl="$EDITOR -colorscheme bubblegum " # micro dependent, lol
 alias eds="$EDITOR -colorscheme simple " # micro dependent, lol
 
@@ -134,8 +136,8 @@ function ssh_controlmaster_ls {
 }
 
 function ssh_controlmaster_kill {
-    ssh_controlmaster_list
-    ssh_controlmaster_list | grep 'pid=' | cut -d= -f2 | tr -d '() ' | xargs kill --verbose
+    ssh_controlmaster_ls
+    ssh_controlmaster_ls | grep 'pid=' | cut -d= -f2 | tr -d '() ' | xargs kill --verbose
 }
 
 #Some cute shorthands:
@@ -152,6 +154,8 @@ complete -W "$(cat ~/.ssh/config | grep '^Host ' | cut  -b 6- | grep -v "\*")" r
 complete -W "$(cat ~/.ssh/config | grep '^Host ' | cut  -b 6- | grep -v "\*")" vpn
 complete -W "$(cat ~/.ssh/config | grep '^Host ' | cut  -b 6- | grep -v "\*")" lvpn
 complete -W "$(cat ~/.ssh/config | grep '^Host ' | cut  -b 6- | grep -v "\*")" dvpn
+complete -W "$(cat ~/.ssh/config | grep '^Host ' | cut  -b 6- | grep -v "\*")" scp
+complete -W "$(cat ~/.ssh/config | grep '^Host ' | cut  -b 6- | grep -v "\*")" remote-init
 
 # Jumping around with symbolic links:
 # Based on http://jeroenjanssens.com/2013/08/16/quickly-navigate-your-filesystem-from-the-command-line.html
@@ -187,7 +191,7 @@ complete -F _completemarks jump unmark
 function hello {
 	name="$(curl -s 'https://pvv.ntnu.no/~pederbs/names.txt' | grep . | shuf -n 1 -)"
 	title="$(curl -s 'https://pvv.ntnu.no/~pederbs/demon_names.txt' | grep . | shuf -n 1 -)"
-	error="$(curl -s 'http://pages.cs.wisc.edu/~ballard/bofh/excuses' | grep . | shuf -n 1 -)"
+	error="$(curl -s 'https://pages.cs.wisc.edu/~ballard/bofh/excuses' | grep . | shuf -n 1 -)"
 	commit="$(curl -s 'http://whatthecommit.com/index.txt')"
 	cow="$(cowsay -l | tail -n +2 | sed -e "s/ /\n/g" | shuf -n 1)"
 	printerfact="$(curl -s 'https://printerfacts.cetacean.club/fact')"
@@ -273,6 +277,11 @@ if python -m pudb -h > /dev/null 2> /dev/null; then
 	export PYTHONBREAKPOINT="pudb.set_trace"
 fi
 
+function read_notebook {
+    (set -x
+        pandoc "$1" -t markdown -o - | python -m rich.markdown -
+    )
+}
 
 # bat --list-themes
 #export BAT_THEME="gruvbox-dark"

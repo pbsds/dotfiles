@@ -33,6 +33,7 @@
 
 'atom-text-editor':
   #'ctrl-w': 'editor:select-word'
+  'alt-shift-d': 'editor:split-selections-into-lines'
   'alt-d': 'find-and-replace:select-next'
   'ctrl-d': 'editor:duplicate-lines'
   'ctrl-shift-D': 'editor:delete-line'
@@ -55,8 +56,8 @@
   'ctrl-shift-tab ^ctrl': 'unset!'
   'ctrl-shift-tab': 'pane:show-previous-item'
   #'ctrl-w': 'unset!'
-  #'ctrl-q': "core:close"
-  'ctrl-q': "unset!"
+  #'ctrl-q': 'core:close'
+  'ctrl-q': 'unset!'
   'ctrl-k ctrl-n': 'status-bar:toggle'
 'atom-workspace':
   #'ctrl-k ctrl-m': 'diagnostics:toggle-table'

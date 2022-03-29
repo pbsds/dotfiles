@@ -29,4 +29,10 @@ RELEASE_URL="https://github.com/pandoc/lua-filters/releases/latest"
 curl -LSs "$RELEASE_URL/download/lua-filters.tar.gz" |
     tar --strip-components=1 --one-top-level=$PANDOC_DIR -zvxf -
 
+# TODO: https://github.com/pandocker/pandocker-lua-filters
+pip install --user git+https://github.com/pandocker/pandocker-lua-filters.git
+
+# 
+
+
 # TODO: hunspell for en_US en_GB and nb

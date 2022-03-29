@@ -32,6 +32,15 @@ function kill_reidun_refresh {
 	)
 }
 
+function fix_atom {
+    (set -xe
+        killall atom || true
+        rm -rf ~/.atom/storage
+        atom --clear-window-state
+    )
+}
+
+
 alias kill-gvfs='killall gvfsd'
 alias kill-gvfs2='killall gvfsd && nautilus -q'
 
@@ -150,3 +159,6 @@ function doc2pdf {
 	)
 }
 
+
+# neat:
+#libreoffice --headless --invisible --convert-to pdf *.ppt
