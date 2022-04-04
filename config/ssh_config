@@ -1,6 +1,7 @@
 ServerAliveInterval 10
 ServerAliveCountMax 3
 ControlPath ~/.ssh/sockets/%r@%h-%p
+Compression yes
 
 
 # X11 and rmate forwarding
@@ -70,6 +71,7 @@ Host lab408.idi.ntnu.no # TITAN X (Pascal)
 Host clab15.idi.ntnu.no
 Host idun-login1.hpc.ntnu.no
 Host snotra-login1.idi.ntnu.no
+Host oppdal.idi.ntnu.no
 Host heid.idi.ntnu.no
     #ProxyJump snotra.idi.ntnu.no
 Host *.hpc.ntnu.no *.stud.ntnu.no *.idi.ntnu.no

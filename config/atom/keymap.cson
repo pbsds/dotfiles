@@ -32,7 +32,7 @@
 # http://flight-manual.atom.io/using-atom/sections/basic-customization/#_cson
 
 'atom-text-editor':
-  'ctrl-w': 'editor:select-word'
+  #'ctrl-w': 'editor:select-word'
   'alt-d': 'find-and-replace:select-next'
   'ctrl-d': 'editor:duplicate-lines'
   'ctrl-shift-D': 'editor:delete-line'
@@ -54,8 +54,9 @@
   'ctrl-tab': 'pane:show-next-item'
   'ctrl-shift-tab ^ctrl': 'unset!'
   'ctrl-shift-tab': 'pane:show-previous-item'
-  'ctrl-w': 'unset!'
-  'ctrl-q': "core:close"
+  #'ctrl-w': 'unset!'
+  #'ctrl-q': "core:close"
+  'ctrl-q': "unset!"
   'ctrl-k ctrl-n': 'status-bar:toggle'
 'atom-workspace':
   #'ctrl-k ctrl-m': 'diagnostics:toggle-table'

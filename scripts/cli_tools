@@ -20,6 +20,7 @@ cat <<EOF | xargs pamac install --no-confirm
 	entr
 	cowsay
 	lolcat
+	parallel
 	bat
 	fd
 	sd
@@ -27,6 +28,7 @@ cat <<EOF | xargs pamac install --no-confirm
 	ripgrep
 	git-delta
 	bash-completion
+	p7zip
 EOF
 
 # AUR

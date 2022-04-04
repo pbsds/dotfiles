@@ -136,3 +136,10 @@ if command -v stack >/dev/null; then
 	alias ghci="stack ghci"
 fi
 
+
+function doc2pdf {
+	(set -x
+		libreoffice --headless -convert-to pdf "$1"
+	)
+}
+

@@ -310,7 +310,8 @@ if test -d "$HOME/.pyenv"; then
     eval "$(pyenv init --path)"
 fi
 
-# remote-exec
+# remote-exec and tldr
 complete -F _command remote
 complete -F _command remote-quick
+complete -F _command tldr
 

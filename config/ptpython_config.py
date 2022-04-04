@@ -3,7 +3,8 @@
 __all__ = ["configure"]
 
 def configure(repl):
-    repl.enable_mouse_support = True
+    #repl.enable_mouse_support = True
+    repl.enable_mouse_support = False
     repl.paste_mode = False
     repl.confirm_exit = False    
     repl.use_code_colorscheme("monokai")

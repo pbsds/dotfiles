@@ -17,6 +17,12 @@
   'EquationSolve':
     'prefix': 'eqso'
     'body': '\\$\\$ \\\\begin\\{aligned\\}\n\t${1:a}\n\t\t&= ${2:b} \\\\\\\\\n\\\\end\\{aligned\\} \\$\\$${4: \\{#eq:${3:TODO}\\}}$0'
+  'LeftRightParams':
+    'prefix': 'leftright'
+    'body': '\\\\left($1\\\\right)$0'
+#  'Superscript':
+#    'prefix': '^'
+#    'body': '^\\{$1\\}$0'
   'smallcaps':
     'prefix': 'sm'
     'body': '[$1]{.smallcaps}$0'

@@ -89,6 +89,7 @@
   jumpy: {}
   kite:
     showWelcomeNotificationOnStartup: false
+  "linter-ui-default": {}
   "markdown-preview-enhanced":
     breakOnSingleNewLine: false
     enableLinkify: false

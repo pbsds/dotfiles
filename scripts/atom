@@ -82,15 +82,39 @@ apmget copy-highlighted
 
 # apmget live-doc-viewer # todo, test first
 
+# direnv
+apmget 000-project-shell-env
+
 # IDE
+# https://github.com/atom-community/atom-languageclient/wiki/List-of-Atom-packages-using-Atom-LanguageClient
 apmget atom-ide-base
 apmget ide-clangd
 apmget ide-rust
+apmget ide-gopls
 #apmget ide-scala
 #apmget ide-csharp
+apmget ide-typescript
+apmget ide-php
 apmget ide-python
+apmget ide-bash
+apmget ide-docker
+
+xargs sudo pacman -S --noconfirm  <<EOF
+	rust-analyzer
+	gopls
+	php
+	python-lsp-server
+	python-lsp-black
+	python-rope
+	python-pyflakes
+	python-mccabe
+	python-pycodestyle
+	python-pydocstyle
+	bash-language-server
+EOF
+#python-lsp-isort
+#python-lsp-mypy
+#python-pyls-flake8
+#python-pylsp-rope
 
 # todo: ensure symlinked config files
-
-# nix
-apmget 000-project-shell-env

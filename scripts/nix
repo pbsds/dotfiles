@@ -19,6 +19,9 @@ sudo systemctl enable --now nix-daemon
 sg nix-users 'nix-channel --add https://nixos.org/channels/nixos-21.11 nixpkgs'
 sg nix-users 'nix-channel --update nixpkgs'
 
+test -s "$HOME"/.local/share/applications/nix-env \
+    || ln -s "$HOME"/.nix-profile/share/applications "$HOME"/.local/share/applications/nix-env
+
 (
     "$DIR"/scripts/symlinks/nix
 )
