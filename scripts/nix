@@ -25,3 +25,5 @@ test -s "$HOME"/.local/share/applications/nix-env \
 (
     "$DIR"/scripts/symlinks/nix
 )
+
+#sg nix-users 'nix-env -i -f https://github.com/nix-community/comma/tarball/master'

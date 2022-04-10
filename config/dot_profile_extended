@@ -103,7 +103,8 @@ if [ "$XDG_SESSION_TYPE" == "wayland" ] && ! ( [ -n "$SSH_CLIENT" ] || [ -n "$SS
     alias clipf="wl-copy"
     alias clipo="wl-paste -t text/plain"
 else
-    alias clip="perl -pe 'chomp if eof' | xclip -sel clip -t text/plain -i"
+    #alias clip="perl -pe 'chomp if eof' | xclip -sel clip -t text/plain -i"
+    alias clip="xclip -sel clip -t text/plain -rmlastnl -i"
     function clipf {
     	MIME="$(file --mime-type "$1" -b)"
     	echo $1 "($MIME)"
@@ -138,8 +139,14 @@ fi
 
 
 function doc2pdf {
-	(set -x
-		libreoffice --headless -convert-to pdf "$1"
+	(
+		if ! command -v libreoffice >/dev/null; then
+			function libreoffice {
+				nix-shell -p libreoffice --run "libreoffice$(printf " %q" "$@")"
+			}
+		fi
+		set -x
+		libreoffice --headless --convert-to pdf "$1"
 	)
 }
 

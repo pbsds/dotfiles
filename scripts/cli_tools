@@ -29,6 +29,7 @@ cat <<EOF | xargs pamac install --no-confirm
 	git-delta
 	bash-completion
 	p7zip
+	pwgen
 EOF
 
 # AUR
