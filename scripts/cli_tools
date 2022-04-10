@@ -30,7 +30,10 @@ cat <<EOF | xargs pamac install --no-confirm
 	bash-completion
 	p7zip
 	pwgen
+	moreutils
 EOF
+
+# TODO: aha
 
 # AUR
 

@@ -6,8 +6,8 @@ eval "$DIR/scripts/atom"
 eval "$DIR/scripts/gnome/install.sh"
 eval "$DIR/scripts/micro"
 eval "$DIR/scripts/fzf"
-eval "$DIR/scripts/git_user_config"
 eval "$DIR/scripts/cli_tools"
+eval "$DIR/scripts/git_user_config"
 eval "$DIR/scripts/cups"
 eval "$DIR/scripts/fonts"
 
@@ -20,3 +20,5 @@ eval "$DIR/scripts/symlinks/environment.d"
 #eval "$DIR/scripts/symlinks/opt" # done by gnome setup
 eval "$DIR/scripts/symlinks/profile_extended"
 eval "$DIR/scripts/symlinks/ssh"
+
+

@@ -108,16 +108,18 @@ function dvpn {
 
 # TODO: move these to normal .profile? The x variants are nice over ssh
 if [ "$XDG_SESSION_TYPE" == "wayland" ] && ! ( [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ] ) ; then
-    alias clip="wl-copy --trim-newline"
+    alias clip="wl-copy --trim-newline --type text/plain"
     alias clipf="wl-copy"
     alias clipo="wl-paste -t text/plain"
 else
     #alias clip="perl -pe 'chomp if eof' | xclip -sel clip -t text/plain -i"
     alias clip="xclip -sel clip -t text/plain -rmlastnl -i"
+    alias clip-html="xclip -sel clip -t text/html -i"
     function clipf {
     	MIME="$(file --mime-type "$1" -b)"
-    	echo $1 "($MIME)"
+    	>&2 echo $1 "($MIME)"
     	cat "$1" | xclip -sel clip -t "$MIME"
+    	# TODO: is filename preserved like this?
     }
     function clip_bmp_to_png {
     	# for use with virtualbox and xfreerdp

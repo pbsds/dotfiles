@@ -3,12 +3,31 @@
     formatOnSave: false
   "atom-ide-outline":
     foldInitially: true
+  "atom-typescript":
+    allowJS: true
+    ignoredDiagnosticCodes: [
+      "8002"
+      "8003"
+      "8004"
+      "8006"
+      "8008"
+      "8010"
+    ]
+    jsSyntaxScopes: [
+      "source.js"
+      "source.jsx"
+      "javascript"
+      "source.flow"
+    ]
   "autocomplete-plus": {}
   "bracket-matcher":
     autocompleteBrackets: false
   "copy-highlighted":
     style: "railscasts"
+  "copy-with-style":
+    preset1: {}
   core:
+    allowPendingPaneItems: false
     autoHideMenuBar: true
     disabledPackages: [
       "language-python"

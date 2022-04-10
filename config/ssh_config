@@ -144,8 +144,12 @@ Host *.nvg.ntnu.no
 
 
 #FYRKAT
-Host *.fyrkat.no
-    User pbsds
-    ProxyJump hop.fyrkat.no
+#Host *.fyrkat.no
+#    User pbsds
+#    ProxyJump hop.fyrkat.no
+#Host fil.fyrkat.no
+Host fridge.fyrkat.no
 Host fyrkat.no
-	Hostname fil.fyrkat.no
+    Hostname fridge.fyrkat.no
+Host fyrkat.no *.fyrkat.no
+    User pbsds

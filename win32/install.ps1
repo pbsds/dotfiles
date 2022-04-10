@@ -85,7 +85,7 @@ choco install -y eartrumpet # a nice sound mixer for the taskbar
 
 # TODO: https://rentry.co/fwt : KMS_VL_ALL
 # TODO: penumbra10: https://www.deviantart.com/scope10/art/Penumbra-10-Windows-10-visual-style-568740374
-# TODO: mount reidun
+# TODO: mount reidun, eg fyrkat
 # TODO: paint.net plugins
 # TODO: decide on a terminal
 # TODO: micro editor

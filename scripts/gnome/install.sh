@@ -40,19 +40,21 @@ function install {
 }
 
 
-install_arch pacaur
+#install_arch pacaur
 
 function installaur {
-	if (which pacaur 2>&1 > /dev/null); then
-	    if ! pacman -Qi $1 > /dev/null; then
-	        echo installing $1...
-	        #sudo pacaur --noconfirm -S $1
-	        VISUAL=echo pacaur --noconfirm -S $1
-	    else
-	        echo omitting installing $1...
-	    fi
+	if (command -v pamac >/dev/null); then
+        pamac build --no-confirm "$@"
+	#if (which pacaur 2>&1 > /dev/null); then
+	#    if ! pacman -Qi $1 > /dev/null; then
+	#        echo installing $1...
+	#        #sudo pacaur --noconfirm -S $1
+	#        VISUAL=echo pacaur --noconfirm -S $1
+	#    else
+	#        echo omitting installing $1...
+	#    fi
 	else
-		echo pacaur not installed, unable to install $1
+		echo pamac not installed, unable to install $@
     fi
 }
 
