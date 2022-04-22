@@ -157,7 +157,7 @@ function doc2pdf {
 			}
 		fi
 		set -x
-		libreoffice --headless --convert-to pdf "$1"
+		libreoffice --headless --convert-to pdf "$@"
 	)
 }
 

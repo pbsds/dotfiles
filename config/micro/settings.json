@@ -13,7 +13,6 @@
         "https://raw.githubusercontent.com/micro-editor/plugin-channel/master/channel.json"
     ],
     "pluginrepos": [],
-    "rmtrailingws": true,
     "splitBottom": true,
     "splitRight": true,
     "tabstospaces": true,

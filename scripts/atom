@@ -75,7 +75,7 @@ apmget markdown-table-editor
 apmget pigments
 apmget remote-atom
 apmget selection-highlight
-#apmget shell-it
+apmget shell-it
 apmget simple-align
 #apmget atom-beautify
 apmget copy-highlighted
