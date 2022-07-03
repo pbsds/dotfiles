@@ -6,15 +6,16 @@ DIR=$(git rev-parse --show-toplevel)
 # global
 
 (set -x
-    #git config --global core.excludesfile $HOME/.gitignore_global
-    #git config --global core.whitespace trailing-space,space-before-tab
-    #git config --global push.default simple
-    #git config --global pull.rebase true
+    #git config --global core.excludesfile "$HOME/.gitignore_global"
+    #git config --global core.whitespace "trailing-space,space-before-tab"
+    #git config --global push.default "simple"
+    #git config --global pull.rebase "true"
     git config --global user.name "Peder Bergebakken Sundt"
-    git config --global user.email pbsds@hotmail.com
-    #git config --global diff.algorithm default
-    #git config --global diff.algorithm patience
-    git config --global diff.algorithm histogram
+    git config --global user.email "pbsds@hotmail.com"
+    #git config --global diff.algorithm "default"
+    #git config --global diff.algorithm "patience"
+    git config --global diff.algorithm "histogram"
+    git config --global init.defaultBranch "main"
 )
 
 read -p "Have you installed your ssh credentials to github?  (y/N)?" DO
