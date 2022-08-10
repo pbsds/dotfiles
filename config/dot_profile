@@ -22,6 +22,7 @@ alias watch="watch -c "
 alias hman="man -H "
 alias igrep="grep -i"
 alias flexget="ssh -t knut.pbsds.net sudo -u flexget flexget"
+alias tmux="systemd-run --scope --user tmux"
 
 # direnv
 if command -v direnv > /dev/null; then
@@ -49,6 +50,7 @@ alias sr='echo sourcing profiles.... ; source ~/.profile'
 # bash navigation
 alias ll="ls -l"
 alias dush="du -shc * | sort -h"
+alias dushd="du -shc * .[!.]?* | sort -h"
 alias diff="diff -u --color"
 bind 'set completion-ignore-case on'
 
@@ -156,6 +158,7 @@ complete -W "$(cat ~/.ssh/config | grep '^Host ' | cut  -b 6- | grep -v "\*")" l
 complete -W "$(cat ~/.ssh/config | grep '^Host ' | cut  -b 6- | grep -v "\*")" dvpn
 complete -W "$(cat ~/.ssh/config | grep '^Host ' | cut  -b 6- | grep -v "\*")" scp
 complete -W "$(cat ~/.ssh/config | grep '^Host ' | cut  -b 6- | grep -v "\*")" remote-init
+complete -W "$(cat ~/.ssh/config | grep '^Host ' | cut  -b 6- | grep -v "\*")" remote-add
 
 # Jumping around with symbolic links:
 # Based on http://jeroenjanssens.com/2013/08/16/quickly-navigate-your-filesystem-from-the-command-line.html
@@ -266,6 +269,7 @@ ex () {
 if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
     export GDK_BACKEND=x11
     export WINIT_UNIX_BACKEND=x11
+    #export PYOPENGL_PLATFORM=egl
 fi
 
 
@@ -323,4 +327,9 @@ fi
 complete -F _command remote
 complete -F _command remote-quick
 complete -F _command tldr
+complete -F _command prime-run
 
+function atom_nix {
+	#--in-process-gpu --no-sandbox
+	nix-shell -p atom --run "atom $(printf "%q " "$@") --in-process-gpu --no-sandbox"
+} 

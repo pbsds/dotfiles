@@ -84,6 +84,7 @@ install xorg-xauth
 install xorg-xprop
 install wmctrl
 install xdotool
+install dconf-editor
 install xclip
 install_arch xorg-xrandr
 install_ubuntu x11-xserver-utils

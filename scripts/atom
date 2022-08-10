@@ -40,6 +40,7 @@ apmget language-autoit
 apmget language-batch
 apmget language-bison-flex
 apmget language-cmake
+apmget language-cython
 apmget language-diff
 apmget language-dg
 apmget language-dot
@@ -68,6 +69,7 @@ apmget zotero-citations
 
 # quality of life
 apmget on-save
+apmget editorconfig
 apmget fonts
 #apmget jumpy
 apmget lines # join lines

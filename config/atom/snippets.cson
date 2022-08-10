@@ -13,13 +13,19 @@
     'body': '\\$\\$ $1\n\\$\\$${3: \\{#eq:${2:TODOs}\\}}$0'
   'AlignedEquation':
     'prefix': 'eqs'
-    'body': '\\$\\$ \\\\begin\\{aligned\\}\n\t${1:a &= b} \\\\\\\\\n\t${2:c &= d} \\\\\\\\\n\\\\end\\{aligned\\} \\$\\$${4: \\{#eq:${3:TODO}\\}}$0'
+    'body': '\\$\\$ \\\\begin\\{aligned\\}\n\t\\\\\\\\ ${1:a &= b} \n\t\\\\\\\\ ${2:c &= d}\n\\\\end\\{aligned\\} \\$\\$${4: \\{#eq:${3:TODO}\\}}$0'
   'EquationSolve':
     'prefix': 'eqso'
     'body': '\\$\\$ \\\\begin\\{aligned\\}\n\t${1:a}\n\t\t&= ${2:b} \\\\\\\\\n\\\\end\\{aligned\\} \\$\\$${4: \\{#eq:${3:TODO}\\}}$0'
-  'LeftRightParams':
-    'prefix': 'leftright'
-    'body': '\\\\left($1\\\\right)$0'
+  'Fraction':
+    'prefix': 'fr'
+    'body': '\\\\frac\\{$1\\}\\{$2\\}$0'
+  'LeftRight':
+    'prefix': 'lr'
+    'body': '\\\\left${1:  \\\\right}$0'
+  'LeftRightAngle':
+    'prefix': 'lra'
+    'body': '\\\\left\\\\langle $1 \\\\right\\\\rangle$0'
 #  'Superscript':
 #    'prefix': '^'
 #    'body': '^\\{$1\\}$0'
@@ -48,7 +54,16 @@
     'body': '{# $0 #}'
   'Do':
     'prefix': 'do'
-    'body': '{% do ${1:expr} %}'
+    'body': '{% do ${1:expr} %}{# requires jinja2.ext.do #}'
+  'Continue':
+    'prefix': 'continue'
+    'body': '{% continue %}{# requires jinja2.ext.loopcontrols #}'
+  'Break':
+    'prefix': 'break'
+    'body': '{% break %}{# requires jinja2.ext.loopcontrols #}'
+  'Autoescape':
+    'prefix': 'autoescape'
+    'body': '{% autoescape ${1:false} %}\n$2\n{% endautoescape %}$0'
   'Todo':
     'prefix': 'todo'
     'body': '{# TODO: ${1:message} #}'

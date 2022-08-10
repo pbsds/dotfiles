@@ -43,13 +43,13 @@ Host timescaledb.labs.uninett.no
 
 Host stud.ntnu.no
     Hostname login.stud.ntnu.no
-    User pederbs
-Host login.ansatt.ntnu.no
-    User pederbs
 Host login.stud.ntnu.no
+Host ansatt.ntnu.no
+    Hostname login.ansatt.ntnu.no
+Host login.stud.ntnu.no lab40*.idi.ntnu.no clab*.idi.ntnu.no idun-login*.hpc.ntnu.no heid.idi.ntnu.no
     ControlMaster auto
     ControlPersist 600
-Host *.idi.ntnu.no stud.ntnu.no *.stud.ntnu.no
+Host stud.ntnu.no *.stud.ntnu.no ansatt.ntnu.no *.ansatt.ntnu.no *.idi.ntnu.no *.hpc.ntnu.no 
     ForwardX11 yes
     ForwardX11Trusted yes
     Compression yes
@@ -73,8 +73,8 @@ Host idun-login1.hpc.ntnu.no
 Host snotra-login1.idi.ntnu.no
 Host oppdal.idi.ntnu.no
 Host heid.idi.ntnu.no
-    #ProxyJump snotra.idi.ntnu.no
-Host *.hpc.ntnu.no *.stud.ntnu.no *.idi.ntnu.no
+#    ProxyJump snotra-login1.idi.ntnu.no
+Host *.hpc.ntnu.no *.stud.ntnu.no stud.ntnu.no *.ansatt.ntnu.no ansatt.ntnu.no *.idi.ntnu.no
     User pederbs
 
 
