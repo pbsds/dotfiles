@@ -52,8 +52,8 @@ installExtension "https://extensions.gnome.org/extension/3843/just-perfection/"
 installExtension "https://extensions.gnome.org/extension/352/middle-click-to-close-in-overview/" #- middleclickclose@paolo.tranquilli.gmail.com
 #installExtension "https://extensions.gnome.org/extension/949/bottompanel/" #- bottompanel@tmoer93
 #installExtension "https://extensions.gnome.org/extension/545/hide-top-bar/" #- hidetopbar@mathieu.bidon.ca
-installExtension "https://extensions.gnome.org/extension/234/steal-my-focus/" #- steal-my-focus@kagesenshi.org
-installExtension "https://extensions.gnome.org/extension/1236/noannoyance/" ## TODO: v2 instead?   #- noannoyance@sindex.com
+#installExtension "https://extensions.gnome.org/extension/234/steal-my-focus/" #- steal-my-focus@kagesenshi.org
+#installExtension "https://extensions.gnome.org/extension/1236/noannoyance/" ## TODO: v2 instead?   #- noannoyance@sindex.com
 installExtension "https://extensions.gnome.org/extension/1326/block-caribou/" #- cariboublocker@git.keringar.xyz
 installExtension "https://extensions.gnome.org/extension/28/gtile/" #- gTile@vibou
 installExtension "https://extensions.gnome.org/extension/4144/vertical-overview/"
