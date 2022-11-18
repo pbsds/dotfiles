@@ -333,3 +333,16 @@ function atom_nix {
 	#--in-process-gpu --no-sandbox
 	nix-shell -p atom --run "atom $(printf "%q " "$@") --in-process-gpu --no-sandbox"
 } 
+
+
+function htmlshow {
+	# https://gist.github.com/Boldewyn/4311962
+	# TODO: doesn't work...
+	#firefox "$(base64 -w0 | cat <(echo -n 'data:text/html;base64,') -)"
+
+	# mktemp it is then!
+	TMP="$(mktemp --suffix=.html)"
+	cat > "$TMP"
+	firefox "$TMP"
+}
+
