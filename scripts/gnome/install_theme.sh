@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 pamac install --no-confirm breeze-icons icoutils
-pamac build --no-confirm vimix-gtk-themes flat-remix
+pamac build --no-confirm vimix-gtk-themes flat-remix colloid-gtk-theme-git
 
 exit 0 # aur has it
 
