@@ -23,6 +23,7 @@ alias hman="man -H "
 alias igrep="grep -i"
 alias flexget="ssh -t knut.pbsds.net sudo -u flexget flexget"
 alias tmux="systemd-run --scope --user tmux"
+alias killall="killall -v"
 
 # direnv
 if command -v direnv > /dev/null; then
@@ -42,6 +43,11 @@ alias ed=$EDITOR # ed is the standard editor
 alias de=$EDITOR # de is the editor standard
 alias edl="$EDITOR -colorscheme bubblegum " # micro dependent, lol
 alias eds="$EDITOR -colorscheme simple " # micro dependent, lol
+
+# bat
+if command -v bat >/dev/null; then
+	alias cat="bat --style=plain --paging=never"
+fi
 
 # .profile management shorthand
 alias ep='$EDITOR ~/.profile ~/.extend.profile && source ~/.profile'
@@ -105,7 +111,7 @@ alias gpo='git push origin'
 alias gpasr='git pull --autostash --rebase'
 #alias gfr='git fetch origin master && git rebase FETCH_HEAD'
 alias gfr='git pull --rebase'
-alias gp='git pull --rebase --autostash'
+alias gpra='git pull --rebase --autostash'
 parse_git_branch() {
 	git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
@@ -298,8 +304,9 @@ function prettify_c {
 
 
 # termbin
-alias termbin="nc termbin.com 9999"
-
+#alias termbin="nc termbin.com 9999"
+#alias ix="curl -F 'f:1=<-' ix.io"
+alias bin="perl -pe 'chomp' | curl -is -X POST https://i.kuklef.se/upload -F content=@- -F expiration=10d | grep '^location:' | cut -d' ' -f2-"
 
 function salias { # alias command, stripped
 	res="$( alias $1 )"

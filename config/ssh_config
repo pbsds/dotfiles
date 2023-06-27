@@ -72,6 +72,8 @@ Host clab15.idi.ntnu.no
 Host idun-login1.hpc.ntnu.no
 Host snotra-login1.idi.ntnu.no
 Host oppdal.idi.ntnu.no
+Host selbu.idi.ntnu.no
+Host malvik.idi.ntnu.no
 Host heid.idi.ntnu.no
 #    ProxyJump snotra-login1.idi.ntnu.no
 Host *.hpc.ntnu.no *.stud.ntnu.no stud.ntnu.no *.ansatt.ntnu.no ansatt.ntnu.no *.idi.ntnu.no
