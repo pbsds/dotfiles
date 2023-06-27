@@ -93,11 +93,11 @@ alias LS='ls'
 alias fuck="echo Ouch! | cowsay -f head-in | lolcat"
 
 # git gud
-alias gs='git status'
-alias gb='git blame'
-alias gl='git log --oneline --color | head -n 30'
-alias glg='git log --all --decorate --oneline --graph'
-alias gp="git pull --rebase --autostash"
+alias gs="git status"
+alias gb="git blame"
+alias gl="git log --oneline --color | head -n 30"
+alias glg="git log --all --decorate --oneline --graph"
+alias gpra="git pull --rebase --autostash"
 alias gd="git diff"
 alias gdwd="git diff --word-diff"
 alias gdwdr="git diff --word-diff --word-diff-regex=."
@@ -105,13 +105,13 @@ alias gds="git diff --staged"
 alias gdswd="git diff --staged --word-diff"
 alias gdswdr="git diff --staged --word-diff --word-diff-regex=."
 alias gcp="git cherry-pick"
-alias gca='git commit --amend'
-alias gcara='git commit --amend --reset-author'
-alias gpo='git push origin'
-alias gpasr='git pull --autostash --rebase'
-#alias gfr='git fetch origin master && git rebase FETCH_HEAD'
-alias gfr='git pull --rebase'
-alias gpra='git pull --rebase --autostash'
+alias gca="git commit --amend"
+alias gcara="git commit --amend --reset-author"
+alias gpo="git push origin"
+alias gpasr="git pull --autostash --rebase"
+#alias gfr="git fetch origin master && git rebase FETCH_HEAD"
+alias gfr="git pull --rebase"
+alias gpra="git pull --rebase --autostash"
 parse_git_branch() {
 	git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
@@ -128,7 +128,7 @@ function fixcrlf {
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 function salert {
 	retval=$?
-	test $? -eq 0 \
+	test $retval -eq 0 \
 		&& mpv "https://pvv.ntnu.no/~pederbs/filer/TFH_MadameC_Sing.wav" --no-video --really-quiet \
 		|| mpv "https://pvv.ntnu.no/~pederbs/filer/NTR-BKIE-USA-0137.wav" --no-video --really-quiet \
 		|| true
@@ -198,11 +198,14 @@ complete -F _completemarks jump unmark
 
 # MOTD
 function hello {
+	cow="$(cowsay -l | tail -n +2 | sed -e "s/ /\n/g" | shuf -n 1)"
+	hello_inner | cowsay -f $cow | boxes -d spring -p h4 | lolcat
+}
+function hello_inner {
 	name="$(curl -s 'https://pvv.ntnu.no/~pederbs/names.txt' | grep . | shuf -n 1 -)"
 	title="$(curl -s 'https://pvv.ntnu.no/~pederbs/demon_names.txt' | grep . | shuf -n 1 -)"
 	error="$(curl -s 'https://pages.cs.wisc.edu/~ballard/bofh/excuses' | grep . | shuf -n 1 -)"
 	commit="$(curl -s 'http://whatthecommit.com/index.txt')"
-	cow="$(cowsay -l | tail -n +2 | sed -e "s/ /\n/g" | shuf -n 1)"
 	printerfact="$(curl -s 'https://printerfacts.cetacean.club/fact')"
 	(
 		echo "$name the $title found a problem:"
@@ -216,7 +219,7 @@ function hello {
 		echo "'$commit'"
 		echo
 		echo "Did you know? $printerfact"
-	) | cowsay -f $cow | boxes -d spring -p h4 | lolcat
+	)
 }
 
 # helpers:
@@ -324,7 +327,7 @@ export PYTHON_KEYRING_BACKEND=keyring.backends.null.Keyring
 
 
 # pyenv:
-if test -d "$HOME/.pyenv"; then
+if command -v pyenv >/dev/null && test -d "$HOME/.pyenv"; then
     export PYENV_ROOT="$HOME/.pyenv"
     export PATH="$PYENV_ROOT/bin:$PATH"
     eval "$(pyenv init --path)"
@@ -352,4 +355,3 @@ function htmlshow {
 	cat > "$TMP"
 	firefox "$TMP"
 }
-

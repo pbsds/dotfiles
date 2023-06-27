@@ -73,3 +73,18 @@
   'Set':
     'prefix': 'set'
     'body': '{% set ${1:var} = ${2:expr} %}'
+  'Var':
+    'prefix': 'var'
+    'body': '{% var ${1:var} = ${2:expr} %}'
+  'Const':
+    'prefix': 'const'
+    'body': '{% const ${1:var} = ${2:expr} %}'
+  'Let':
+    'prefix': 'let'
+    'body': '{% let ${1:var} = ${2:expr} %}'
+  'Proc':
+    'prefix': 'proc'
+    'body': '{% proc ${1:name}(${2:args}): string = %}\n\t${3:hello world!}\n{% endproc %}$0'
+  'Func':
+    'prefix': 'func'
+    'body': '{% func ${1:name}(${2:args}): string = %}\n\t${3:hello world!}\n{% endfunc %}$0'

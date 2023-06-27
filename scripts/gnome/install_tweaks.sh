@@ -28,7 +28,7 @@ function installExtension {
 	        org.gnome.Shell.Extensions.InstallRemoteExtension  \
 	        string:"$uuid"
 
-        # TODO: doesn't work for remote extensions 
+        # TODO: doesn't work for remote extensions
         #(set -x
         #    #echo \
         #    gnome-extensions enable $uuid
@@ -56,21 +56,22 @@ installExtension "https://extensions.gnome.org/extension/352/middle-click-to-clo
 #installExtension "https://extensions.gnome.org/extension/1236/noannoyance/" ## TODO: v2 instead?   #- noannoyance@sindex.com
 installExtension "https://extensions.gnome.org/extension/1326/block-caribou/" #- cariboublocker@git.keringar.xyz
 installExtension "https://extensions.gnome.org/extension/28/gtile/" #- gTile@vibou
-installExtension "https://extensions.gnome.org/extension/4144/vertical-overview/"
+installExtension "https://extensions.gnome.org/extension/5177/vertical-workspaces/"
+#installExtension "https://extensions.gnome.org/extension/4144/vertical-overview/"
 #installExtension "https://extensions.gnome.org/extension/4099/no-overview/"
 
 # neat
 installExtension "https://extensions.gnome.org/extension/905/refresh-wifi-connections/" #- refresh-wifi@kgshank.net
 installExtension "https://extensions.gnome.org/extension/1276/night-light-slider/" #- night-light-slider.timur@linux.com
-installExtension "https://extensions.gnome.org/extension/959/disable-workspace-switcher-popup/" #- disable-workspace-switcher-popup@github.com
+#installExtension "https://extensions.gnome.org/extension/959/disable-workspace-switcher-popup/" #- disable-workspace-switcher-popup@github.com
 installExtension "https://extensions.gnome.org/extension/744/hide-activities-button/" #- Hide_Activities@shay.shayel.org
 installExtension "https://extensions.gnome.org/extension/1097/keep-awake/" #- KeepAwake@jepfa.de
-installExtension "https://extensions.gnome.org/extension/708/panel-osd/" #- panel-osd@berend.de.schouwer.gmail.com
+#installExtension "https://extensions.gnome.org/extension/708/panel-osd/" #- panel-osd@berend.de.schouwer.gmail.com
 #installExtension "https://extensions.gnome.org/extension/3718/hide-dash-forked/" #- hide-dash-forked@farnasirim.com
 installExtension "https://extensions.gnome.org/extension/906/sound-output-device-chooser/" #- sound-output-device-chooser@kgshank.net
 installExtension "https://extensions.gnome.org/extension/1031/topicons/" #- TopIcons@phocean.net
 installExtension "https://extensions.gnome.org/extension/1289/window-animations/" #- window-animations@rliang.github.com
-installExtension "https://extensions.gnome.org/extension/3488/big-avatar/" #- big-avatar@gustavoperedo.org
+#installExtension "https://extensions.gnome.org/extension/3488/big-avatar/" #- big-avatar@gustavoperedo.org
 installExtension "https://extensions.gnome.org/extension/1401/bluetooth-quick-connect/" #- bluetooth-quick-connect@bjarosze.gmail.com
 
 echo

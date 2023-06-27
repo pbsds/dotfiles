@@ -16,6 +16,7 @@ import functools
 import typing
 from functools import reduce
 from pathlib import Path
+from objexplore import explore
 
 p = pprint
 

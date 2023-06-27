@@ -19,10 +19,17 @@ fi
 sudo usermod -aG nix-users $(id -un)
 sudo systemctl enable --now nix-daemon
 
-sg nix-users 'nix-channel --add https://nixos.org/channels/nixos-21.11 nixpkgs'
-sg nix-users 'nix-channel --add https://nixos.org/channels/nixpkgs-unstable unstable'
+# TODO: set flake registry
+
+sg nix-users 'nix-channel --add https://nixos.org/channels/nixos-23.05 nixpkgs'
+#sg nix-users 'nix-channel --add https://nixos.org/channels/nixpkgs-unstable unstable'
 sg nix-users 'nix-channel --add https://github.com/guibou/nixGL/archive/main.tar.gz nixgl'
-sg nix-users 'nix-channel --update nixpkgs unstable nixgl'
+sg nix-users 'nix-channel --update nixpkgs'
+
+sg nix-users 'nix registry pin nixpkgs          github:NixOS/nixpkgs/nixos-23.05'
+sg nix-users 'nix registry pin nixpkgs-unstable github:NixOS/nixpkgs/nixpkgs-unstable'
+
+#nix profile install github:guibou/nixGL#nixGLIntel --impure --override-input nixpkgs nixpkgs
 
 test -s "$HOME"/.local/share/applications/nix-env \
     || ln -s "$HOME"/.nix-profile/share/applications "$HOME"/.local/share/applications/nix-env

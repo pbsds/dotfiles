@@ -49,7 +49,7 @@ Host ansatt.ntnu.no
 Host login.stud.ntnu.no lab40*.idi.ntnu.no clab*.idi.ntnu.no idun-login*.hpc.ntnu.no heid.idi.ntnu.no
     ControlMaster auto
     ControlPersist 600
-Host stud.ntnu.no *.stud.ntnu.no ansatt.ntnu.no *.ansatt.ntnu.no *.idi.ntnu.no *.hpc.ntnu.no 
+Host stud.ntnu.no *.stud.ntnu.no ansatt.ntnu.no *.ansatt.ntnu.no *.idi.ntnu.no *.hpc.ntnu.no
     ForwardX11 yes
     ForwardX11Trusted yes
     Compression yes
@@ -86,13 +86,16 @@ Host hildring.pvv.ntnu.no
 Host microbel.pvv.ntnu.no
 Host tom.pvv.ntnu.no
 Host tim.pvv.ntnu.no
+Host venture.pvv.ntnu.no
+Host bicep.pvv.ntnu.no
+Host jokum.pvv.ntnu.no
 Host demiurgen.pvv.ntnu.no
 Host eirin.pvv.ntnu.no
 Host knakelibrak.pvv.ntnu.no
-Host dash8.pvv.ntnu.no
+#Host dash8.pvv.ntnu.no
 Host git.pvv.ntnu.no
 Host essendrop.pvv.ntnu.no
-Host skrotnisse.pvv.ntnu.no
+#Host skrotnisse.pvv.ntnu.no
 Host spikkjeposche.pvv.ntnu.no
 Host sleipner.pvv.ntnu.no
 Host hasub.pvv.ntnu.no
@@ -151,6 +154,8 @@ Host *.nvg.ntnu.no
 #    ProxyJump hop.fyrkat.no
 #Host fil.fyrkat.no
 Host fridge.fyrkat.no
+Host meldun.fyrkat.no
+    ProxyJump fridge.fyrkat.no # ipv6
 Host fyrkat.no
     Hostname fridge.fyrkat.no
 Host fyrkat.no *.fyrkat.no
