@@ -3,6 +3,7 @@
     formatOnSave: false
   "atom-ide-outline":
     foldInitially: true
+    initialDisplay: false
   "atom-typescript":
     allowJS: true
     ignoredDiagnosticCodes: [
